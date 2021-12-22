@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ 
+<title>Programming Assignment 6</title></head>
+
+<body style="" _texified="true">
+<h1>Programming Assignment 6 (OPTIONAL)</h1>
+
+<h3>
+
+Due dates:<br> 
+Interim report: Monday 12/03/2012, 11:59pm<br> 
+Full assignment: Thursday 12/06/2012, 11:59pm.</h3>
+
+
+<h3> Summary </h3>
+In this assignment you will implement decision trees, including
+learning decision trees from training data and applying decision trees
+to classify test objects.
+<p> 
+
+</p><hr>
+
+<h3> Command-line Arguments </h3>You must a program that learns a
+decision tree for a binary classification problem, given some training
+data. In particular, your program will run as follows:
+<pre>dtree training_labels_file training_features_file test_features_file<br></pre>
+
+The arguments provide to the program the following information:
+<ol>
+<li> The first argument is the file name where the class labels of the
+training objects are stored. The i-th row is the class label of the
+i-th training object.
+</li><li> The second argument is the file name where the features of
+the training objects are stored. The i-th row and j-th column contain
+the value for the j-th feature of the i-th training object. You can
+assume in your program that every object has seven features, and each
+feature is an integer between -2 and 3.
+</li><li> The third argument is the file name where the features of
+the test objects are stored. The i-th row and j-th column contain the
+value for the j-th feature of the i-th test object. As before, you can
+assume in your program that every object has seven features, and each
+feature is an integer between -2 and 3.
+</li></ol>
+
+Example files that can be passed as command-line arguments are <a href="pa6_files/training_labels.txt"> training_labels.txt</a>, <a href="pa6_files/training_features.txt"> training_features.txt</a>, and <a href="pa6_files/test_features.txt">test_features.txt</a>. In case you are curious, the class labels of the test objects from <a href="pa6_files/test_features.txt">test_features.txt</a> can be seen at <a href="pa6_files/test_labels.txt">test_labels.txt</a>.
+
+
+
+
+
+<p>
+
+</p><hr>
+
+<h3> Training </h3>The first part of the program execution performs
+training of a decision tree using the training data. Your decision tree
+should be binary and with depth 4. In other words, any non-leaf node
+should have two children, and any leaf node should have depth 4 (the
+root is considered to have depth 1). This means that, at classification
+time (see description of classification task later), each test object
+will be subjected to three tests. EXCEPTION: if for some node at depth
+&lt; 4 you find that that node was only assigned training objects from
+one class (and no training objects from the other class), then you can
+make that node a leaf node.
+<p>The question chosen at each node should simply test if a specific
+feature is LESS THAN a specific value. For full credit, for each node
+of the tree (starting at the root) you should identify the optimal
+question, i.e., the question leading to the highest information gain
+for that node, as specified in pages 659-660 of the textbook.
+</p><p>
+
+Your decision tree will have at most 7 non-leaf nodes. For each of them your program should print:
+</p><ul>
+<li> node ID (a number from one to seven, where the root ID is 1).
+</li><li> left or right: this specifies if this node is the left or right child of its parent. For the root just print "root".
+</li><li> node ID of the parent (0 for the parent of the root).
+</li><li> a feature ID (a number from one to seven, specifying which of the seven features is used for the decision test).
+</li><li> a value V. If feature ID = X and value = Y, then objects
+whose X-th feature has a value LESS THAN Y are directed to the left
+child of that node.
+</li><li> number of training objects of class1 considered in this node.
+</li><li> number of training objects of class2 considered in this node.
+</li><li> information gain achieved by the question chosen for this node.
+</li></ul>
+
+<p>
+
+</p><hr>
+
+<h3> Classification </h3>For each test object described in
+test_features_file print out, in a separate line, the classification
+label (class1 or class2). <p>
+
+</p><hr>
+
+<h3>Interim report </h3>
+
+The interim report should be submitted via e-mail to the instructor and the TA, and should contain the following:
+
+<ul>
+<li>On subject line: "CSE 4308/5360 - Programming Assignment 6 - Interim report".
+</li><li>On body of message: Your name and UTA ID (all 10 digits, no spaces).
+</li><li>On body of message, or as an attachment (in text, Word, PDF,
+or OpenOffice format): a description (as brief or long as you want) of
+what you have done so far for the assignment, and any
+difficulties/bottlenecks you may have reached (in case you encounter
+such difficulties, it is highly recommended to contact the instructor
+and/or TA for help).
+</li></ul>For purposes of grading, it is absolutely fine if your
+interim report simply states that you have done nothing so far (you
+still get the 10 points allocated for the interim report, AS LONG AS
+YOU SUBMIT THE REPORT ON TIME). At the same time, starting early and
+identifying potential bottlenecks by the deadline for the interim
+report is probably a good strategy for doing well in this assignment. <h3> Grading </h3>
+
+<ul>
+<li> 20 points: Correctly computing the information gain of each
+(feature, value) pair at each node, using the training data assigned to
+that node.
+</li><li> 20 points: Identifying and choosing, for each node, the
+(feature, value) pair with the highest information gain for that node,
+according to the training set.
+</li><li> 20 points: Correctly directing training objects to the left
+or right child of each node, depending on the (feature, value) pair
+used at that node.
+</li><li> 20 points: Correctly applying the decision tree to test objects.
+</li><li> 20 points: Printing out the required information in an easy-to-read format, according to the instructions.
+ </li></ul>
+
+
+
+
+<h3>How to submit</h3>
+
+Submissions should be made using <a href="http://elearn.uta.edu/">Blackboard</a>.
+
+<p>
+
+Implementations in C, C++, and Java will be accepted. If you would like
+to use another language, please first check with the instructor via
+e-mail. Points will be taken off for failure to comply with this
+requirement.
+
+</p><p>Submit a ZIPPED directory called <tt>programming6.zip</tt> (no other
+forms of compression accepted, contact the instructor or TA if you do
+not know how to produce .zip files). The directory should
+contain all source code. The directory should also contain a file called
+readme.txt,
+which should specify precisely:</p>
+<ul>
+ <li>Name and UTA ID of the student.
+ </li><li>What programming language is used.</li>
+ <li>How the code is structured.</li>
+ <li>How to run the code, including very specific compilation
+instructions, if compilation
+   is needed. Instructions such as "compile using g++" are NOT
+considered specific. Providing all the command lines that are needed to complete the compilation on omega is specific.</li>
+</ul>
+Insufficient or unclear instructions will be penalized by up to 20 points.
+Code that does not run on omega machines gets AT MOST half credit (50 points).
+
+
+
+
+<h3>Submission checklist</h3>
+
+<ul>
+<li> Is the code running on omega?
+</li><li> Is the implementations in C, C++, or Java? If not, have you
+obtained written consent from the instructor?
+</li><li> Is the submitted zipped file called <tt>programming6.zip</tt>?
+</li><li> Does the attachment include a readme.txt file, as specified?
+</li></ul>
+</body></html>

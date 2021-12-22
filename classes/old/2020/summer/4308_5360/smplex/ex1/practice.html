@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Practice Questions and Answers</title></head>
+<body>
+<h3 style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-style: normal; font-variant: normal; letter-spacing: normal; line-height: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;">Practice
+Questions
+and Answers</h3>
+<ol style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;">
+<li>For
+each of the following agent environments, decide if it is fully or
+partially observable, deterministic or stochastic, static or dynamic,
+and discrete or continuous:
+<ol>
+<li>playing poker.</li>
+<li>robot soccer player.</li>
+<li>autonomous Mars rover.</li>
+<li>playing tic-tac-toe.</li>
+<li>mathematician's theorem-proving assistant.</li>
+</ol>
+<h4>Answer</h4>
+<ol>
+<li>playing poker: partially observable, stochastic,
+static, discrete.</li>
+<li>robot soccer player: partially observable, stochastic,
+dynamic, continuous.</li>
+<li>autonomous Mars rover: partially observable,
+stochastic, dynamic, continuous.</li>
+<li>playing tic-tac-toe: fully observable, deterministic,
+static, discrete.</li>
+<li>mathematician's theorem-proving assistant: fully
+observable, deterministic, static, discrete.</li>
+</ol>
+<p></p>
+</li>
+<li>Suppose
+that an agent lives in a grid world of size 5 x 5 (for a total of 25
+squares). The agent has two sensors: a GPS sensor, which informs the
+agent of its current location on the grid, and a camera sensor, which
+informs the agent of the color on the current square and the four
+adjacent squares. The agent, at each step, moves left, right, top,
+bottom. 24 of the 25 squares are safe, and one square (at location 4,3)
+is dangerous. The current location of the agent is safe.
+<p>a. If the
+agent is reflex-based, the safe squares are green, and the dangerous
+square is red, is it possible for this agent to follow a safe strategy
+that will always avoid the dangerous square? If yes, what is that
+strategy?</p>
+<h4>Answer</h4>
+Yes, the strategy is to never visit a red square.
+<p>b. If the agent is reflex-based, and<span class="Apple-converted-space">&nbsp;</span><b>all
+squares (safe and dangerous) are green</b>,
+is it possible for this agent to follow a safe strategy that will
+always avoid the dangerous square? If yes, what is that strategy?</p>
+<h4>Answer</h4>
+Yes, the strategy is to never visit location (4,3), which can be
+achieved because the agent has a GPS sensor.
+<p></p>
+</li>
+<li>For
+the following tree, show the order of nodes visited for breadth-first
+search, depth-first search, uniform cost search, and iterative
+deepening search . The goal node is I and the numbers next to the edges
+indicate the associated cost.
+<p><img src="./practice_files/practice1.gif"></p>
+<p></p>
+<h4>Answer</h4>
+Note: in all methods, after goal node I is visited, the search stops.
+BFS: ABCDEFGHI<span class="Apple-converted-space">&nbsp;</span><br>
+DFS: ABECFGI<span class="Apple-converted-space">&nbsp;</span><br>
+UCS: ADCBGFEHI
+<p>IDS:<br>
+first iteration: A<span class="Apple-converted-space">&nbsp;</span><br>
+second iteration: ABCD<span class="Apple-converted-space">&nbsp;</span><br>
+third iteration: ABECFGDH<span class="Apple-converted-space">&nbsp;</span><br>
+fourth iteration: ABECFGI<span class="Apple-converted-space">&nbsp;</span><br>
+</p>
+</li>
+<li>Does a finite state space always lead to a finite search
+tree? Justify your answer.
+<h4>Answer</h4>
+Yes
+if the algorithm remembers states already visited and thus avoids
+visiting each state an infinite number of times. No if the algorithm
+does not keep track of states already visited.
+<p></p>
+</li>
+<li>Textbook
+exercise 3.8, parts (a) and (b): Consider a state space where the start
+state is number 1 and the successor function for state n returns two
+states, numbers 2n and 2n+1.<span class="Apple-converted-space">&nbsp;</span><br>
+&nbsp; &nbsp; &nbsp;<span class="Apple-converted-space">&nbsp;</span><strong>a.</strong><span class="Apple-converted-space">&nbsp;</span>&nbsp;
+Draw the portion of the state space for states 1 to 15.
+<h4>Answer</h4>
+<p><img src="./practice_files/answer5.png"><span class="Apple-converted-space">&nbsp;</span><br>
+<br>
+<br>
+&nbsp; &nbsp; &nbsp;<span class="Apple-converted-space">&nbsp;</span><strong>b.</strong><span class="Apple-converted-space">&nbsp;</span>&nbsp;
+Suppose the goal state is 11. List the order in which nodes will be
+visited for breadth-first search, depth-limited search with limit 3,
+and iterative deepening search.</p>
+<h4>Answer</h4>
+BFS: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11<span class="Apple-converted-space">&nbsp;</span><br>
+DLS (depth limit 3): 1, 2, 4, 5, 3, 6, 7<span class="Apple-converted-space">&nbsp;</span><br>
+<p>IDS:<span class="Apple-converted-space">&nbsp;</span><br>
+first iteration: 1<span class="Apple-converted-space">&nbsp;</span><br>
+second iteration: 1, 2, 3<span class="Apple-converted-space">&nbsp;</span><br>
+third iteration: 1, 2, 4, 5, 3, 6, 7<span class="Apple-converted-space">&nbsp;</span><br>
+fourth iteration: 1, 2, 4, 8, 9, 5, 10, 11<span class="Apple-converted-space">&nbsp;</span><br>
+</p>
+<p></p>
+</li>
+<li>Describe
+a state space with 5 states, where the number of nodes visited by
+iterative deepening search (including the start node) is 15.
+<h4>Answer</h4>
+Quick answer: S1 -&gt; S2 -&gt; S3 -&gt; S4 -&gt; S5
+<p>More detailed answer:</p>
+<p>States: S1, S2, S3, S4, S5.<span class="Apple-converted-space">&nbsp;</span><br>
+Root: S1<span class="Apple-converted-space">&nbsp;</span><br>
+Child of S1: S2<span class="Apple-converted-space">&nbsp;</span><br>
+Child of S2: S3<span class="Apple-converted-space">&nbsp;</span><br>
+Child of S3: S4<span class="Apple-converted-space">&nbsp;</span><br>
+Child of S4: S5<span class="Apple-converted-space">&nbsp;</span><br>
+</p>
+<p></p>
+</li>
+<li>Suppose
+that we are given a roadmap of the United States (i.e., we are given a
+list of roads, such that each road directly connects two cities).
+Additionally, we are given the distance from every city to Chicago.
+Consider the following heuristic (for possible use with A*): for each
+city A, h(A) = distance from A to Chicago + distance from Chicago to
+the goal. Is this heuristic admissible? Justify your answer.
+<h4>Answer</h4>
+No.
+If A is Dallas and the goal is Forth Worth, then h(A) &gt; 1000
+miles,
+which is clearly greater than the true distance from Dallas to Forth
+Worth.
+<p></p>
+</li>
+<li>An agent lives in a grid world of size 10 x 10.
+The goal of the agent is to find a rose. At every step, the agent can
+move left, right, up, or down. The agent has a sensor that detects the
+smell at the current square, and another sensor that detects if the
+current square contains a rose. Any square having distance 3 steps or
+less from a rose smells nicely, all other squares smell badly. Use this
+information to define a maximal admissible heuristic for this search
+problem (i.e., a heuristic that is not dominated by any other
+admissible heuristic that can be defined using this knowledge).
+<h4>Answer</h4>
+Heuristic h is defined as follows:<br>
+h(square) = 0 if the square smells nice.<span class="Apple-converted-space">&nbsp;</span><br>
+h(square) = 4 if the square smells bad.<span class="Apple-converted-space">&nbsp;</span><br><br>or<br><br>
+h(square) = 0 if the square smells nice and rose detected.<span class="Apple-converted-space"></span><br>
+h(square) = 1 if the square smells nice and rose not detected.<br>
+h(square) = 4 if the square smells bad.<span class="Apple-converted-space">&nbsp;</span><br>
+</li>
+<li>Perform
+minimax search with alpha-beta pruning for the following game tree.
+Indicate which nodes are never visited and which branches are pruned
+(assuming that ties are broken strictly from left to right ). Also
+indicate next to each node its computed value or an upper/lower bound
+for that value, as computed during the search.. The utilities of
+terminal nodes are indicated below the leaf nodes.
+<p><img src="./practice_files/practice_second.gif"></p>
+<h4>Answer</h4>
+<p><img src="./practice_files/answer9.png"></p>
+</li>
+<li>Determine
+the values of all nodes in the following game tree with chance nodes
+using Expectiminimax. The utilities of terminal nodes are indicated
+below the leaf nodes and the probabilities of chance nodes are next to
+the corresponding branches.
+<p><img src="./practice_files/practice_third.gif"></p>
+<h4>Answer</h4>
+<p><img src="./practice_files/answer10.png"></p>
+</li>
+</ol>
+</body></html>

@@ -1,0 +1,79 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Preparation for Second Midterm - Answers</title>
+
+<script type="text/javascript" src="chrome-extension://bfbmjmiodbnnpllbbbfblcplfjjepjdn/js/injected.js"></script>
+<style type="text/css"></style>
+<link rel="stylesheet" type="text/css" href="data:text/css,"></head>
+<body style="" _texified="true">
+<h1><a href="ques.htm">Preparation
+for Second Midterm</a> - Answers
+</h1>
+<h3> Answers </h3>
+<ol><li> What is the negation of each of the following sentences:
+<pre>1. for-every x, exists y: son(x) = y<br>2. for-every x, for-every y: son(x) = y &lt;=&gt; father(y) = x<br></pre>
+In your answers, any "not" may only appear after the last appearance of
+a universal or existential quantifier.
+<p><strong>Answer: </strong></p>
+<pre><strong>1. exists x, for every y: son(x) != y<br>2. exists x, exists y: not (son(x) = y &lt;=&gt; father(y) = x)<br><br></strong></pre>
+<strong></strong>
+<p></p>
+</li>
+<li>Textbook exercise 8.8 (in both second and third edition).
+<p><strong>Answer for exercise 8.8 in the 2nd edition:
+</strong></p>
+<p><strong>There is an extra axiom needed: </strong></p>
+<pre><strong>(Male(x) and Spouse(x, y)) =&gt; Female(y)<br></strong></pre>
+<strong></strong>
+<p><strong>Answer for exercise 8.8 in the 3nd edition:
+</strong></p>
+<p><strong>No, <tt>not(Spouse(George, Laura))</tt>
+does not follow from the given facts. We need the additional axiom: </strong></p>
+<pre><strong>(Spouse(x, y) and (z != x)) =&gt; not(Spouse(z, y))<br></strong></pre>
+<strong>If <tt>Spouse</tt> becomes a unary
+function, then no additional axiom is needed. Then, the facts would be
+written as:
+<pre>Jim != George<br>Spouse(Laura) = Jim<br></pre>
+and the statement <tt>not(Spouse(Laura) = George)</tt> can
+be proven as follows:
+<pre>((Spouse(Laura) = Jim) and (Jim != George)) =&gt; not(Spouse(Laura) = George)<br></pre>
+If <tt>Spouse</tt> is a function, then it can only return
+a single value for each argument (such as <tt>Laura</tt>).
+</strong>
+<p></p>
+</li>
+<li> Consider the technique of propositionalization. For each
+of the following two knowledge bases, decide if propositionalization
+can be applied successfully. If not, why not?
+<pre>KB 1:<br><br>for-every x: king(x) and greedy(x) =&gt; evil(x)<br>king(John)<br>greedy(John)<br>brother(Richard, John)<br><br><br>KB 2:<br>for-every x: king(x) and greedy(x) =&gt; evil(x)<br>king(John)<br>greedy(John)<br>brother(Richard, John)<br>king(father(John))<br></pre>
+<p>
+<strong>Answer:
+</strong></p>
+<p><strong>For KB1, propositionalization can be applied
+successfully because there are no functions.
+For KB2, propositionalization cannot be applied successfully because
+there are functions.
+</strong></p>
+
+</li><li> Textbook exercise 9.19, parts (a), (b), (c) (second
+edition), exercise 9.24, parts (a), (b), (c) (third edition).
+<p><strong>Answer: <br>
+(a): (A) becomes: for every natural number x there exists a natural
+number y such that x is greater than or equal to y.
+<br>
+(B) becomes: there exists a natural number y such that every natural
+number x is greater than or equal to y.
+<br>
+(b): (A) is true: any natural number is &gt;= 0.
+<br>
+(c): (B) is true: If y = 0, then any natural number x is greater than
+or equal to 0.
+<br>
+</strong>
+</p>
+
+</li>
+</ol>
+<img onselect="return false" onselectstart="return false" id="zoomIcon" src="chrome-extension://kdfgigbjonaniokmpfflpflkhahhbaej/images/zoom.png" style="cursor: pointer; position: fixed; right: 50px; top: 25px; width: 70px; height: 70px; z-index: 10000; display: none;"><input id="zoomLabel" style="border: 3px solid rgb(102, 102, 102); padding: 3px; background-color: gray; color: white; font-size: 10pt; font-family: 'MS Sans Serif'; font-weight: bolder; text-align: center; cursor: pointer; position: fixed; right: 80px; top: 75px; width: 50px; height: 20px; z-index: 10000; opacity: 0.2; display: none;" value="100 %" title=" • Scroll up to Zoom In • Scroll down to Zoom out • Double click to hide this • Holding Left mouse button and Right click to show it again">
+<div id="sbi_camera_button" class="sbi_search" style="border: medium none ; margin: 0px; padding: 0px; left: 0px; top: 0px; position: absolute; width: 29px; height: 27px; z-index: 2147483647; display: none;"></div>
+</body></html>

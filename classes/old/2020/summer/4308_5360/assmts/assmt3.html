@@ -1,0 +1,300 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+
+
+
+
+  
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Assignment 3</title></head><body>
+<h1>Assignment 3<br>
+</h1>
+<h2>Written Assignment - Logic and Planning</h2>
+
+
+Max points:<br>
+
+<ul>
+
+  <li>CSE 4308: 100 (120 with EC)</li>
+  <li>CSE 5360: 100 (110 with EC)<br>
+  </li>
+</ul>
+
+<span style="font-weight: bold;"></span>The
+assignment should be submitted via Canvas.<br>
+
+<h2>Instructions</h2>
+
+<ul>
+
+  <li>The answers can be typed as a document or handwritten and
+scanned.&nbsp;</li>
+  <li>Name files as
+assignment3_&lt;net-id&gt;.&lt;format&gt;</li>
+  <li>Accepted document format is .pdf.</li>
+  <ul>
+    <li>If you are using Word, OpenOffice or LibreOffice, make
+sure
+to
+save as .pdf.</li>
+    <li>If you are using LaTEX, compile into a .pdf file.</li>
+  </ul>
+  <ul>
+    <li>Please do not submit
+.txt files.</li>
+  </ul>
+  <li>If
+you are scanning handwritten documents make sure to scan it at a
+minimum of 600dpi and save as a&nbsp;.pdf or .png file. Do not
+insert images in word document and submit.&nbsp;</li>
+  <li>If there are multiple files in your submission, zip them
+together as assignment6_&lt;net-id&gt;.zip and submit the .zip
+file.</li>
+</ul>
+
+<hr style="width: 100%; height: 2px;"><span style="font-weight: bold;"></span>
+<h2>Task 1 (CSE 4308: 10 Points; CSE 5360: 10 points)</h2>
+
+<table style="text-align: center;" border="1" cellpadding="0" cellspacing="0">
+
+  <tbody>
+    <tr>
+      <td>A</td>
+      <td>B</td>
+      <td>C</td>
+      <td>KB</td>
+      <td>S1</td>
+    </tr>
+    <tr>
+      <td>&nbsp;&nbsp;&nbsp;True&nbsp;&nbsp;&nbsp;</td>
+      <td>&nbsp;&nbsp;&nbsp;True&nbsp;&nbsp;&nbsp;</td>
+      <td>&nbsp;&nbsp;&nbsp;True&nbsp;&nbsp;&nbsp;</td>
+      <td>&nbsp;&nbsp;&nbsp;True&nbsp;&nbsp;&nbsp;</td>
+      <td>&nbsp;&nbsp;&nbsp;True&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+      <td>True</td>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>True</td>
+      <td>False</td>
+      <td>True</td>
+      <td>True</td>
+      <td> True</td>
+    </tr>
+    <tr>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>False</td>
+      <td>True</td>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td>False</td>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+KB and S1 are two propositional logic statements, that are constructed
+using symbols A, B, C, and using various connectives. The above truth
+table shows, for each combination of values of A, B, C, whether KB and
+S1 are true or false.
+</p>
+
+<p><strong>Part a</strong>: Given the above
+information, does KB entail S1? Justify your answer.
+</p>
+
+<p><strong>Part b</strong>: Given the above
+information, does statement NOT(KB) entail statement NOT(S1)? Justify
+your answer.
+</p>
+
+<br>
+
+<hr>
+<h2>Task 2 (CSE 4308: 10 Points; CSE 5360: 10 points)</h2>
+
+<br>
+
+Suppose that some&nbsp; knowledge base contains various
+propositional-logic sentences that utilize symbols A, B, C, D
+(connected with various connectives). There are only two cases when the
+knowledge base is <span style="font-weight: bold;">false</span>:<br>
+
+- First case: when A is true, B is false, C is false, D is true. <br>
+
+- Second case: when A is false, B is true, C is true, D is false.<br>
+
+<br>
+
+In all other cases, the knowledge base is true. Write a conjunctive
+normal form (CNF)&nbsp; for the knowledge base.<br>
+
+<br>
+
+<hr>
+<h2>Task 3 (CSE 4308: 15 Points; CSE 5360: 15 points)</h2>
+
+Consider the KB<br>
+
+<br>
+
+A &lt;=&gt; B<br>A =&gt; C<br>
+
+D =&gt; E<br>
+
+C&nbsp;AND E =&gt; F<br>B<br>
+
+D<br>
+
+<br>
+
+Show that this entails F by<br>
+
+<br>
+
+i. Forward Chaining<br>
+
+ii. Backward Chaining<br>
+
+iii. Resolution<br>
+
+<hr><br>
+
+<h2>Task 4 (CSE 4308: 25 Points; CSE 5360: 20 points)</h2>John and Mary sign the following contract:<br>
+
+<br>
+
+- If it rains on May 1, 2020, then John must give Mary a check for
+$10,000 on May 2, 2020<br>
+
+- Mary must mow
+the lawn on May 3, 2020 if and only if John gives Mary a check for $10,000 on May 2, 2020.<br>
+
+<br>
+
+What truly happened those days is the following:<br>
+
+-&nbsp; it did not rain on May 1, 2020<br>
+
+- John gave Mary a check for $10,000 on May 2, 2020<br>
+
+- Mary mowed the lawn on May 3, 2020.<br>
+
+<br>
+
+<strong>Part a</strong>: Write a first order logic
+statement to express the contract. Make sure that you clearly define
+what constants and predicates that you use are. (NOTE: DO NOT use
+functions)<br>
+
+<br>
+
+<strong>Part b</strong>: Write a logical statement to
+express what truly happened. When possible, use the same predicates and
+constants as in
+question 4a. If you need to define any new predicates or constants,
+clearly define what
+they stand for.<br>
+
+<br><strong>Part c</strong><span style="font-weight: bold;">:</span> Define the
+symbols required to convert any KB involved in the above
+domanin from FOL to Propositional logic. Use this to convert the
+answers to part a and b to Propositional Logic.<br>
+<br>
+
+
+<span style="font-weight: bold;">Part d</span>:
+Was the contract violated
+or not, Justify your answer [Note: Contract is not violated if the sequence of events entails the contract]<br>
+
+<br>
+
+<hr>
+<h2>Task 5 (CSE 4308: 20 Points (+10 Points EC); CSE 5360: 15 points (+10
+Points EC))</h2>Consider the following scenario:<br>
+<br>
+<div style="text-align: center;"><img style="width: 589px; height: 274px;" alt="Planning Task" src="assmt3_files/Planning.png"><br>
+</div>
+<br>
+Your task is to get all the blue marbles in P1 and red marbles in P2<br>
+<br>
+The actions available are as follows:<br>
+<ul>
+  <li>You can move 2 marbles from P1 to P2 if they are of the same color (either you can move 2 red or you can move 2 blue)</li>
+  <li>You can move 2 marbles from P2 to P1 if they are each of different colors (one blue or one red)</li>
+</ul>
+Give the PDDL description to represent the above as a Planning Problem.
+Do not forget to also define and describe the predicates and constants
+that your are going to use.<br>
+<br>
+
+<span style="font-weight: bold;">Extra Credit (10 pts)</span>: Also,
+give a complete plan (using the actions described) for getting
+from the start to the goal state<br>
+
+<br>
+
+<hr style="width: 100%; height: 2px;">
+<h2>Task 6 (CSE 4308: 20 Points; CSE 5360: 20 points)</h2>
+
+Suppose that we are using PDDL to describe facts and actions in a
+certain world called JUNGLE. In the JUNGLE world there are 5
+predicates, each predicate takes at most 4 arguments, and there are 3
+constants. Give a reasonably tight bound on the number of unique states
+in the JUNGLE world. Justify your answer.<br>
+
+<br>
+
+<hr>
+<h2>Task 7 (CSE 4308: 10 Points (EC); CSE 5360: 10 points)</h2>
+Consider the problem in Task 5. Let us say that, when you move the
+marbles, it is possible to sometimes end up moving only one of them
+(You try to move 2 Red marbles from P1 to P2 but only end up moving
+one). How would you modify the actions
+you described in Task 5 to account for this if you were going to try
+and handle this scenario by<br>
+
+<ul>
+
+  <li>Execution Monitoring/Online Replanning</li>
+  <li>Conditional Planning</li>
+</ul>
+
+In both cases, show what the modifications are (If no modification is
+necessary, Justify). <br>
+
+<br>
+
+</body></html>

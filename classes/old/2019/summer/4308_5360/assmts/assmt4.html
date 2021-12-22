@@ -1,0 +1,335 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Assignment 4</title></head><body>
+<h1>Assignment 4</h1>
+
+<h2>Written and Programming Assignment - Probabilites, Bayesian Networks &amp; Decision Trees</h2>
+<span style="font-weight: bold;">Note</span>: The assignment is for 120 Points<br>
+<h3>Task 1</h3>
+
+<strong style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">10 points.</strong>
+<br>
+
+<br>
+
+<span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;">In
+a certain probability problem, we have 11 variables: A, B</span><sub style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">1</sub><span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;">,
+B</span><sub style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">2</sub><span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;">,
+..., B</span><sub style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">10</sub><span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;">.</span>
+<ul style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">
+<li>Variable A has 5 values.</li><li>Each of variables B<sub>1</sub>, ..., B<sub>10</sub><span class="Apple-converted-space">&nbsp;</span>have 7
+possible values. Each B<sub>i</sub><span class="Apple-converted-space">&nbsp;</span>is
+conditionally indepedent of all other 9 B<sub>j</sub>variables
+(with j != i) given A.</li>
+</ul>
+
+<span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;">Based
+on these facts:</span>
+<p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;"><strong>Part
+a:</strong><span class="Apple-converted-space">&nbsp;</span>How
+many numbers do you need to store in the joint distribution table of
+these 11 variables?</p>
+
+<p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;"><strong>Part
+b:</strong><span class="Apple-converted-space">&nbsp;</span>What
+is the most space-efficient way (in terms of how many numbers you need
+to store) representation for the joint probability distribution of
+these 11 variables? How many numbers do you need to store in your
+solution? Your answer should work with any variables satisfying the
+assumptions stated above.</p>
+
+<p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;"><br>
+</p>
+
+
+<hr>
+<h3>Task 2</h3>
+<p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">
+</p>
+<span style="font-family: 'Times New Roman';"><span style="font-weight: bold;">40 points</span></span><br>
+
+<br>
+
+<span style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px; line-height: normal; widows: 1; float: none; display: inline ! important;">The
+task in this part is to implement a system that:</span><span style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; display: inline ! important; float: none;"></span>
+<ul style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px; line-height: normal; widows: 1;">
+<li>Can determine the posterior probability of different
+hypotheses, given priors for these hypotheses, and given a sequence of
+observations.</li><li>Can determine the probability that the next observation
+will be of a specific type, priors for different hypotheses, and given
+a sequence of observations.</li>
+</ul>
+
+<span style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px; line-height: normal; widows: 1; float: none; display: inline ! important;">As
+in the slides that we saw in class, there are five types of bags of
+candies. Each bag has an infinite amount of candies. We have one of
+those bags, and we are picking candies out of it. We don't know what
+type of bag we have, so we want to figure out the probability of each
+type based on the candies that we have picked.</span><span style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; display: inline ! important; float: none;"></span>
+<p style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px; line-height: normal; widows: 1;">The
+five possible hypotheses for our bag are:</p>
+
+<ul style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px; line-height: normal; widows: 1;">
+<li>h<sub>1</sub><span class="Apple-converted-space">&nbsp;</span>(prior:
+10%): This type of bag contains 100% cherry candies.</li><li>h<sub>2</sub><span class="Apple-converted-space">&nbsp;</span>(prior:
+20%): This type of bag contains 75% cherry candies and 25% lime candies.</li><li>h<sub>3</sub><span class="Apple-converted-space">&nbsp;</span>(prior:
+40%): This type of bag contains 50% cherry candies and 50% lime candies.</li><li>h<sub>4</sub><span class="Apple-converted-space">&nbsp;</span>(prior:
+20%): This type of bag contains 25% cherry candies and 75% lime candies.</li><li>h<sub>5</sub><span class="Apple-converted-space">&nbsp;</span>(prior:
+10%): This type of bag contains 100% lime candies.</li>
+</ul>
+
+<span style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; font-weight: bold;">Command
+Line arguments:</span><br style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;">
+
+<br style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;">
+
+<span style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px; line-height: normal; widows: 1; float: none; display: inline ! important;">The
+program takes a single command line argument, which is a string, for
+example CLLCCCLLL. This string represents a sequence of observations,
+i.e., a sequence of candies that we have already picked. Each character
+is C if we picked a cherry candy, and L if we picked a lime candy.
+Assuming that characters in the string are numbered starting with 1,
+the i-th character of the string corresponds to the i-th observation.
+The program should be invoked from the commandline as follows:</span><span style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; display: inline ! important; float: none;"></span>
+<pre style="color: rgb(0, 0, 0); font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; word-spacing: 0px; line-height: normal; widows: 1;">compute_a_posteriori observations<br></pre>
+
+<span style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px; line-height: normal; widows: 1; float: none; display: inline ! important;">For
+example:</span><span style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; display: inline ! important; float: none;"></span>
+<pre style="color: rgb(0, 0, 0); font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; word-spacing: 0px; line-height: normal; widows: 1;">compute_a_posteriori CLLCCLLLCCL<br></pre>
+
+<span style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px; line-height: normal; widows: 1; float: none; display: inline ! important;">We
+also allow the case of not having a command line argument at all, this
+represents the case where we have made no observations yet.<br>
+<br>
+<span style="font-weight: bold;">Output:</span><br>
+<br>
+</span><span style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px; line-height: normal; widows: 1; float: none; display: inline ! important;">Your
+program should create a text file called "result.txt", that is
+formatted exactly as shown below. ??? is used where your program should
+print values that depend on its command line argument. Five decimal
+points should appear for any floating point number.</span><span style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; display: inline ! important; float: none;"></span>
+<pre style="color: rgb(0, 0, 0); font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; word-spacing: 0px; line-height: normal; widows: 1;">Observation sequence Q: ???<br>Length of Q: ???<br><br>After Observation ??? = ???: <span style="font-style: italic;">(This and all remaining lines are repeated for every observation)</span><br><br>P(h1 | Q) = ???<br>P(h2 | Q) = ???<br>P(h3 | Q) = ???<br>P(h4 | Q) = ???<br>P(h5 | Q) = ???<br><br>Probability that the next candy we pick will be C, given Q: ???<br>Probability that the next candy we pick will be L, given Q: ???<br><br>Sample output for the Tasks is given <a href="assmt4_files/sample_Task4.zip">here</a>.<span style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; display: inline ! important; float: none;">
+<br>
+</span>
+</pre>
+<hr>
+<h3 style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-style: normal; font-variant: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">Task 3&nbsp;</h3>
+
+<span style="font-family: 'Times New Roman';"><span style="font-weight: bold;">10 points<br>
+</span></span><strong style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"></strong><span style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; display: inline ! important; float: none;"></span>
+<p style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;">George
+doesn't watch much TV in the evening, unless there is a baseball game
+on. When there is baseball on TV, George is very likely to watch.
+George has a cat that he feeds most evenings, although he forgets every
+now and then. He's much more likely to forget when he's watching TV.
+He's also very unlikely to feed the cat if he has run out of cat food
+(although sometimes he gives the cat some of his own food). Design a
+Bayesian network for modeling the relations between these four events:</p>
+
+<ul style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;">
+<li>baseball_game_on_TV</li><li>George_watches_TV</li><li>out_of_cat_food</li><li>George_feeds_cat</li>
+</ul>
+
+<span style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; display: inline ! important; float: none;">Your
+task is to connect these nodes with arrows pointing from causes to
+effects. No programming is needed for this part, just include an
+electronic document (PDF, Word file, or OpenOffice document) showing
+your Bayesian network design.<br>
+<br>
+</span>
+<hr>
+<h3 style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-style: normal; font-variant: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">Task 4&nbsp;</h3>
+
+<span style="font-family: 'Times New Roman';"><span style="font-weight: bold;">10 points</span></span>
+<p style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;">For
+the Bayesian network of Task 1, the text file<span class="Apple-converted-space">&nbsp;</span><a href="assmt4_files/training_data.txt">at this link<span class="Apple-converted-space">&nbsp;</span></a><a>contains
+training data from every evening of an entire year. Every line in this
+text file corresponds to an evening, and contains four numbers. Each
+number is a 0 or a 1. In more detail:</a></p>
+
+<ul style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;">
+<li><a>The first number is 0 if there is no baseball game
+on TV, and 1 if there is a baseball game on TV.</a></li><li><a>The second number is 0 if George does not watch TV, and 1
+if George watches TV.</a></li><li><a>The third number is 0 if George is not out of cat food, and
+1 if George is out of cat food.</a></li><li><a>The fourth number is 0 if George does not feed the cat, and
+1 if George feeds the cat.</a></li>
+</ul>
+
+Based
+on the data in this file, determine the probability table for each node
+in the Bayesian network you have designed for Task 3. You need to
+include these four tables in the drawing that you produce for question
+3. You also need to submit the code/script that computes these
+probabilities.hich leaf node does this
+test case end up in? What does the decision tree output for that case?<br>
+<br>
+<hr style="width: 100%; height: 2px;">
+<h3>Task 5</h3>
+
+<strong style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">15
+points.<br>
+</strong>&nbsp;<br>
+
+<img style="border: 1px solid ; width: 1151px; height: 755px;" alt="BayesianNetwork2" src="assmt4_files/large-net.png">
+<p><strong> Figure 1: Yet another Bayesian Network.</strong>
+</p>
+
+<strong style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;"><br>
+Part a:</strong><span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;"><span class="Apple-converted-space">&nbsp;</span>On the
+network shown in Figure 1, what is the Markovian blanket of node N?</span>
+<p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;"><strong>Part
+b:</strong><span class="Apple-converted-space">&nbsp;</span>On
+the network shown in Figure 1, what is P(A, F)? How is it derived?</p>
+
+<p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;"><strong>Part c:</strong><span class="Apple-converted-space">&nbsp;</span>On
+the network shown in Figure 1, what is P(N, not(D) | I)? How is it
+derived?</p>
+<p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">Hint: Part b,c have easier ways to arrive at the answer other than Inference by enumeration.</p>
+<br>
+
+<hr>
+<h3> Task 6</h3>
+
+<h3>15 points </h3>
+
+
+<table style="text-align: center;" border="1" cellpadding="0" cellspacing="0">
+
+
+<tbody>
+<tr>
+<td>&nbsp;&nbsp;Class&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;A&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;B&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;C&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td>X</td>
+<td>1</td>
+<td>2</td>
+<td>1</td>
+</tr>
+<tr>
+<td>X</td>
+<td>2</td>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr>
+<td>X</td>
+<td>3</td>
+<td>2</td>
+<td>2</td>
+</tr>
+<tr>
+<td>X</td>
+<td>1</td>
+<td>3</td>
+<td>3</td>
+</tr>
+<tr>
+<td>X</td>
+<td>1</td>
+<td>2</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Y</td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Y</td>
+<td>3</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Y</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Y</td>
+<td>3</td>
+<td>3</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Y</td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+
+
+<br>
+
+
+We want to build a decision tree that determines whether a certain
+pattern is of type X or type Y. The decision tree can only use tests
+that are based on attributes A, B, and C. Each attribute has 3 possible
+values: 1, 2, 3 (we do not apply any thresholding). We have the 10
+training examples, shown on the table (each row corresponds to a
+training example).
+<p>What is the information gain of each attribute at the root?
+Which attribute achieves the highest information gain at the root?</p>
+<hr style="width: 100%; height: 2px;">
+<h3>Task 7<br>
+
+</h3>
+
+<h3>20 points </h3>
+
+
+<img alt="Decisiontree" style="border: 1px solid ; width: 696px; height: 541px;" src="assmt4_files/decision_tree.png">
+<p><strong> Figure 3: A decision tree for estimating
+whether the patron will be willing to wait for a table at a restaurant.
+</strong></p>
+
+
+<p><strong> Part a (5 points):</strong> Suppose that,
+on the
+entire set of training samples available for constructing the decision
+tree of Figure 1, 80 people decided to wait, and 20 people decided not
+to wait. What is the initial entropy at node A (before the test is
+applied)? </p>
+
+
+<p><strong> Part b</strong><strong> (5 points)</strong><strong>:</strong>
+As mentioned in the
+previous part, at node A 80 people decided to wait, and 20 people
+decided not to wait. </p>
+
+
+<ul>
+<li> Out of the cases where people decided to wait, in 20 cases
+it was weekend and in 60 cases it was not weekend. </li><li> Out of the cases where people decided not to wait, in 15
+cases it was weekend and in 5 cases it was not weekend.
+</li>
+</ul>
+
+
+What is the information gain for the weekend test at node A?&nbsp;
+<p><strong> Part c</strong><strong> (5 points)</strong><strong>:</strong>
+In the decision tree of
+Figure 1, node E uses the exact same test (whether it is weekend or
+not) as node A. What is the information gain, at node E, of using the
+weekend test? </p>
+
+
+<p><strong> Part d</strong><strong> (5 points)</strong><strong>:</strong>
+We have a test case of a
+hungry patron who came in on a rainy Sunday. Which leaf node does this
+test case end up in? What does the decision tree output for that case?</p>
+<p>
+
+</p>
+
+  
+
+</body></html>

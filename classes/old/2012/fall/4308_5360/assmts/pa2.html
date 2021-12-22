@@ -1,0 +1,311 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Programming Assignment 2</title></head>
+<body>
+<h1>Programming Assignment 2</h1>
+<h2>Due
+Dates:</h2>
+Interim report: Sunday 09/23/2012, 11:59pm<br>
+Full assignment: <span style="text-decoration: line-through;">Friday
+09/28/2012</span> <span style="text-decoration: line-through;">Saturday 09/29/2012</span> <span style="text-decoration: line-through;">Sunday 09/30/2012</span> Thursday 10/04/2012, 11:59pm.
+<h2>Task</h2>
+<div style="text-align: justify;">The task in this
+programming assignment is to implement an agent that
+plays the Max-Connect4 game using search. Figure 1 shows the first few
+moves of a game. The game is played on a 6x7 grid, with six rows and
+seven columns. There are two players, player A (red) and player B
+(green). The two players take turns placing pieces on the board: the
+red player can only place red pieces, and the green player can only
+place green pieces.<br>
+<br>
+It is best to think of the board as standing upright. We will assign a
+number to every row and column, as follows: columns are numbered from
+left to right, with numbers 1, 2, ..., 7. Rows are numbered from bottom
+to top, with numbers 1, 2, ..., 6. When a player makes a move, the move
+is completely determined by specifying the COLUMN where the piece will
+be placed. If all six positions in that column are occupied, then the
+move is invalid, and the program should reject it and force the player
+to make a valid move. In a valid move, once the column is specified,
+the piece is placed on that column and "falls down", until it reaches
+the lowest unoccupied position in that column.<br>
+<br>
+The game is over when all positions are occupied. Obviously, every
+complete game consists of 42 moves, and each player makes 21 moves. The
+score, at the end of the game is determined as follows: consider each
+quadruple of four consecutive positions on board, either in the
+horizontal, vertical, or each of the two diagonal directions (from
+bottom left to top right and from bottom right to top left). The red
+player gets a point for each such quadruple where all four positions
+are occupied by red pieces. Similarly, the green player gets a point
+for each such quadruple where all four positions are occupied by green
+pieces. The player with the most points wins the game.<br>
+<br>
+Your program will run in two modes: an interactive mode, that is best
+suited for the program playing against a human player, and a one-move
+mode, where the program reads the current state of the game from an
+input file, makes a single move, and writes the resulting state to an
+output file. The one-move mode can be used to make programs play
+against each other. Note that THE PROGRAM MAY BE EITHER THE RED OR THE
+GREEN PLAYER, THAT WILL BE SPECIFIED BY THE STATE, AS SAVED IN THE
+INPUT FILE.<br>
+<br>
+As part of this assignment, you will also need to measure and report
+the time that your program takes, as a function of the number of moves
+it explores. All time measurements should report CPU time, not total
+time elapsed. CPU time does not depend on other users of the system,
+and thus is a meaningful measurement of the efficiency of the
+implementation.
+</div>
+<div style="text-align: center;"><img style="width: 684px; height: 1113px;" title="Sample Max-Connect Game" alt="Sample Max-Connect Game" src="pa2_files/game.gif"><br>
+Figure 1: Sample Max-Connect Game (15 moves in)
+</div>
+<h2>Interactive Mode</h2>
+In the interactive mode, the game should run from the command line with
+the following arguments (assuming a Java implementation, with obvious
+changes for C++ or other implementations):<br>
+<br>
+<span style="font-style: italic; font-weight: bold;">java
+maxconnect4
+interactive [input_file] [computer-next/human-next]
+[depth]</span><br>
+<br>
+For example:<br>
+<br>
+<span style="font-style: italic;">java maxconnect4
+interactive input1.txt computer-next 7</span><br>
+<ul>
+<li>Argument interactive specifies that the program runs in
+interactive
+mode.</li>
+<li>Argument [input_file] specifies an input file that contains
+an initial
+board state. This way we can start the program from a non-empty board
+state. If the input file does not exist, the program should just create
+an empty board state and start again from there.</li>
+<li>Argument [computer-first/human-first] specifies whether the
+computer
+should make the next move or the human.</li>
+<li>Argument [depth] specifies the number of moves in advance
+that the
+computer should consider while searching for its next move. In other
+words, this argument specifies the depth of the search tree.
+Essentially, this argument will control the time takes for the computer
+to make a move.</li>
+</ul>
+After reading the input file, the program gets into the following loop:<br>
+<ol>
+<li>If computer-next, goto 2, else goto 5.</li>
+<li>Print the current board state and score. If the board is
+full, exit.</li>
+<li>Choose and make the next move.</li>
+<li>Save the current board state in a file called computer.txt
+(in same
+format as input file).</li>
+<li>Print the current board state and score. If the board is
+full, exit.</li>
+<li>Ask the human user to make a move (make sure that the move
+is valid,
+otherwise repeat request to the user).</li>
+<li>Save the current board state in a file called human.txt (in
+same format
+as input file).</li>
+<li>Goto 2.</li>
+</ol>
+<h2>One-Move Mode</h2>
+The purpose of the one-move mode is to make it easy for programs to
+compete against each other, and communicate their moves to each other
+using text files. The one-move mode is invoked as follows:<br>
+<br>
+<span style="font-style: italic; font-weight: bold;">java
+maxconnect4
+one-move [input_file] [output_file] [depth]</span><br>
+<br>
+For example:<br>
+<br>
+<span style="font-style: italic;">java maxconnect4
+one-move red_next.txt green_next.txt 5</span><br>
+<br>
+In this case, the program simply makes a single move and terminates. In
+particular, the program should:<br>
+<ul>
+<li>Read the input file and initialize the board state and
+current score,
+as in interactive mode.</li>
+<li>Print the current board state and score. If the board is
+full, exit.</li>
+<li>Choose and make the next move.</li>
+<li>Print the current board state and score.</li>
+<li>Save the current board state to the output file <span style="font-weight: bold;">IN EXACTLY THE SAME
+FORMAT THAT IS USED FOR INPUT FILES</span>.</li>
+<li>Exit</li>
+</ul>
+<h2>Sample code</h2>
+The sample code needs an input file to run. Sample input files that you
+can download are <a href="pa2_files/input1.txt">input1.txt</a>
+and <a href="pa2_files/input2.txt">input2.txt</a>.
+You are free to make other
+input files to experiment with, as long as they follow the same format.
+In the input files, a 0 stands for an empty spot, a 1 stands for a
+piece played by the first player, and a 2 stands for a piece played by
+the second player. The last number in the input file indicates which
+player plays NEXT (and NOT which player played last). Sample code is
+available in:
+<ul>
+<li>Java: download files <a href="pa2_files/maxconnect4.java">maxconnect4.java</a>,
+<a href="pa2_files/GameBoard.java">GameBoard.java</a>,
+and
+<a href="pa2_files/AiPlayer.java">AiPlayer.java</a>.
+Compile on omega using:<br>
+<br>
+<span style="font-style: italic;">javac
+maxconnect4.java GameBoard.java AiPlayer.java</span><br>
+<br>
+An example command line that runs the program (assuming that you have
+input1.txt saved in the same directory) is:<br>
+<br>
+<span style="font-style: italic;">java maxconnect4
+one-move input1.txt output1.txt 10</span><br>
+<br>
+</li>
+<li>C++: download file <a href="pa2_files/maxconnect4.cpp">maxconnect4.cpp</a>.
+Compile on omega using:<br>
+<br>
+<span style="font-style: italic;">g++ -o maxconnect4
+maxconnect.cpp</span><br>
+<br>
+An example command line that runs the program (assuming that you have
+input1.txt saved in the same directory) is:<br>
+<br>
+<span style="font-style: italic;">maxconnect4 one-move
+input1.txt output1.txt 10</span></li>
+</ul>
+The sample code implements a system playing max-connect4 (in one-move
+mode only) by making random moves. While the AI part of the sample code
+leaves much to be desired (your assignment is to fix that), the code
+can get you started by showing you how to represent and generate board
+states, how to save/load the game state to and from files in the
+desired format, and how to count the score (though faster
+score-counting methods are possible).
+<h2>Measuring Execution Time</h2>
+You can measure the execution time for your program on omega by
+inserting the word "time" in the beginning of your command line. For
+example, if you want to measure how much time it takes for your system
+to make one move with the depth parameter set to 10, try this:<br>
+<br>
+time java maxconnect4 one-move red_next.txt green_next.txt 10<br>
+<br>
+Your output will look something like:<br>
+<span style="font-style: italic;">&nbsp;&nbsp;&nbsp;
+real&nbsp;&nbsp;&nbsp; 0m0.003s</span><br style="font-style: italic;">
+<span style="font-style: italic;">&nbsp;&nbsp;&nbsp;
+user&nbsp;&nbsp;&nbsp; 0m0.002s</span><br style="font-style: italic;">
+<span style="font-style: italic;">&nbsp;&nbsp;&nbsp;
+sys&nbsp;&nbsp;&nbsp;&nbsp; 0m0.001s</span><br>
+<br>
+Out of the above three lines, the <span style="font-weight: bold;">user</span>
+line is what you should report.
+<h2>Tournament</h2>
+We will have a playoff-style tournament of peoples' submissions. We
+will configure the depth argument for each submission so that a move is
+made in at most one second on omega. In each matchup, two games will be
+played, where each program will play first in one of the two games. The
+cumulative score (total number of points won after two games) will be
+used to determine the winner, and program efficiency will be used as a
+tiebreaker.
+<h2>Interim report</h2>
+The interim report should be submitted via e-mail to the instructor and
+the TA, and should contain the following:
+<ul>
+<li>On subject line: "CSE 4308/5360 - Programming Assignment 2
+- Interim
+report".</li>
+<li>On body of message: Your name and UTA ID (all 10 digits, no
+spaces).</li>
+<li>On body of message, or as an attachment (in text, Word,
+PDF, or
+OpenOffice format): a description (as brief or long as you want) of
+what you have done so far for the assignment, and any
+difficulties/bottlenecks you may have reached (in case you encounter
+such difficulties, it is highly recommended to contact the instructor
+and/or TA for help).</li>
+</ul>
+For purposes of grading, it is absolutely fine if your interim report
+simply states that you have done nothing so far (you still get the 10
+points allocated for the interim report, AS LONG AS YOU SUBMIT THE
+REPORT ON TIME). At the same time, starting early and identifying
+potential bottlenecks by the deadline for the interim report is
+probably a good strategy for doing well in this assignment
+<h2>Grading</h2>
+The assignments will be graded out of 100 points. There is also a total
+of 25 possible extra credit points.<br>
+<ul>
+<li>10 points: Submitting the interim report according to the
+instructions,
+and on time.</li>
+<li>25 points: Implementing plain minimax.</li>
+<li>25 points: Implementing alpha-beta pruning.</li>
+<li>25 points: Implementing the depth-limited version of
+minimax (if
+correctly implemented, and includes alpha-beta pruning, you also get
+the 25 points for plain minimax and 25 points for alpha-beta search,
+you don't need to have separate implementations for those). For full
+credit, you obviously need to come up with a reasonable evaluation
+function to be used in the context of depth-limited search. A
+"reasonable" evaluation function is defined to be an evaluation
+function that allows your program to consistently beat a random player.</li>
+<li>(CSE 5360 only) 15 points: Include in your submission an
+accurate table
+of CPU runtime (for making a single move) vs depth, when the board is
+empty. Document the number of measurements for each entry on the table.
+All measurements should be performed on omega. Your table should
+include every single depth, until (and including) the first depth for
+which the time exceeds one minute. For CSE 4308 students, this part is
+optional, they get 15 points no matter whether they do it or not.</li>
+<li>Optional, 10 points, extra credit. What is the max depth
+(in
+depth-limited search) that allows your program to make a move (as
+measured on an empty board) in at most 1 second on omega, WHILE STILL
+IMPLEMENTING A REASONABLE HEURISTIC? Report your result in your
+submission. The top 3 results (as verified by the TA and instructor)
+will get 10 points each.</li>
+<li>15 points extra credit: Tournament first-place winner (One
+for 4308 and one for 5360).</li>
+<li>10 points extra credit: Tournament second-place winner (One
+for 4308 and one for 5360).</li>
+</ul>
+<h2>How to submit</h2>
+Submissions should be made using Blackboard. Implementations in Python,
+C, C++, and Java will be accepted. If you would like to use another
+language, please first check with the instructor via e-mail. Points
+will be taken off for failure to comply with this requirement.<br>
+<br>
+Submit a ZIPPED directory called programming2.zip (no other forms of
+compression accepted, contact the instructor or TA if you do not know
+how to produce .zip files). The directory should contain source code.
+Including binaries is optional. The submission should also contain a
+file called readme.txt, which should specify precisely:
+<ul>
+<li>Name and UTA ID of the student.</li>
+<li>What programming language is used.</li>
+<li>How the code is structured.</li>
+<li>How to run the code, including very specific compilation
+instructions.
+Instructions such as "compile using g++" are NOT considered specific.
+Providing all the command lines that are needed to complete the
+compilation on omega is specific.</li>
+<li>What, if any, extra credit parts were done, and details
+about the
+method and the results.</li>
+</ul>
+Insufficient or unclear instructions will be penalized by up to 20
+points. Code that does not run on omega machines gets AT MOST half
+credit (50 points).
+<h2>Submission checklist</h2>
+<ul>
+<li>Is the code running on omega?</li>
+<li>Is the submitted zipped file called programming2.zip?</li>
+<li>Does the submission include a readme.txt file, as
+specified?
+</li>
+</ul>
+</body></html>

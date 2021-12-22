@@ -1,0 +1,227 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head><!-- saved from url=(0078)file:///C:/Users/Vamsi/Desktop/OffWeb/classes/2015/fall/ai1/assmts/wa/wa1.html -->
+
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><title>Assignment 2</title></head>
+<body>
+<h1>Assignment 2</h1>
+<h2>Written Assignment - Uninformed &amp; Informed Search</h2>
+Max points:<br>
+<ul>
+<li>CSE 4308: 100 (125 with EC)</li>
+<li>CSE 5360: 100</li>
+</ul>
+The assignment should be submitted via <a href="http://elearn.uta.edu/">Blackboard</a>.<br>
+<h2>Instructions</h2>
+<ul>
+<li>Some questions and subsections are for CSE 5360. CSE 4308
+students can answer these questions for extra credit.</li>
+<li>The answers can be typed as a document or handwritten and
+scanned.&nbsp;</li>
+<li>Name files as
+assignment2_&lt;net-id&gt;.&lt;format&gt;</li>
+<li>Accepted document formats are (.pdf, .doc or
+.docx).&nbsp;If you are using OpenOffice or LibreOffice, make sure
+to
+save as .pdf or .doc</li>
+<li>Please do not submit
+.txt files.</li>
+<li>If
+you are scanning handwritten documents make sure to scan it at a
+minimum of 600dpi and save as a&nbsp;.pdf or .png file. Do not
+insert images in word document and submit.&nbsp;</li>
+<li>If there are multiple files in your submission, zip them
+together as assignment2_&lt;net-id&gt;.zip and submit the .zip
+file.</li>
+</ul>
+<h2>Question 1</h2>
+<span style="font-weight: bold;">Max: [4308: 20 Points,
+5360: 16 Points]</span><br>
+<br>
+Consider the search tree shown in Figure 1. The number next to each
+edge is the cost of the performing the action corresponding to that
+edge. You start from the node A. The goal is the reach node G. List the order in which nodes will be visited using:<br>
+<ul>
+<li>breadth-first search.</li>
+<li>depth-first search.</li>
+<li>iterative deepening search.</li>
+<li>uniform cost search.</li>
+</ul>
+<div style="text-align: center;"><img style="width: 490px; height: 370px;" alt="Figure 1: Search Tree" title="Figure 1: Search Tree" src="./assmt2_files/q1_f1.gif"><br>
+Figure 1: Search Tree for Problem 1
+</div>
+<br>
+<h2>Question 2</h2>
+<span style="font-weight: bold;">Max: [4308: 30 Points,
+5360: 25 Points]</span><br>
+<br>
+A social network graph (SNG) is a graph where each vertex is a
+person and each edge represents an acquaintance. In other words, an SNG
+is a graph showing who knows who. For example, in the graph shown on
+Figure 2, George knows Mary and John, Mary knows Christine, Peter and
+George, John knows Christine, Helen and George, Christine knows Mary
+and John, Helen knows John, Peter knows Mary.<br>
+The degrees of separation measure how closely connected two people are
+in the graph. For example, John has 0 degrees of separation from
+himself, 1 degree of separation from Christine, 2 degrees of separation
+from Mary, and 3 degrees of separation from Peter.<br>
+<ol style="list-style-type: lower-roman;">
+<li>From among general tree search using breadth-first search,
+depth-first search,
+iterative deepening search, and uniform cost search, which one(s)
+guarantee finding the correct number of degrees of separation between
+any two people in the graph?</li>
+<br>
+<li>For the SNG shown in Figure 2, draw the
+first three
+levels of the search tree, with John as the starting point (the first
+level of the tree is the root). Is there a one-to-one correspondence
+between nodes in the search tree and vertices in the SNG (i.e. does
+every node in the search tree correspond to a vertex in the SNG)? Why,
+or why
+not? In your answer here, you should assume that the search algorithm
+does not try to avoid revisiting the same state.</li>
+<br>
+<li>Draw an SNG containing exactly 5 people,
+where at least
+two people have 4 degrees of separation between them.</li>
+<br>
+<li>Draw an SNG containing exactly 5 people,
+where all
+people have 1 degree of separation between them.</li>
+<br>
+<li><span style="font-weight: bold;">CSE 5360 Only
+(5 point EC for CSE 4308):</span> In an implementation of
+breadth-first tree
+search for
+finding degrees of separation, suppose that every node in the search
+tree takes 1KB of memory. Suppose that the SNG contains one million
+people. Outline (briefly but precisely) how to make sure that the
+memory required to store search tree nodes will not exceed 1GB (the
+correct answer can be described in one-two lines of text). In your
+answer here you are free to enhance/modify the breadth-first search
+implementation as you wish, as long as it remains breadth-first (a
+modification that, for example, converts breadth-first search into
+depth-first search or iterative deepening search is not
+allowed).&nbsp;</li>
+</ol>
+<div style="text-align: center;"><img alt="Figure 2: A Social Network Graph" title="Figure 2: A Social Network Graph" src="./assmt2_files/q2_f1.gif"><br>
+Figure 2: A Social Network Graph</div>
+<br>
+<h2>Question 3</h2>
+<span style="font-weight: bold;">Max: [4308: 30 Points,
+5360: 24 Points]</span><br>
+<br>
+<div style="text-align: center;"><img style="width: 330px; height: 219px;" alt="Figure 5. A search graph showing states and costs of moving from one state to another. Costs are undirected." src="./assmt2_files/heuristics.png"><br>
+<span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;">Figure
+3. A search graph showing states and costs of moving from one state to
+another. Costs are undirected.</span><br>
+<span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;"></span></div>
+<span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;"><br>
+</span><span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;">Consider
+the search space shown in Figure 3. D is the only goal state. Costs are
+undirected. For each of the following heuristics, determine if it is
+admissible or not. For non-admissible heuristics, modify their values
+as needed to make them admissible.<br>
+<br>
+Heuristic 1:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h(A) = 5<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h(B) = 40<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h(C) = 10<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h(D) =&nbsp;0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h(E) = 10<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h(F) = 0<br>
+<br>
+Heuristic 2:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h(A) = 8<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h(B) = 5<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h(C) = 3<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h(D) = 5<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h(E) = 5<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h(F) = 0<br>
+<br>
+Heuristic 3:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h(A) = 35<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h(B) = 30<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h(C) = 20<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h(D) = 0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h(E) = 0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h(F) = 50<br>
+<br>
+Heuristic 4:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h(A) = 50<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h(B) = 50<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h(C) = 50<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h(D) = 50<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h(E) = 50<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h(F) = 50<br>
+</span><br>
+<span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;"></span><span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;">Heuristic
+5:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h(A) = 0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h(B) = 0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h(C) =&nbsp;0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h(D) = 0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h(E) = 0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h(F) = 0</span>
+<h2>Question 4</h2>
+<span style="font-weight: bold;">Max: [4308: 20 Points,
+5360: 15 Points]<br>
+</span><br>Consider
+a search space, where each state can be a city, suburb, farmland, or
+mountain. The goal is to reach any state that is a mountain. Here are some rules on the
+successors of different states:<br><ul><li>
+Successors of a city are always suburbs.&nbsp;</li><ul><li>Each city has at least one
+suburb as a successor.</li></ul><li>
+Successors of a suburb can only be cities, or suburbs, or farms. </li><ul><li>
+Each suburb has at least one city as a successor.</li></ul><li>
+Successors of a farm can only be farms, or suburbs, or mountains.</li><ul><li>
+Each farm has at least one other farm as a successor. </li></ul><li>
+Successors of a mountain can only be farms.</li></ul>
+Define the best admissible heuristic h you can define using only the
+above information (you should not assume knowledge of any additional
+information about the state space). By "best admissible" we mean that
+h(n) is always the highest possible value we can give, while ensuring
+that heuristic h is still admissible.<br>
+<br>
+You should assume that every move from one state to another has cost
+1.&nbsp;
+<h2>Question 5 (Extra Credit for 4308, Required for 5360)</h2>
+<span style="font-weight: bold;">Max: [4308: 20 Points EC,
+5360: 20 Points]<br>
+</span><br>
+<div style="text-align: center;"><img style="width: 552px; height: 260px;" alt="Figure 6. An example of a start state (left) and the goal state (right) for the 24-puzzle." src="./assmt2_files/24puzzle.png"><br>
+<span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;">Figure
+4. An example of a start state (left) and the goal state (right) for
+the 24-puzzle.</span><br>
+<span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;"></span></div>
+<span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;"><br>
+</span>
+<p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">The
+24-puzzle is an extension of the 8-puzzle, where there are 24 pieces,
+labeled with the numbers from 1 to 24, placed on a 5x5 grid. At each
+move, a tile can move up, down, left, or right, but only if the
+destination location is currently empty. For example, in the start
+state shown above, there are three legal moves: the 12 can move down,
+the 22 can move left, or the 19 can move right. The goal is to achieve
+the goal state shown above. The cost of a solution is the number of
+moves it takes to achieve that solution.</p>
+<p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">For
+some initial states, the shortest solution is longer than 100 moves.<span class="Apple-converted-space">&nbsp;</span><br>
+For all initial states, the shortest solution is at most 208 moves.</p>
+<p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">An
+additional constraint is that, in any implementation, storing a search
+node takes 1000 bytes, i.e., 1KB of memory.</p>
+<p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">Consider
+general tree search using the stategies of
+breadth-first search, depth-first search, iterative deepening search
+and
+uniform cost search.</p>
+<p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">(a):
+Which (if any), among those methods, can guarantee that you will never
+need more than 50KB of memory to store search nodes? Briefly justify
+your answer.</p>
+<p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">(b):
+Which (if any), among those methods, can guarantee that you will never
+need more than 1200KB of memory to store search nodes? Briefly justify
+your answer.</p>
+</body></html>

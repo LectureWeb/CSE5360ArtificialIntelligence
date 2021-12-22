@@ -1,0 +1,269 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+
+<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Assignment 2</title></head><body><h1>Assignment 2</h1>
+<h2>Game Search, CSPs and Propositional Logic</h2><h3> Problem 1 </h3>
+<span style="font-weight: bold;">Max: [4308: 15 Points,
+5360: 10 Points]</span>
+<p style="text-align: center;"><img style="width: 970px; height: 463px;" alt="MinimaxSearchTree" src="assmt2_files/minimax1.gif"><br>
+<br>
+Figure 1. A game search tree.
+</p>
+<p>a. (4308: 10 points, 5360: 5 points)
+In the game search tree of Figure 1, indicate what nodes will be pruned
+using alpha-beta search, and what the estimated utility values are for
+the rest of the nodes. Assume that, when given a choice, alpha-beta
+search expands nodes in a left-to-right order. Also, assume the MAX
+player plays first. Finally incidcate which action the Minmax algorithm
+will pick to exectute.
+</p>
+<p>b. (4308: 5 points, 5360: 5 points) This question is also on
+the game search tree
+of Figure 1. Suppose we are given some additional knowledge about the
+game: the maximum utility value is 10, i.e., it is not mathematically
+possible for the MAX player to get an outcome greater than 10. How can
+this knowledge be used to further improve the efficiency of alpha-beta
+search? Indicate the nodes that will be pruned using this improvement.
+Again, assume that, when given a choice, alpha-beta search expands
+nodes in a left-to-right order, and that the MAX player plays first.
+</p>
+<hr>
+<h3> Problem 2 </h3>
+<span style="font-weight: bold;">Max: [4308: 10 Points,
+5360: 10 Points]</span><br>
+<br>
+<div style="text-align: center;"><img style="width: 400px; height: 294px;" alt="Figure 3: Yet another game search tree" title="Figure 3: Yet another game search tree" src="assmt2_files/best_worst_outcome.png"><br>
+Figure 2: Yet another game search tree<br>
+</div>
+<br>
+<p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">Consider
+the MINIMAX tree above. Suppose that we are the MAX player, and we
+follow the MINIMAX algorithm to play a full game against an opponent.
+However,<span class="Apple-converted-space">&nbsp;</span><strong>we
+do not know what algorithm the opponent uses</strong>.</p>
+<p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">Under
+these conditions, what is the best possible outcome of playing the full
+game for the MAX player? What is the worst possible outcome for the MAX
+player? Justify your answer.</p>
+<p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">NOTE:
+the question is not asking you about what MINIMAX will compute for the
+start node. It is asking you what is the best and worst outcome of a<span class="Apple-converted-space">&nbsp;</span><strong>complete
+game</strong><span class="Apple-converted-space">&nbsp;</span>under
+the assumptions stated above.</p>
+<p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;"></p>
+<hr>
+<h3> Problem 3 </h3>
+<span style="font-weight: bold;">Max: [4308: 15 Points,
+5360: 10 Points]</span><br>
+<br>
+<div style="text-align: center;"><img style="width: 555px; height: 388px;" alt="Expectiminmax Tree" src="assmt2_files/expectiminmax.png"><br>
+Figure 3: An Expectiminmax tree.<br>
+</div>
+<br>
+Find
+the value of every non-terminal node in the expectiminmax tree given
+above. Also indicate which action will be performed by the algoirithm.<br>What
+does the MinMax value obtained by the root node represent. For a
+particular game, what is the maximum and minmum actual payoff the MAX
+player can get?<br>
+<br>
+<span style="font-family: 'Times New Roman';"></span>
+<hr>
+<h3>Problem 4</h3><span style="font-weight: bold;">Max: [4308: 15 Points + 5 Points EC,
+5360: 15 Points + 5 Points EC]</span><br>
+<br>
+The following outline map needs to be colored. Your
+job is to color the various sections such that no two&nbsp;sections
+sharing a border have the same color. You are allowed to use the colors
+(Red, Green, Blue).<br>
+<br>
+<div style="text-align: center;"><a href="file:///C:/Users/vamsi/Google%20Drive/ClassStuff/OfficialWebsite/classes/2018/fall/4308_5360/assmts/assmt3_files/map_west.png"><img style="border: 0px solid ; width: 424px; height: 846px;" alt="Map Outline" src="assmt2_files/map_west.png"></a><br>
+Figure 5: Map to be colored.<br>
+</div>
+<br>
+<br>
+<span style="font-weight: bold;">Part a</span>: Draw
+the Constraint Graph for this problem. Can you use this information to
+simplify the problem?<br>
+<br>
+<span style="font-weight: bold;">Part b</span>:
+Assuming you are using Backtracking search to solve this problem and
+that you are using both MRV and Degree heuristic to select the
+variable, Which variable will be selected at each level of the search
+tree [You do not need to draw the tree. Just let me know which variable
+will be selected and why (MRV and degree values)]. Note: Multiple
+possible answers. You only have to give one.<span style="font-weight: bold;"><br>
+<br>
+Part c: EC (5 points)</span>: Give one valid solution to this
+problem.
+<br><br>
+<hr>
+<h3>Problem 5</h3>
+<span style="font-weight: bold;">Max: [4308: 10 Points,
+5360: 10 Points]</span><br>
+<br>
+<table style="text-align: center;" border="1" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td>A</td>
+<td>B</td>
+<td>C</td>
+<td>KB</td>
+<td>S1</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;True&nbsp;&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;True&nbsp;&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;True&nbsp;&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;True&nbsp;&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;True&nbsp;&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td>True</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+<td>True</td>
+</tr>
+<tr>
+<td>True</td>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+<td> True</td>
+</tr>
+<tr>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>True</td>
+</tr>
+<tr>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>False</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<p>
+KB and S1 are two propositional logic statements, that are constructed
+using symbols A, B, C, and using various connectives. The above truth
+table shows, for each combination of values of A, B, C, whether KB and
+S1 are true or false.
+</p>
+<p><strong>Part a</strong>: Given the above
+information, does KB entail S1? Justify your answer.
+</p>
+<p><strong>Part b</strong>: Given the above
+information, does statement NOT(KB) entail statement NOT(S1)? Justify
+your answer.
+</p>
+<br>
+<hr>
+<h3>Problem 6</h3>
+<span style="font-weight: bold;">Max: [4308: 10 Points,
+5360: 10 Points]</span><br>
+<br>
+Suppose that some&nbsp; knowledge base contains various
+propositional-logic sentences that utilize symbols A, B, C, D
+(connected with various connectives). There are only two cases when the
+knowledge base is <span style="font-weight: bold;">false</span>:<br>
+- First case: when A is false, B is true, C is true, D is true. <br>
+- Second case: when A is true, B is false, C is true, D is false.<br>
+<br>
+In all other cases, the knowledge base is true. Write a conjunctive
+normal form (CNF)&nbsp; for the knowledge base.<br>
+<br>
+<hr>
+<h3> Problem 7</h3>
+<span style="font-weight: bold;">Max: [4308: 15 Points,
+5360: 15 Points]</span><br>
+<br>
+Consider the KB<br>
+<br>
+(A &lt;=&gt; B) AND (B =&gt; C) AND (D =&gt; A) AND
+(C&nbsp;AND E =&gt; F) AND&nbsp;E AND D<br>
+<br>
+Show that this entails F by<br>
+<br>
+i. Forward Chaining<br>
+ii. Backward Chaining<br>
+iii. Resolution<br>
+<br>
+<hr>
+<h3> Problem 8</h3>
+<span style="font-weight: bold;">Max: [4308: 10 Points,
+5360: 10 Points]</span><br>
+<br>
+On April 20, 2019, John and Mary sign the following contract:<br>
+<br>
+- If it rains on May 1, 2019, then John must give Mary a check for
+$10,000 on May 2, 2019<br>
+-  Mary must mow
+the lawn on May 3, 2019 if and only if John gives Mary a check for $10,000 on May 2, 2019.<br>
+<br>
+What truly happened those days is the following:<br>
+- It did not rain on May 1, 2019<br>
+- John gave Mary a check for $10,000 on May 2, 2019<br>
+- Mary mowed the lawn on May 3, 2019.<br>
+<br>
+<strong>Part a</strong>: Write a propositional-logic
+statement to express the contract. Make sure that, for each symbol that
+you use, you clearly define what that symbol stands for.<br>
+<br>
+<br>
+<strong>Part b</strong>: Write a logical statement to
+express what truly happened. When possible, use the same symbols as in
+question 6a. If you need to define any new symbols, clearly define what
+those new symbols stand for.<br>
+<br>
+<br>
+<strong>Part c</strong>:&nbsp;Was the contract violated
+or not, Justify your answer<br>
+<br>
+<hr>
+<h3> Problem 9 (Extra Credit for 4308, Required for 5360) </h3>
+<span style="font-weight: bold;">Max: [4308: 10 Points EC,
+5360: 10 Points]</span><br>
+<br>
+Suppose that you want to implement an algorithm tht will compete on a
+two-player deterministic game of perfect information. Your opponent is
+a supercomputer called DeepGreen. DeepGreen does not use Minimax. You
+are given a library function DeepGreenMove(S), that takes any state S
+as an argument, and returns the move that DeepGreen will choose for
+that state S (more precisely, DeepGreenMove (S) returns the state
+resulting from the opponent's move).
+<p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">Write
+an algorithm in pseudocode (following the style of the Minimax
+pseudocode) that will always make an optimal decision given the
+knowledge we have about DeepGreen. You are free to use the library
+function DeepGreenMove(S) in your pseudocode. How does this compare to
+Minimax wrt optimality of solution and the number of states explored.</p>
+<hr>
+<h3></h3>
+<br>
+</body></html>

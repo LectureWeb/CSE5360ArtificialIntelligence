@@ -1,0 +1,259 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+
+  
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Assignment 6</title></head><body>
+<h1>Written Assignment - Decision Trees, Nearest Neighbor Classifiers
+and Neural Networks</h1>
+
+<span style="font-weight: bold;">NOTE: Task for Neural Networks (TASK
+6) is
+NOT required for CSE 4308 003/ CSE 5360 003/ CSE 5360 203 students. It
+is only required for CSE 4308 001/CSE 5360&nbsp; 001/CSE 5360 201
+students.</span><br>
+
+<h3>Task 1</h3>
+
+<strong style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;"></strong>
+<h3>20 points </h3>
+
+<div style="text-align: center;"><img alt="Decisiontree" style="border: 1px solid ; width: 696px; height: 541px;" src="assmt6_files/decision_tree.png">
+</div>
+<p style="text-align: center;"><strong> Figure 3: A decision tree for estimating
+whether the patron will be willing to wait for a table at a restaurant.
+</strong></p>
+
+<p><strong> Part a (5 points):</strong> Suppose that,
+on the
+entire set of training samples available for constructing the decision
+tree of Figure 1, 80 people decided to wait, and 20 people decided not
+to wait. What is the initial entropy at node A (before the test is
+applied)? </p>
+
+<p><strong> Part b</strong><strong> (5 points)</strong><strong>:</strong>
+As mentioned in the
+previous part, at node A 80 people decided to wait, and 20 people
+decided not to wait. </p>
+
+<ul>
+
+  <li> Out of the cases where people decided to wait, in 20 cases
+it was weekend and in 60 cases it was not weekend. </li>
+  <li> Out of the cases where people decided not to wait, in 15
+cases it was weekend and in 5 cases it was not weekend. </li>
+</ul>
+
+What is the information gain for the weekend test at node A?&nbsp;
+<p><strong> Part c</strong><strong> (5 points)</strong><strong>:</strong>
+In the decision tree of
+Figure 1, node E uses the exact same test (whether it is weekend or
+not) as node A. What is the information gain, at node E, of using the
+weekend test? </p>
+
+<p><strong> Part d</strong><strong> (5 points)</strong><strong>:</strong>
+We have a test case of a
+hungry patron who came in on a rainy Sunday. Which leaf node does this
+test case end up in? What does the decision tree output for that case?</p>
+
+<hr>
+<h3> Task 2</h3>
+
+<h3>15 points </h3>
+
+<table style="text-align: center;" border="1" cellpadding="0" cellspacing="0">
+
+  <tbody>
+    <tr>
+      <td>&nbsp;&nbsp;Class&nbsp;&nbsp;</td>
+      <td>&nbsp;&nbsp;A&nbsp;&nbsp;</td>
+      <td>&nbsp;&nbsp;B&nbsp;&nbsp;</td>
+      <td>&nbsp;&nbsp;C&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+      <td>X</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>X</td>
+      <td>2</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>X</td>
+      <td>3</td>
+      <td>2</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>X</td>
+      <td>1</td>
+      <td>3</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>X</td>
+      <td>1</td>
+      <td>2</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>Y</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Y</td>
+      <td>3</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Y</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>Y</td>
+      <td>3</td>
+      <td>3</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Y</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+
+<br>
+
+We want to build a decision tree that determines whether a certain
+pattern is of type X or type Y. The decision tree can only use tests
+that are based on attributes A, B, and C. Each attribute has 3 possible
+values: 1, 2, 3 (we do not apply any thresholding). We have the 10
+training examples, shown on the table (each row corresponds to a
+training example).
+What is the information gain of each attribute at the root?
+Which attribute achieves the highest information gain at the root?
+<hr>
+<h3> Task 3<br>
+</h3>
+
+<h3>20 points </h3>
+
+Suppose that, at a node N of a decision tree, we have 1000 training
+examples. There are four possible class labels (A, B, C, D) for each of
+these training examples.
+<p><strong> Part a:</strong> What is the highest
+possible and lowest possible entropy value at node N? </p>
+
+<p><strong> Part b:</strong> Suppose that, at node N,
+we choose an attribute K. What is the highest possible and lowest
+possible information gain for that attribute? </p>
+
+<hr>
+<h3> Task 4</h3>
+
+<h3>5 points </h3>
+
+Your boss at a software company gives you a binary classifier (i.e., a
+classifier with only two possible output values) that predicts, for any
+basketball game, whether the home team will win or not. This classifier
+has a 28% accuracy, and your boss assigns you the task of improving
+that classifier, so that you get an accuracy that is better than 60%.
+How do you achieve that task? Can you guarantee achieving better than
+60% accuracy?<br>
+
+<br>
+
+<hr>
+<h3> Task 5</h3>
+
+<h3>10 points </h3>
+
+<span style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; display: inline ! important; float: none;">Consider
+the Training set for a Pattern Classification problem given below<br>
+<br>
+</span>
+<table style="text-align: left; width: 250px; height: 172px;" border="1" cellpadding="2" cellspacing="2">
+
+  <tbody>
+    <tr>
+      <td style="font-weight: bold;">Attribute 1</td>
+      <td style="font-weight: bold;">Attribute 2</td>
+      <td style="font-weight: bold;">Class</td>
+    </tr>
+    <tr>
+      <td style="text-align: center;">15</td>
+      <td style="text-align: center;">28</td>
+      <td style="text-align: center;">A</td>
+    </tr>
+    <tr>
+      <td style="text-align: center;">20</td>
+      <td style="text-align: center;">10</td>
+      <td style="text-align: center;">B</td>
+    </tr>
+    <tr>
+      <td style="text-align: center;">25</td>
+      <td style="text-align: center;">18</td>
+      <td style="text-align: center;">A</td>
+    </tr>
+    <tr>
+      <td style="text-align: center;">32</td>
+      <td style="text-align: center;">15</td>
+      <td style="text-align: center;">B</td>
+    </tr>
+    <tr>
+      <td style="text-align: center;">25</td>
+      <td style="text-align: center;">15</td>
+      <td style="text-align: center;">B</td>
+    </tr>
+  </tbody>
+</table>
+
+<span style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; display: inline ! important; float: none;"><br>
+As</span><span style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; display: inline ! important; float: none;"></span>suming
+we want to build a Pseudo-Bayes classifier for this problem using one
+dimensional gaussians (with naive-bayes assumption) to approximate the
+required probabilties. Calculate the probabilites required.<br>
+
+<br>
+
+<hr>
+<br>
+
+<h3> Task 6 (ONLY FOR CSE 4308-001, CSE 5360-001 and CSE 5360-201
+students)<br>
+</h3>
+
+<h3>15 points </h3>
+
+<span style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; display: inline ! important; float: none;">Can
+you design a single neuron</span> that will return 1 if 4X - 7Y + 2Z =
+6. If so give the weights of the neuron. If not, can you design a
+simple neural network to achieve the same result? If yes, give the
+weights of every node in that network.<br>
+
+<br>
+
+<ul>
+
+  <li>Assume a bias input of +1</li>
+  <li>Assume the following activation function:</li>
+  <ul>
+    <li>If x &gt;= 0, return 1</li>
+    <li>else return 0<br>
+    </li>
+  </ul>
+</ul>
+
+<h3> </h3>
+
+</body></html>

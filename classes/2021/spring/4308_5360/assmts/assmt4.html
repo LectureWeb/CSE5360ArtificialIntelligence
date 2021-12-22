@@ -1,0 +1,298 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+
+
+  
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Assignment 4</title></head><body style="background-color: rgb(231, 246, 253);">
+<h1>Assignment 4</h1>
+
+<h2>Written Assignment - Planning, Probablity &amp; Bayesian Networks.<br>
+</h2>
+
+<h3><span style="font-weight: bold;">Max possible score:</span></h3>
+
+<ul>
+
+  <li>4308: 100 Points (+10 Points EC)<br>
+</li>
+  <li>5360: 100 Points (+10 Points EC)</li>
+</ul>
+
+<hr>
+<h3>Task 1 (18 Points (+10 Points EC))</h3>
+
+Consider the following scenario:<br>
+
+<br>
+
+<div style="text-align: center;"><img style="width: 589px; height: 274px;" alt="Planning Task" src="assmt4_files/Planning.png"><br>
+<strong> Figure 1: Marble Moving Problem.</strong><br>
+</div>
+
+<br>
+
+Your task is to get all the blue marbles in P1 and red marbles in P2<br>
+
+<br>
+
+The actions available are as follows:<br>
+
+<ul>
+
+  <li>You can move 2 marbles from P1 to P2 if they are each of
+different colors (one blue or one red)</li>
+  <li>You can move 2 marbles from P2 to P1 if they are of the same
+color (either you can move 2 red or you can move 2 blue)</li>
+</ul>
+
+Give the PDDL description to represent the above as a Planning Problem.
+Do not forget to also define and describe the predicates and constants
+that your are going to use.<br>
+
+<br>
+
+<span style="font-weight: bold;">Extra Credit (10 pts)</span>: Also,
+give a complete plan (using the actions described) for getting
+from the start to the goal state<br>
+
+<br>
+
+<hr style="width: 100%; height: 2px;">
+<h3>Task 2 (10 Points)</h3>
+
+Suppose that we are using PDDL to describe facts and actions in a
+certain world called JUNGLE. In the JUNGLE world there are 4
+predicates, each predicate takes at most 3 arguments, and there are 5
+constants. Give a reasonably tight bound on the number of unique states
+in the JUNGLE world. Justify your answer.<br>
+
+<br>
+
+<hr style="width: 100%; height: 2px;">
+<h3>Task 3 (15 Points)<br>
+</h3>
+
+<span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;">Consider
+the given joint probabilty distribution for a domain of two variables
+(Color, Vehicle) :<br>
+<br>
+</span>
+<table style="text-align: left; width: 50%; margin-left: auto; margin-right: auto;" class="center" border="1" cellpadding="2" cellspacing="2">
+
+  <tbody>
+    <tr>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top; font-weight: bold;">Color = Red<br>
+      </td>
+      <td style="vertical-align: top; font-weight: bold;">Color = Green<br>
+      </td>
+      <td style="vertical-align: top; font-weight: bold;">Color = Blue<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; font-weight: bold;">Vehicle = Car<br>
+      </td>
+      <td style="vertical-align: top;">0.0630<br>
+      </td>
+      <td style="vertical-align: top;">0.1080<br>
+      </td>
+      <td style="vertical-align: top;">0.1290<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; font-weight: bold;">Vehicle = Van<br>
+      </td>
+      <td style="vertical-align: top;">0.0441<br>
+      </td>
+      <td style="vertical-align: top;">0.0756<br>
+      </td>
+      <td style="vertical-align: top;">0.0903<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; font-weight: bold;">Vehicle = Truck<br>
+      </td>
+      <td style="vertical-align: top;">0.0504<br>
+      </td>
+      <td style="vertical-align: top;">0.0864<br>
+      </td>
+      <td style="vertical-align: top;">0.1032<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; font-weight: bold;">Vehicle = SUV<br>
+      </td>
+      <td style="vertical-align: top;">0.0525<br>
+      </td>
+      <td style="vertical-align: top;">0.0900<br>
+      </td>
+      <td style="vertical-align: top;">0.1075<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<br>
+
+<span style="font-weight: bold;">Part a:</span> Calculate P ( Color is
+not Green | Vehicle is Truck ) by Inference by Enumeration<br>
+
+<br>
+
+<span style="font-weight: bold;">Part b:</span> Are Vehicle and
+Color totally independant from each other<span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;">? Justify.<br>
+</span><br>
+
+<hr>
+<h3>Task 4 (12 Points)</h3>
+
+<span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;">In
+a certain probability probl</span><span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;">em,
+we have 12 variables: A, B</span><sub style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">1</sub><span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;">,
+B</span><sub style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">2</sub><span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;">,
+..., B</span><sub style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">10</sub><span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;">,
+C.</span>
+<ul style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">
+
+  <li>Variable A has 8 possible values.</li>
+  <li>Each of variables B<sub>1</sub>, ..., B<sub>10</sub><span class="Apple-converted-space">&nbsp;</span>have 5
+possible values. Each B<sub>i</sub><span class="Apple-converted-space">&nbsp;</span>is
+conditionally indepedent of all other 9 B<sub>j </sub>variables
+(with j != i) given A.</li>
+  <li>Variable C has 6 possible values. Variable C is totally
+independant of all other variables in the domain.<br>
+  </li>
+</ul>
+
+<span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;">Based
+on these facts:</span>
+<p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;"><strong>Part
+a:</strong><span class="Apple-converted-space">&nbsp;</span>How
+many numbers do you need to store in the joint distribution table of
+these 12 variables?</p>
+
+<p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;"><strong>Part
+b:</strong><span class="Apple-converted-space">&nbsp;</span>What
+is the most space-efficient way (in terms of how many numbers you need
+to store) representation for the joint probability distribution of
+these 12 variables? How many numbers do you need to store in your
+solution? <br>
+</p>
+
+<p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;"><br>
+</p>
+
+<hr style="width: 100%; height: 2px;">
+<h3 style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-style: normal; font-variant: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">Task
+5 (10 Points)</h3>
+
+<h4><span style="font-weight: bold; font-style: italic;">Note: This is
+a
+ABET Assesment Task</span></h4>
+
+<span style="font-family: 'Times New Roman';"><span style="font-weight: bold;"></span></span><strong style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"></strong><span style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; display: inline ! important; float: none;"></span>
+<p style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;">George
+doesn't watch much TV in the evening, unless there is a baseball game
+on. When there is baseball on TV, George is very likely to watch.
+George has a cat that he feeds most evenings, although he forgets every
+now and then. He's much more likely to forget when he's watching TV.
+He's also very unlikely to feed the cat if he has run out of cat food
+(although sometimes he gives the cat some of his own food). Design a
+Bayesian network for modeling the relations between these four events:</p>
+
+<ul style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;">
+
+  <li>baseball_game_on_TV</li>
+  <li>George_watches_TV</li>
+  <li>out_of_cat_food</li>
+  <li>George_feeds_cat</li>
+</ul>
+
+<span style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; display: inline ! important; float: none;">Your
+task is to connect these nodes with arrows pointing from causes to
+effects. No programming is needed for this part, just include an
+electronic document (PDF, Word file, or OpenOffice document) showing
+your Bayesian network design.<br>
+<br>
+</span>
+<hr>
+<h3 style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-style: normal; font-variant: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">Task
+6 (10 Points) <br>
+</h3>
+
+<h4><span style="font-weight: bold; font-style: italic;">Note: This is
+a
+ABET Assesment Task</span></h4>
+
+<span style="font-family: 'Times New Roman';"><span style="font-weight: bold;"></span></span>
+<p style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;">For
+the Bayesian network of previous task, the text file<span class="Apple-converted-space">&nbsp;</span><a target="_blank" href="assmt4_files/training_data.txt">at
+this link<span class="Apple-converted-space">&nbsp;</span></a><a>contains
+training data from every evening of an entire year. Every line in this
+text file corresponds to an evening, and contains four numbers. Each
+number is a 0 or a 1. In more detail:</a></p>
+
+<ul style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;">
+
+  <li><a>The first number is 0 if there is no baseball game
+on TV, and 1 if there is a baseball game on TV.</a></li>
+  <li><a>The second number is 0 if George does not watch TV, and 1
+if George watches TV.</a></li>
+  <li><a>The third number is 0 if George is not out of cat food, and
+1 if George is out of cat food.</a></li>
+  <li><a>The fourth number is 0 if George does not feed the cat, and
+1 if George feeds the cat.</a></li>
+</ul>
+Based
+on the data in this file, determine the probability table for each node
+in the Bayesian network you have designed for Task 5. You need to
+include these four tables in the drawing that you produce for Task 5.
+You also need to submit the code/script that computes these
+probabilities.<span style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; display: inline ! important; float: none;"><br>
+<br>
+</span>
+<hr>
+<h3 style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-style: normal; font-variant: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">Task
+7 (10 Points) <br>
+</h3>
+
+<h4><span style="font-weight: bold; font-style: italic;">Note: This is
+a
+ABET Assesment Task</span></h4>
+
+Given the network obtained in the previous two tasks, calculate P
+( Baseball Game on TV | not(George Feeds Cat) ) using Inference by
+Enumeration<br>
+
+<br>
+
+<hr style="width: 100%; height: 2px;"><br>
+
+<h3>Task 8 (15 Points)<br>
+</h3>
+
+<strong style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;"></strong>&nbsp;<br>
+
+<div style="text-align: center;"><img style="border: 1px solid ; width: 1151px; height: 755px;" alt="BayesianNetwork2" src="assmt4_files/large-net.png">
+</div>
+
+<div style="text-align: center;"><strong> Figure 2: A Large Bayesian
+Network.</strong></div>
+
+<strong style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;"><br>
+Part a:</strong><span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;"><span class="Apple-converted-space">&nbsp;</span>On the
+network shown in Figure 2, what is the Markov blanket of node N?</span>
+<p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;"><strong>Part
+b:</strong><span class="Apple-converted-space">&nbsp;</span>On
+the network shown in Figure 2, what is P(I, D)? (Note: You can use
+simplified calculations to calculate this as long as it is justified)<br>
+</p>
+
+<p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;"><strong>Part
+d:</strong><span class="Apple-converted-space">&nbsp;</span>On
+the network shown in Figure 2, what is P(M, not(C) | H)? (Note: You can
+use simplified calculations to calculate this as long as it is
+justified)</p>
+
+</body></html>

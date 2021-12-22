@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+  
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+  <title>Accessing Omega</title>
+
+  
+</head><body style="background-color: rgb(231, 246, 253);">
+<h1>Accessing Omega</h1>
+
+Note:
+If you are not on UTA campus, you will need to connnect to UTA VPN to
+access omega. Instructions on connecting to the UTA VPN are given <a href="https://libguides.uta.edu/offcampus/vpn" target="_blank">here</a>.<br>
+
+<h3>Linux/Mac</h3>
+
+To access omega from a Linux shell prompt use the following command<br>
+
+<br>
+
+<div style="margin-left: 40px;">ssh &lt;net-id&gt;@omega.uta.edu<br>
+</div>
+
+<br>
+
+If you want to connect with GUI support use<br>
+
+<br>
+
+<div style="margin-left: 40px;">ssh -X &lt;net-id&gt;@omega.uta.edu<br>
+</div>
+
+<br>
+
+To
+get GUI support you need to have an X-server running on your machine.
+Linux and Mac systems should have a X server running natively.<br>
+
+<br>
+
+<h3>Windows</h3>
+
+You need to download a SSH client (Either the <a href="https://www.uta.edu/oit/cs/software/ssh/ssh-secure-shell-for-workstations-3/index.php">one
+provided by OIT</a> or <a href="http://www.putty.org/">PuTTY</a>).
+Then use the same commands given above. To get GUI support you need to
+have an <a href="https://sourceforge.net/projects/xming/" target="_blank">X-server</a> running on your
+machine.<br>
+
+<br>
+
+More detailed intsructions are given <a href="win_omega_x.pdf">here</a>.
+</body></html>

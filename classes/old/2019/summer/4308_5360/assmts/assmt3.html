@@ -1,0 +1,235 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+  
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+  <title>Assignment 3</title>
+
+  
+</head><body>
+<h1>Assignment 3<br>
+</h1>
+
+<h2>Written Assignment - Predicate Logic &amp; Planning</h2>
+
+<br>
+
+<hr>
+<h2> Task 1 (CSE 4308: 15 Points; CSE 5360: 15 points)</h2>
+
+<p>Consider a knowledge base with these facts:
+</p>
+
+<ul>
+
+  <li> There is a dog called Shadow.
+  </li>
+  <li> John gave Shadow to Mary.
+  </li>
+  <li> If Shadow is male, Mary gave a smartphone to John.
+  </li>
+  <li> If Shadow is female, Mary gave John a laptop.
+  </li>
+  <li> John only gives male dogs to people (Interpret it as if John
+gives dogs to people they are male).
+  </li>
+  <li> Mary gave John a laptop.
+  </li>
+</ul>
+
+Convert the above knowledge-base to a first-order logic knowledge base.
+For each predicate, function, constant, or variable that you use,
+explicitly state:
+<ul>
+
+  <li> What type of entity it is (is it a predicate, function,
+constant, or variable).
+  </li>
+  <li> What its semantics are (what it means).</li>
+</ul>
+
+<br>
+
+<hr><br>
+
+<h2> Task 2 (CSE 4308: 5 Points; CSE 5360: 5 points)</h2>
+
+Try and unifiy the following predicates(if possible)<br>
+
+<pre style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; widows: 1; word-spacing: 0px;">taller(John, y), taller(x, Son(x))<br><br>taller(y, Barry), taller(Barry, x)<br><br>taller(x, Jane), taller(Bob, Jane)<br><br>taller(Son(x), Jane), taller(Bob, Jane)<br><br>taller(Barry, John), taller(x, y)<br><br></pre>
+
+<hr><br>
+
+<h2> Task 3 (CSE 4308: 10 Points; CSE 5360: 10 points)</h2>
+
+List all the symbols required to convert the given KB to Propositional
+Logic. Your symbols should be comprehensive enough that any statement
+using the predicates and constants used in the KB below can be
+converted. Also convert the given KB<br>
+
+<pre style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; widows: 1; word-spacing: 0px;">Faster(Sam, John)<br>for-all x,y: Taller(x,y) &lt;=&gt; Faster(y,x) <br></pre>
+
+Show the the following KB entails
+<pre style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; widows: 1; word-spacing: 0px;">Taller(John,Sam)</pre>
+
+by propositionalization<br>
+
+<br>
+
+<hr><br>
+
+<h2> Task 4 (CSE 4308: 30 Points; CSE 5360: 30 points) </h2>
+
+The task in this programming assignment is to design appropriate
+descriptions of facts, actions, and goals, using the PDDL language,
+for the <a href="http://en.wikipedia.org/wiki/Tower_of_Hanoi">Tower of
+Hanoi problem</a>. You will
+use your descriptions as inputs to a Graphplan implementation. If your
+descriptions are correct, Graphplan will produce appropriate plans.
+<h3> Compiling and Running the Software </h3>
+
+The Graphplan software can be downloaded from <a href="assmt3_files/graphplan.zip">graphplan.zip</a>.
+See
+the README file in that package for additional information. To compile
+the software on <tt>omega</tt>, unzip the directory, and,
+from that directory, type
+<pre>make graphplan<br></pre>
+
+Once the program compiles, it can be invoked from the commandline as
+follows:
+<pre>graphplan -o [operators_file] -f [facts_file]<br></pre>
+
+For example:
+<pre>graphplan -o block_ops.txt -f block_facts3.txt<br></pre>
+
+<ul>
+
+  <li>Argument <tt>operators_file</tt> specifies the
+location of a text file containing definitions of actions. For example,
+see <a href="assmt3_files/block_ops.txt">block_ops.txt</a>
+for definitions of actions appropriate for the blocks world domain. </li>
+  <li>Argument <tt>facts_file</tt> specifies the
+location of a text file containing definitions of facts about the
+environment, including objects (and types for those objects), general
+predicates that are always true, initial state description, and goal
+description. For example, see <a href="assmt3_files/block_facts2.txt">block_facts2.txt</a>,
+    <a href="assmt3_files/block_facts3.txt">block_facts3.txt</a>,
+and <a href="assmt3_files/block_facts4.txt">block_facts4.txt</a>
+for example fact descriptions for the blocks world domain. </li>
+</ul>
+
+Once you start running the software, it will ask you three questions.
+<span style="font-weight: bold;">Just hit enter for each
+question</span>, so as to use the default settings. If
+your descriptions of actions and facts are correct, the program will
+print out a plan achieving the stated goal.
+<p>Note that the preconds in each fact file will contain both
+statements that are always true in that domain (i.e., in the Tower of
+Hanoi domain or the blocks world domain), and statements that simply
+describe the initial state for that specific planning problem. In
+addition to the facts files for the specific planning problems you are
+given, you will have to create a separate text file that includes all
+the statements that must be present in ANY facts file for that domain.
+</p>
+
+<h3>Tower of Hanoi Description</h3>
+
+A description of the Tower of Hanoi domain can be found at <a href="http://en.wikipedia.org/wiki/Tower_of_Hanoi">Wikipedia</a>.
+In all problems that your program will be tested with there will be
+five discs (called disk1, disk2, disk3, disk4, disk5) and three pegs
+(called A, B, C). In all your facts files you will have to include both
+a common part (defining objects and relations among objects) and a
+plan-specific part (describing the initial state and goal for each
+plan). Note that some of the five disks may not appear in some of the
+planning problems.
+<p>The two planning problems you have to solve are:
+</p>
+
+<p><strong>Problem 1</strong>
+</p>
+
+<pre>initial state:<br>(on disk1 disk2)<br>(on disk2 A) <br>(clear disk1)<br>(clear B)<br>(clear C) <br><br>goal:<br>(on disk1 B)<br>(on disk2 C)</pre>
+
+<strong>Problem 2</strong>
+<pre>initial state:<br>(on disk1 disk2) <br>(on disk2 disk3)<br>(on disk3 disk4)<br>(on disk4 disk5)<br>(on disk5 C) <br>(clear disk1) <br>(clear A) <br>(clear B)<br><br>goal:<br>(on disk1 disk2) <br>(on disk2 disk3)<br>(on disk3 disk4)<br>(on disk4 disk5)<br>(on disk5 A) <br></pre>
+
+<h3> Grading </h3>
+
+This task will be graded for 30 points.
+Specifically, the point allocation is:
+<ul>
+
+  <li>15 points: defining facts and actions correctly. The
+language that you define (i.e., the actions, objects, and general
+statements that are always true) should be sufficient not only for the
+specific plans that you are required to construct, but also for any
+other planning problems that we can define in the Tower of Hanoi
+domain. As part of grading, we will also test your
+solutions on planning problems that we will make up. </li>
+  <li>15 points: solving the planning problems
+you
+are given&nbsp; + 1 additional problem per domain. You get 5 points for
+each
+problem. If you solve all 3
+correctly, you get 15 points.</li>
+</ul>
+
+<hr>
+<h2>Task 5 (CSE 4308: 25 Points; CSE 5360: 20 points)</h2>
+
+Three adults and three children are on the left side of the river. Each
+adult
+weighs 150 pounds. Each child has half the weight of an adult, so each
+child weighs 75 pounds. They all want to cross to the right side of the
+river. However, the only means of transportation they can use is a
+boat, and the boat can carry a maximum of 150 pounds. Thus, the boat
+can carry one adult without children, or one child, or two children.
+Any adult or child can operate the boat, but the boat cannot be
+operated without having at least one person on the boat. The goal is to
+come up with a plan for moving everyone from the left side to the right
+side using multiple boat trips.
+<br>
+
+<br>
+
+Describe the initial state and the goal, using PDDL.
+Define
+appropriate actions for this planning problem, in the PDDL language.
+For each action, provide a name, arguments, preconditions, and effects.
+Also, give a complete plan (using the actions described) for getting
+from the start to the goal state<br>
+
+<br>
+
+<hr style="width: 100%; height: 2px;">
+<h2>Task 6 (CSE 4308: 15 Points; CSE 5360: 10 points)</h2>
+
+Suppose that we are using PDDL to describe facts and actions in a
+certain world called JUNGLE. In the JUNGLE world there are 5
+predicates, each predicate takes at most 3 arguments, and there are 4
+constants. Give a reasonably tight bound on the number of unique states
+in the JUNGLE world. Justify your answer.<br>
+
+<span style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; display: inline ! important; float: none;"><br>
+</span>
+<hr>
+<h2>Task 7 (CSE 4308: 10 Points (EC); CSE 5360: 10 points)</h2>
+
+Consider the problem in Task 5. Let us say that, if there is only one
+person in the boat, the boat can be blown off course and end up back on
+the side it originally started from. How would you modify the actions
+you described in Task 2 to account for this if you were going to try
+and handle this scenario by<br>
+
+<ul>
+
+  <li>Execution Monitoring/Online Replanning</li>
+  <li>Conditional Planning</li>
+</ul>
+
+In both cases, show what the modifications are (If no modification is
+necessary, Justify).
+<br>
+
+<br>
+
+</body></html>

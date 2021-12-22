@@ -1,0 +1,288 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><!-- saved from url=(0076)https://omega.uta.edu/~gopikrishnav/classes/2015/fall/ai1/assmts/wa/wa5.html -->
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Assignment 9</title>
+
+<link href="chrome-extension://lnkdbjbjpnpjeciipoaflmpcddinpjjp/mytube.css" rel="stylesheet" type="text/css">
+<script src="chrome-extension://lnkdbjbjpnpjeciipoaflmpcddinpjjp/mutationObserver.js"></script>
+<script src="chrome-extension://lnkdbjbjpnpjeciipoaflmpcddinpjjp/mytube.js"></script>
+<link rel="stylesheet" type="text/css" href="chrome-extension://pkehgijcmpdhfbdbbnkijodmdjhbjlgp/skin/socialwidgets.css"></head><body style="" _texified="true">
+<h1>Assignment 9</h1><h2>Programming and Written Assignment - Bayesian Networks &amp; &nbsp;Decision Trees</h2>
+The assignment should be submitted via <a href="http://elearn.uta.edu/">Blackboard</a>.<br>
+<br>
+<span style="font-weight: bold;">NOTE: </span>This assignment is for 120 points.<br><br><h3 style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-style: normal; font-variant: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">Task 1&nbsp;</h3>
+<span style="font-family: 'Times New Roman';"><span style="font-weight: bold;">10 points<br>
+</span></span><strong style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"></strong><span style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; display: inline ! important; float: none;"></span>
+<p style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;">George
+doesn't watch much TV in the evening, unless there is a baseball game
+on. When there is baseball on TV, George is very likely to watch.
+George has a cat that he feeds most evenings, although he forgets every
+now and then. He's much more likely to forget when he's watching TV.
+He's also very unlikely to feed the cat if he has run out of cat food
+(although sometimes he gives the cat some of his own food). Design a
+Bayesian network for modeling the relations between these four events:</p>
+<ul style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"><li>baseball_game_on_TV</li><li>George_watches_TV</li><li>out_of_cat_food</li><li>George_feeds_cat</li></ul>
+<span style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; display: inline ! important; float: none;">Your
+task is to connect these nodes with arrows pointing from causes to
+effects. No programming is needed for this part, just include an
+electronic document (PDF, Word file, or OpenOffice document) showing
+your Bayesian network design.<br>
+<br>
+</span>
+<hr>
+<h3 style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-style: normal; font-variant: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">Task 2&nbsp;</h3>
+<span style="font-family: 'Times New Roman';"><span style="font-weight: bold;">10 points</span></span>
+<p style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;">For
+the Bayesian network of Task 1, the text file<span class="Apple-converted-space">&nbsp;</span><a href="assmt9_files/training_data.txt">at this link<span class="Apple-converted-space">&nbsp;</span></a><a>contains
+training data from every evening of an entire year. Every line in this
+text file corresponds to an evening, and contains four numbers. Each
+number is a 0 or a 1. In more detail:</a></p>
+<ul style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"><a></a><li><a>The first number is 0 if there is no baseball game
+on TV, and 1 if there is a baseball game on TV.</a></li>
+<li><a>The second number is 0 if George does not watch TV, and 1
+if George watches TV.</a></li>
+<li><a>The third number is 0 if George is not out of cat food, and
+1 if George is out of cat food.</a></li>
+<li><a>The fourth number is 0 if George does not feed the cat, and
+1 if George feeds the cat.</a></li>
+</ul>
+Based
+on the data in this file, determine the probability table for each node
+in the Bayesian network you have designed for Task 3. You need to
+include these four tables in the drawing that you produce for question
+3. You also need to submit the code/script that computes these
+probabilities.<br><br>
+<hr>
+<h3>Task 3</h3>
+<strong style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">15
+points.<br>
+</strong>&nbsp;<br>
+<img style="border: 1px solid ; width: 1151px; height: 755px;" alt="BayesianNetwork2" src="assmt9_files/large-net.png">
+<p><strong> Figure 1: Yet another Bayesian Network.</strong>
+</p>
+<strong style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;"><br>
+Part a:</strong><span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;"><span class="Apple-converted-space">&nbsp;</span>On the
+network shown in Figure 1, what is the Markovian blanket of node L?</span>
+<p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;"><strong>Part
+b:</strong><span class="Apple-converted-space">&nbsp;</span>On
+the network shown in Figure 1, what is P(H, C)? How is it derived?</p>
+<p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;"><strong>Part c:</strong><span class="Apple-converted-space">&nbsp;</span>On
+the network shown in Figure 1, what is P(M, not(C) | H)? How is it
+derived?</p><p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">Hint: Part b,c have easier ways to arrive at the answer other than Inference by enumeration.</p><hr>
+<h3 style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-style: normal; font-variant: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">Task 4&nbsp;</h3>
+<span style="font-family: 'Times New Roman';"><span style="font-weight: bold;">50 points<br>
+<br>
+</span></span><a style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"><img style="border: 1px solid ; width: 564px; height: 327px;" alt="Earthquake_Burglary Net as discussed in Class" src="assmt9_files/burglary.gif">
+<p><strong>Figure 2: A Bayesian network establishing
+relations between events on the burglary-earthquake-alarm domain,
+together with complete specifications of all probability distributions.</strong></p>
+<strong><br>
+</strong>
+<p>For the Bayesian network of Figure 2, implement a program that
+computes and prints out the probability of any combination of events
+given any other combination of events. If the executable is called
+bnet, here are some example invocations of the program:</p>
+<ol>
+<li>To print out the probability P(Burglary=true and
+Alarm=false | MaryCalls=false).
+<pre>bnet Bt Af given Mf<br></pre>
+</li>
+<li>To print out the probability P(Alarm=false and
+Earthquake=true).
+<pre>bnet Af Et<br></pre>
+</li>
+<li>To print out the probability P(JohnCalls=true and
+Alarm=false | Burglary=true and Earthquake=false).
+<pre>bnet Jt Af given Bt Ef<br></pre>
+</li>
+<li>To print out the probability P(Burglary=true and
+Alarm=false and MaryCalls=false and JohnCalls=true and Earthquake=true).
+<pre>bnet Bt Af Mf Jt Et<br></pre>
+</li>
+</ol>
+In general, bnet takes 1 to 6(no more, no fewer) command line
+arguments, as follows:
+<ul>
+<li>First, there are one to five arguments, each argument
+specifying a variable among Burglary, Earthquake, Alarm, JohnCalls, and
+MaryCalls and a value equal to true or false. Each of these arguments
+is a string with two letters. The first letter is B (for Burglary), E
+(for Earthquake), A (for Alarm), J (for JohnCalls) or M (for
+MaryCalls). The second letter is t (for true) or f (for false). These
+arguments specify a combination C1 of events whose probability we want
+to compute. For example, in the first example above, C1 =
+(Burglary=true and Alarm=false), and in the second example above C1 =
+(Alarm=false and Earthquake=true).</li>
+<li>Then, optionally, the word "given" follows, followed by one
+to four arguments. Each of these one to four arguments is again a
+string with two letters, where, as before the first letter is B (for
+Burglary), E (for Earthquake), A (for Alarm), J (for JohnCalls) or M
+(for MaryCalls). The second letter is t (for true) or f (for false).
+These last arguments specify a combination of events C2 such that we
+need to compute the probability of C1 given C2. For example, in the
+first example above C2 = (MaryCalls=false), and in the second example
+there is no C2, so we simply compute the probability of C1, i.e.,
+P(Alarm=false and Earthquake=true).</li>
+</ul>
+The implementation should not contain hardcoded values for all
+combinations of arguments. Instead, your code should use the tables
+shown on Figure 2 and the appropriate formulas to evaluate the
+probability of the specified event. It is OK to hardcode values from
+the tables on Figure 1 in your code, but it is not OK to hard code
+values for all possible command arguments, or probability values for
+all possible atomic events. More specifically, for full credit, the
+code should include and use a Bayesian network class. The class should
+include a member function called computeProbability(b, e, a, j, m),
+where each argument is a boolean, specifying if the corresponding event
+(burglary, earthquake, alarm, john-calls, mary-calls) is true or false.
+This function should return the joint probability of the five events.<br><br>Note: Sample output for some scenarios&nbsp; is given </a><a href="assmt9_files/sample_Task4.txt">here</a>.<strong><br>
+<br>
+</strong>
+<hr>
+<h3>Task 5<br>
+</h3>
+<h3>20 points </h3>
+
+<img alt="Decisiontree" style="border: 1px solid ; width: 696px; height: 541px;" src="assmt9_files/decision_tree.png">
+<p><strong> Figure 3: A decision tree for estimating
+whether the patron will be willing to wait for a table at a restaurant.
+</strong></p>
+
+<p><strong> Part a (5 points):</strong> Suppose that,
+on the
+entire set of training samples available for constructing the decision
+tree of Figure 1, 80 people decided to wait, and 20 people decided not
+to wait. What is the initial entropy at node A (before the test is
+applied)? </p>
+
+<p><strong> Part b</strong><strong> (5 points)</strong><strong>:</strong>
+As mentioned in the
+previous part, at node A 80 people decided to wait, and 20 people
+decided not to wait. </p>
+
+<ul>
+<li> Out of the cases where people decided to wait, in 20 cases
+it was weekend and in 60 cases it was not weekend. </li><li> Out of the cases where people decided not to wait, in 15
+cases it was weekend and in 5 cases it was not weekend.
+</li>
+</ul>
+
+What is the information gain for the weekend test at node A?&nbsp;
+<p><strong> Part c</strong><strong> (5 points)</strong><strong>:</strong>
+In the decision tree of
+Figure 1, node E uses the exact same test (whether it is weekend or
+not) as node A. What is the information gain, at node E, of using the
+weekend test? </p>
+
+<p><strong> Part d</strong><strong> (5 points)</strong><strong>:</strong>
+We have a test case of a
+hungry patron who came in on a rainy Sunday. Which leaf node does this
+test case end up in? What does the decision tree output for that case?</p>
+<hr>
+<h3> Task 6</h3>
+<h3>15 points </h3>
+
+<table style="text-align: center;" border="1" cellpadding="0" cellspacing="0">
+
+<tbody>
+<tr>
+<td>&nbsp;&nbsp;Class&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;A&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;B&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;C&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td>X</td>
+<td>1</td>
+<td>2</td>
+<td>1</td>
+</tr>
+<tr>
+<td>X</td>
+<td>2</td>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr>
+<td>X</td>
+<td>3</td>
+<td>2</td>
+<td>2</td>
+</tr>
+<tr>
+<td>X</td>
+<td>1</td>
+<td>3</td>
+<td>3</td>
+</tr>
+<tr>
+<td>X</td>
+<td>1</td>
+<td>2</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Y</td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Y</td>
+<td>3</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Y</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Y</td>
+<td>3</td>
+<td>3</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Y</td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+
+<br>
+
+We want to build a decision tree that determines whether a certain
+pattern is of type X or type Y. The decision tree can only use tests
+that are based on attributes A, B, and C. Each attribute has 3 possible
+values: 1, 2, 3 (we do not apply any thresholding). We have the 10
+training examples, shown on the table (each row corresponds to a
+training example).
+<p>What is the information gain of each attribute at the root?
+Which attribute achieves the highest information gain at the root?
+</p>
+<br>
+<hr>
+<h2>Other Instructions</h2>
+<ul><li>The&nbsp;code for the programming task has to run on OMEGA.&nbsp;Also
+include a readme.txt file that has:</li>
+<ul>
+<li>Name and UTA ID of the student.</li>
+</ul>
+<ul>
+<li>What programming language is used.</li>
+</ul>
+<ul>
+<li>How the code is structured.</li>
+</ul>
+<li>Zip the files of your submission into
+assignment9_&lt;netid&gt;.zip and submit the .zip file.</li>
+</ul>
+<mytubeelement id="myTubeRelayElementToPage" event="preferencesUpdated" data="{&quot;bundle&quot;:{&quot;label_delimitor&quot;:&quot;:&quot;,&quot;percentage&quot;:&quot;%&quot;,&quot;smart_buffer&quot;:&quot;Smart Buffer&quot;,&quot;start_playing_when_buffered&quot;:&quot;Start playing when buffered&quot;,&quot;sound&quot;:&quot;Sound&quot;,&quot;desktop_notification&quot;:&quot;Desktop Notification&quot;,&quot;continuation_on_next_line&quot;:&quot;-&quot;,&quot;loop&quot;:&quot;Loop&quot;,&quot;only_notify&quot;:&quot;Only Notify&quot;,&quot;estimated_time&quot;:&quot;Estimated Time&quot;,&quot;global_preferences&quot;:&quot;Global Preferences&quot;,&quot;no_notification_supported_on_your_browser&quot;:&quot;No notification style supported on your browser version&quot;,&quot;video_buffered&quot;:&quot;Video Buffered&quot;,&quot;buffered&quot;:&quot;Buffered&quot;,&quot;hyphen&quot;:&quot;-&quot;,&quot;buffered_message&quot;:&quot;The video has been buffered as requested and is ready to play.&quot;,&quot;not_supported&quot;:&quot;Not Supported&quot;,&quot;on&quot;:&quot;On&quot;,&quot;off&quot;:&quot;Off&quot;,&quot;click_to_enable_for_this_site&quot;:&quot;Click to enable for this site&quot;,&quot;desktop_notification_denied&quot;:&quot;You have denied permission for desktop notification for this site&quot;,&quot;notification_status_delimitor&quot;:&quot;;&quot;,&quot;error&quot;:&quot;Error&quot;,&quot;adblock_interferance_message&quot;:&quot;Adblock (or similar extension) is known to interfere with SmartVideo. Please add this url to adblock whitelist.&quot;,&quot;calculating&quot;:&quot;Calculating&quot;,&quot;waiting&quot;:&quot;Waiting&quot;,&quot;will_start_buffering_when_initialized&quot;:&quot;Will start buffering when initialized&quot;,&quot;will_start_playing_when_initialized&quot;:&quot;Will start playing when initialized&quot;,&quot;completed&quot;:&quot;Completed&quot;,&quot;buffering_stalled&quot;:&quot;Buffering is stalled. Will stop.&quot;,&quot;stopped&quot;:&quot;Stopped&quot;,&quot;hr&quot;:&quot;Hr&quot;,&quot;min&quot;:&quot;Min&quot;,&quot;sec&quot;:&quot;Sec&quot;,&quot;any_moment&quot;:&quot;Any Moment&quot;,&quot;popup_donate_to&quot;:&quot;Donate to&quot;,&quot;extension_id&quot;:&quot;lnkdbjbjpnpjeciipoaflmpcddinpjjp&quot;},&quot;prefs&quot;:{&quot;desktopNotification&quot;:true,&quot;soundNotification&quot;:true,&quot;logLevel&quot;:0,&quot;enable&quot;:true,&quot;loop&quot;:false,&quot;hidePopup&quot;:false,&quot;autoPlay&quot;:false,&quot;autoBuffer&quot;:false,&quot;autoPlayOnBuffer&quot;:false,&quot;autoPlayOnBufferPercentage&quot;:42,&quot;autoPlayOnSmartBuffer&quot;:true,&quot;quality&quot;:&quot;default&quot;,&quot;fshd&quot;:false,&quot;onlyNotification&quot;:false,&quot;enableFullScreen&quot;:true,&quot;saveBandwidth&quot;:false,&quot;hideAnnotations&quot;:false,&quot;turnOffPagedBuffering&quot;:false}}"></mytubeelement><mytubeelement id="myTubeRelayElementToTab" event="relayPrefs" data="{&quot;loadBundle&quot;:true}"></mytubeelement><img onselect="return false" onselectstart="return false" id="zoomIcon" src="chrome-extension://kdfgigbjonaniokmpfflpflkhahhbaej/images/zoom.png" style="cursor: pointer; position: fixed; right: 50px; top: 25px; width: 70px; height: 70px; z-index: 200000; display: none;"><input id="zoomLabel" style="border: 3px solid rgb(102, 102, 102); padding: 3px ! important; background: gray none repeat scroll 0% 50%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; color: white; font-size: 10pt; font-family: &quot;MS Sans Serif&quot;; font-weight: bolder; text-align: center; cursor: pointer; position: fixed; right: 80px; top: 75px; z-index: 200000; opacity: 0.2; width: 50px ! important; height: 20px ! important; display: none;" value="100 %" title=" • Scroll up to Zoom In • Scroll down to Zoom out • Double click to hide this • Holding Left mouse button and Right click to show it again">
+</body></html>

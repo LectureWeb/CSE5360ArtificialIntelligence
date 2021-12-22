@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head><meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Programming Assignment 8</title></head><body><h1>Programming
+Assignment 8</h1>
+<h3> Summary </h3><span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;">In this assignment you will implement&nbsp;</span>k-nearest neighbor classifiers.<span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;"><br><br><span style="font-weight: bold;">NOTE:</span> This is an <span style="font-weight: bold;">optional</span>
+assignment, This will only be added to your programming assignment
+average if it Improves it. If you do not make a submission or if your
+points awarded does not increase your average, this assignment will be
+ignored.<br>
+<br>
+</span>
+<hr>
+<h3> Command-line Arguments </h3>
+<span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;">You
+must implement a program that learns a naive Bayes classifier for a
+classification problem, given some training data and some additional
+options. In particular, your program can be invoked as follows:</span>
+<pre style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; widows: 1; word-spacing: 0px;">knnclassify &lt;training_file&gt; &lt;test_file&gt; &lt;k&gt;<br><span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;"><br></span><span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;">Both
+the training file and the test file are text files, containing data in
+tabular format. Each value is a number, and values are separated by
+white space. The i-th row and j-th column contain the value for the
+j-th feature of the i-th object. The only exception is the LAST column,
+that stores the class label for each object.</span><strong style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">Make
+sure you do not use data from the last column (i.e., the class labels)
+as attributes (features) in your decision tree.</strong><strong></strong><br></pre><p>Example files that can be passed as command-line arguments are
+in the <a href="file:///C:/Users/Vamsi/Desktop/ai1/Web/assmts/pa/pa6_files/datasets">datasets</a>
+directory. That directory contains three datasets, copied from the <a href="http://archive.ics.uci.edu/ml/datasets.html">UCI
+repository of machine learning datasets</a>:
+</p>
+<ul><li> The <tt>pendigits</tt> dataset, containing
+data for pen-based recognition of handwritten digits.
+<ul><li> 7494 training objects.
+</li><li> 3498 test objets.
+</li><li> 16 attributes.
+</li><li> 10 classes.<br></li></ul>
+
+</li><li> The <tt>satelite</tt> dataset. The full name
+of this
+dataset is Statlog (Landsat Satellite) Data Set, and it contains data
+for classification of pixels in satellite images.
+<ul><li> 4435 training objects.
+</li><li> 2000 test objets.
+</li><li> 36 attributes.
+</li><li> 6 classes.
+</li></ul>
+
+</li><li> The <tt>yeast</tt> dataset, containing some
+biological data whose purpose I do not understand myself.
+<ul><li> 1000 training objects.
+</li><li> 484 test objets.
+</li><li> 8 attributes.
+</li><li> 10 classes.
+</li></ul>
+</li></ul>
+For each dataset, a training file and a test file are provided. The
+name
+of each file indicates what dataset the file belongs to, and whether
+the file contains training or test data.
+<p>Note
+that, for the purposes of your assignment, it does not matter at all
+where the data came from. One of the attractive properties of decision
+trees (and many other machine learning methods) is that they can be
+applied in the exact same way to many different types of data, and
+produce useful results.<br></p>
+<hr>
+<h3 style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-style: normal; font-variant: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">Training</h3><span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;">For
+this phase you should classify the test data using a k-nearest neighbor
+classifier. The value of k is specified by the third command-line
+argument.</span><p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">In your k-nearest neighbor classifier, you should use the following guidelines:</p><ul style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;"><li>Each
+attribute should be normalized, separately from all other attributes.
+Specifically, each attribute should be transformed using function F(v)
+= (v - mean) / std, using the mean and std of the values of that
+attribute on the training data.</li><li>Use the <a target="_blank" href="https://en.wikipedia.org/wiki/Euclidean_distance">L<sub>2</sub><span class="Apple-converted-space">&nbsp;</span>distance (the Euclidean distance)</a> for computing the nearest neighbors.</li></ul><span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;">There is no need to output anything for the training phase.<br></span><hr style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;"><h3 style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-style: normal; font-variant: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">Classification</h3><span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;">For each test object you should print a line containing the following info:</span><ul style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;"><li>Object ID. This is the line number where that object occurs in the test file. Start with 0 in numbering the objects, not with 1.</li><li>Predicted
+class (the result of the classification). If your classification result
+is a tie among two or more classes, choose one of them randomly.</li><li>True class (from the last column of the test file).</li><li>ID (index) of the nearest neighbor among training objects. Numbering of training objects should start at 0.</li><li>Distance
+to the nearest neighbor among training objects. This should be the
+Euclidean distance, applied after normalizing the attributes.</li><li>Accuracy. This is defined as follows:<ul><li>If there were no ties in your classification result, and the predicted class is correct, the accuracy is 1.</li><li>If there were no ties in your classification result, and the predicted class is incorrect, the accuracy is 0.</li><li>If
+there were ties in your classification result, and the correct class
+was one of the classes that tied for best, the accuracy is 1 divided by
+the number of classes that tied for best.</li><li>If there were ties in
+your classification result, and the correct class was NOT one of the
+classes that tied for best, the accuracy is 0.</li></ul></li></ul><span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;">To produce this output in a uniform manner, use these printing statements:</span><ul style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;"><li>For C or C++, use:<ul><li><pre>printf("ID=%5d, predicted=%3d, true=%3d, nn=%5d, distance=%7.2lf, accuracy=%4.2lf\n", <br>       object_id, predicted_class, true_class, nn_index, distance, accuracy);</pre></li></ul></li><li>For Java, use:<ul><li><pre>System.out.printf("ID=%5d, predicted=%3d, true=%3d, nn=%5d, distance=%7.2f, accuracy=%4.2f\n", <br>                  object_id, predicted_class, true_class, nn_index, distance, accuracy);</pre></li></ul></li><li>For
+Python or any other language, just make sure that you use formatting
+specifies that produce aligned output that matches the specs given for
+C and Java.</li></ul><span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;">After
+you have printed the results for all test objects, you should print the
+overall classification accuracy, which is defined as the average of the
+classification accuracies you printed out for each test object. To
+print the classification accuracy in a uniform manner, use these
+printing statements:</span><ul style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;"><li>For C or C++, use:<pre>printf("classification accuracy=%6.4lf\n", classification_accuracy);<br></pre><p></p></li><li>For Java, use:<pre>System.out.printf("classification accuracy=%6.4f\n", classification_accuracy);<br><br></pre></li><li>For
+Python or any other language, just make sure that you use formatting
+specifies that produce aligned output that matches the specs given for
+C and Java.</li></ul><p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;"></p><hr style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;"><h3 style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-style: normal; font-variant: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">Grading</h3><ul style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;"><li>30 points: Correct normalization of attributes.</li><li>60 points:&nbsp;<span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;">Correct implementation of k-nearest neighbor classifiers</span>.</li><li>10 points: Following the specifications in producing the required output.<br></li></ul><hr>
+<h3>How to submit</h3>
+Submissions should be made using <a href="http://elearn.uta.edu/">Blackboard</a>.
+Implementations in Python, C, C++, and Java will be accepted. If you
+would like
+to use another language, please first check with the instructor via
+e-mail. Points will be taken off for failure to comply with this
+requirement.
+<p>Submit a ZIPPED directory called <tt>programming-assignment8.zip</tt>
+(no other
+forms of compression accepted, contact the instructor or TA if you do
+not know how to produce .zip files). The directory should
+contain:
+</p>
+<ul><li> Source code for the programming part. Including binaries
+is optional. </li><li> A file called readme.txt,
+which should specify precisely:
+<ul><li>Name and UTA ID of the student.
+</li><li>What programming language is used.</li><li>How to run the code, including very specific
+compilation
+instructions. Instructions such as "compile using g++" are NOT
+considered specific. Providing all the command lines that are needed to
+complete the compilation on omega is specific.</li></ul>
+</li></ul>
+Insufficient or unclear instructions will be penalized by up to 20
+points.
+Code that does not run on omega machines gets AT MOST half credit,
+unless you obtained prior written permission.<pre style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; widows: 1; word-spacing: 0px;"></pre><pre style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; widows: 1; word-spacing: 0px;"></pre><br><span style="font-family: 'Times New Roman';"><br></span></body></html>

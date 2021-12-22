@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Written Assignment 2</title>
+
+<style type="text/css"></style>
+<link rel="stylesheet" type="text/css" href="data:text/css,"></head>
+<body style="" _texified="true">
+<h1>Written Assignment 2</h1>
+<h3>Due date: <span style="text-decoration: line-through;">Sunday
+09/30/2012</span> <span style="text-decoration: line-through;">Monday
+10/01/2012</span> Wednesday
+10/03/2012, 11:59pm.</h3>
+The assignment should be submitted via <a href="http://elearn.uta.edu/">Blackboard</a>.<br>
+<hr>
+<h3> Problem 1 </h3>
+20 points.
+<p>Consider the following three variants of minimax: the simple
+version, alpha-beta search, and depth-limited search, and consider the
+games of tic-tac-toe and chess. For each combination of minimax variant
+and game, answer the following question: can that minimax variant
+possibly never terminate, in computing the best next move? Justify your
+answer.
+</p>
+<hr>
+<h3> Problem 2 </h3>
+20 points.
+<p style="text-align: center;">
+<table style="text-align: left; margin-left: auto; margin-right: auto;" border="1">
+<tbody>
+<tr>
+<td>X</td>
+<td> O </td>
+<td>X</td>
+</tr>
+<tr>
+<td>O</td>
+<td>&nbsp;</td>
+<td>O</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td> X </td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<br>
+Figure 1. A tic-tac-toe board state.
+</p>
+<p>Consider the tic-tac-toe board state shown in Figure 1. Draw
+the full
+minimax search tree starting from this state, and ending in terminal
+nodes. Show the utility value for each terminal and non-terminal node.
+Utility values are +1 if X wins, 0 for a tie, and -1 if O wins. Assume
+that X makes the next move.
+</p>
+<hr>
+<h3> Problem 3 </h3>
+20 points.
+<p style="text-align: center;"><img src="./wa2_files/minimax1.gif"><br>
+<br>
+Figure 2. A game search tree.
+</p>
+<p>a. (10 points)
+In the game search tree of Figure 2, indicate what nodes will be pruned
+using alpha-beta search, and what the estimated utility values are for
+the rest of the nodes. Assume that, when given a choice, alpha-beta
+search expands nodes in a left-to-right order. Also, assume the MAX
+player plays first.
+</p>
+<p>b. (10 points) This question is also on the game search tree
+of Figure 2. Suppose we are given some additional knowledge about the
+game: the maximum utility value is 10, i.e., it is not mathematically
+possible for the MAX player to get an outcome greater than 10. How can
+this knowledge be used to further improve the efficiency of alpha-beta
+search? Indicate the nodes that will be pruned using this improvement.
+Again, assume that, when given a choice, alpha-beta search expands
+nodes in a left-to-right order, and that the MAX player plays first.
+</p>
+<hr>
+<h3> Problem 4 </h3>
+20 points
+<p>Suppose that two computer algorithms A and B are playing
+tic-tac-toe against each other. Algorithm A is plain minimax search. </p>
+<p>a. (10 points). If algorithm B is also plain minimax, does
+algorithm A always follow the best possible strategy? </p>
+<p>b. (10 points). Can you make up an algorithm B for which
+algorithm A (i.e., plain minimax) does not find the best possible
+strategy? I.e., can you make up an algorithm B such that, if the
+designers of A knew that their opponent uses this algorithm B, the
+designers of A could replace minimax with a better strategy?
+</p>
+<hr>
+<h3> Problem 5 </h3>
+20 points.
+<p>a. (10 points). Is the number of possible board states in
+tic-tac-toe greater than 20,000 or not? Why?
+</p>
+<p> b. (10 points). A game is defined as a sequence of moves
+starting from an empty board and finishing at a terminal board state.
+Is the number of possible tic-tac-toe games greater than 800,000 or
+not? Why?
+</p>
+</body></html>

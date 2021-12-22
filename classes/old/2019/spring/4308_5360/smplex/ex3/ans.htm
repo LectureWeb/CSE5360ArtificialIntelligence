@@ -1,0 +1,240 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Preparation for Third Midterm - Answers</title></head>
+<body style="" _texified="true">
+<h1>Preparation for Third Midterm - Answers
+</h1>
+<h3> Answers </h3>
+<ol><li>
+<ul>
+<li>
+Is the following function P a valid probability function? If you answer
+"no", explain why not.
+<pre>P(day == Monday) = 0.4<br>P(day == Tuesday) = 0.4<br>P(day == Wednesday) = 0.2<br></pre>
+<strong>
+Answer:
+</strong>
+<p><strong>Yes.
+</strong></p>
+</li>
+<li>Is the following function P a valid probability
+function? If you answer "no", explain why not.
+<pre>P(day == Monday) = 0.4<br>P(day == Tuesday) = 0.4<br>P(day == Wednesday) = 0.2<br>P(day == Thursday) = 0.1<br></pre>
+<strong>
+Answer:
+</strong>
+<p><strong>No, because the sum of probabilities is
+1.1, it should be 1.
+</strong></p>
+</li>
+<li>Is the following function P a valid probability density
+function? If you answer "no", explain why not.
+<pre>P(x) = 0.1, if 10 &lt;= x &lt;= 20.<br>P(x) = 0 otherwise.<br></pre>
+<strong>
+Answer:
+</strong>
+<p><strong>Yes.
+</strong></p>
+</li>
+<li>Is the following function P a valid probability density
+function? If you answer "no", explain why not.
+<pre>P(x) = 0.01, if 10 &lt;= x &lt;= 20.<br>P(x) = 0 otherwise.<br></pre>
+<strong>
+Answer:
+</strong>
+<p><strong>No, because the integral of P from
+-infinity to + infinity is 0.1, it should be 1.
+</strong></p>
+</li>
+</ul>
+<p>
+</p>
+</li>
+<li> Compute P(fire | alarm), given the following information:
+<pre>P(alarm | fire) = A<br>P(alarm | not fire) = B<br>P(fire) = C<br></pre>
+<strong>
+Answer:
+<p></p>
+<pre>P(fire | alarm) = P(alarm | fire) * P(fire) / P(alarm) = A * C / P(alarm).<br><br>P(alarm) = P(alarm, fire) + P(alarm, not fire)<br>= P(alarm | fire) * P(fire) + P(alarm | not fire) * P(not fire) = <br>= A * C + B * (1 - C)<br></pre>
+So, if we set <tt>D = P(alarm) = A * C + B * (1 - C)</tt>,
+our final answer is:
+<pre>P(fire | alarm) = A * C / D<br></pre>
+</strong>
+</li>
+<li> We are given the following information:
+<pre>P(fire) = 0.1<br>P(earthquake) = 0.2<br>P(flood) = 0.4<br></pre>
+<ol>
+<li> Suppose that we do not know whether fire, earthquake,
+and flood, are independent events. Can we compute the probability
+P(fire and earthquake and flood)? If yes, what is P(fire and earthquake
+and flood)?
+<p><strong>Answer:
+</strong></p>
+<p><strong>No, if we do not know whether fire,
+earthquake, and flood, are independent events, then we would need some
+additional information (such as a joint distribution table) to compute
+P(fire and earthquake and flood).
+</strong></p>
+</li>
+<li> Suppose that we know that fire, earthquake, and flood,
+are independent events. Can we compute the probability P(fire and
+earthquake and flood)? If yes, what is P(fire and earthquake and
+flood)?
+<p><strong>Answer:
+</strong></p>
+<p><strong>Yes.
+</strong></p>
+<p><strong> <tt>P(fire and earthquake and
+flood) = P(fire) * P(earthquake) * P(flood) = 0.1 * 0.2 * 0.4 = 0.008</tt>.
+</strong>
+</p>
+</li>
+<li> Suppose that we know that fire, earthquake, and flood,
+are not independent events. Can we compute the probability P(fire and
+earthquake and flood)? If yes, what is P(fire and earthquake and
+flood)?
+<p><strong>Answer:
+</strong></p>
+<p><strong>No, if we know that fire, earthquake,
+and flood are not independent events, then we would need some
+additional information (such as a joint distribution table) to compute
+P(fire and earthquake and flood).
+</strong></p>
+</li>
+</ol>
+<p>
+</p>
+</li>
+<li> Compute P(commute time &lt; 20 min | temperature
+&gt; 80), given the following joint probability distribution:
+<pre>Commute time 40-60 Fahrenheit 60-80 Fahrenheit above 80 Fahrenheit<br>&lt; 20 min 0.1 0.05 0.1 <br>20-40 min 0.2 0.1 0.1<br>&gt; 40 min 0.05 0.1 0.2<br></pre>
+<p>
+<strong>Answer:
+</strong></p>
+<p><strong></strong></p>
+<pre><strong>P(commute time &lt; 20 min | temperature &gt; 80) = P(commute time &lt; 20 min AND temperature &gt; 80) / P(temperature &gt; 80)<br><br>P(commute time &lt; 20 min AND temperature &gt; 80) = 0.1<br><br>P(temperature &gt; 80) = 0.1 + 0.1 + 0.2 = 0.4<br><br>P(commute time &lt; 20 min | temperature &gt; 80) = 0.1 / 0.4 = 0.25<br></strong></pre>
+<strong></strong>
+</li>
+<li>For the Bayesian network shown in textbook figure 14.2: is
+P(Earthquake | Alarm) larger, equal to, or smaller than P(Earthquake |
+Alarm and Burglary)? You can either (not recommended) compute both
+probabilities, or (recommended) provide an intuitive (but correct)
+justification for your answer.
+<p><strong>Answer:
+</strong></p>
+<p><strong>We expect that P(Earthquake | Alarm) is
+larger than P(Earthquake | Alarm and Burglary). Burglary and Earthquake
+are competing causes for the Alarm event. Given that Alarm is true, if
+we know that one possible cause (Burglary) is true, the other competing
+cause (Earthquake) becomes less likely.
+</strong></p>
+<p></p>
+</li>
+<li> For the Bayesian network shown in textbook figure 14.2: is
+P(Earthquake | Alarm) larger, equal to, or smaller than P(Earthquake |
+Alarm and MaryCalls)? You can either (not recommended) compute both
+probabilities, or (recommended) provide an intuitive (but correct)
+justification for your answer.
+<p><strong>Answer:
+</strong></p>
+<p><strong>P(Earthquake | Alarm) is equal to
+P(Earthquake | Alarm and MaryCalls). Earthquake and MaryCalls are
+conditionally independent given the value for the Alarm event.
+</strong></p>
+<p></p>
+</li>
+<li> We are building a decision tree to determine if the next
+car of a person will be a regular car or a minivan. We have 100 cases
+as examples. The following is true for those cases:
+<ul>
+<li> 40 people bought minivans. Out of those 40 people, 30
+people were over 35 years of age, and 10 people were under 35 years of
+age.
+</li>
+<li> 60 people bought regular cars. Out of those 60 people,
+12 people were over 35 years of age, and 48 people were under 35 years
+of age.
+</li>
+</ul>
+What is the entropy gain of selecting the "over 35 years of age"
+attribute as a test for the root node of the decision tree?
+<p><strong>Answer:
+</strong></p>
+<p><strong>We call "parent" the node with the 100
+training examples, "child1" the child node that receives the examples
+where the age is over 35 years, and child2 the child node that receives
+the examples where the age is under 35. Node child1 receives 42
+examples, and node child2 receives 58 examples. We denote by log2(x)
+the logarithm base 2 of x. Then:
+</strong></p>
+<pre><strong>Entropy gain = Entropy(parent) - 42/100 * Entropy(child1) - 58/100 * Entropy(child2).<br><br>Entropy(parent) = -0.4 * log2(0.4) - 0.6 * log2(0.6) = 0.971<br><br>Entropy(child1) = -(30/42) * log2(30/42) - (12/42) * log2(12/42) = 0.8631<br><br>Entropy(child2) = -(10/58) * log2(10/58) - (48/58) * log2(48/58) = 0.6632<br><br>Entropy gain = Entropy(parent) - 42/100 * Entropy(child1) - 58/100 * Entropy(child2)<br>= 0.971 - 0.42 * .8631 - 0.58 * 0.6632 <br>=&gt; Entropy gain = 0.2238<br></strong></pre>
+<strong></strong>
+<p></p>
+</li>
+<li> Given a set of training examples, is there always a
+decision tree that perfectly classifies all training examples in that
+set? If yes, prove your answer. If no, provide a counter example.
+<p><strong>Answer:
+</strong></p>
+<p><strong>If there are no duplicate training examples
+(i.e., if no two training examples have exactly the same values for all
+attributes), then the answer is yes. If there are two training examples
+with exactly the same values for all attributes but different class
+labels, then the answer is no.
+</strong></p>
+<p></p>
+</li>
+<li> There are two types of candy bags, type A and type B. Both
+types of bags contain an infinite number of candies. A bag of type A
+contains 80% chocolate candies and 20% vanilla candies. A bag of type B
+contains 40% chocolate candies and 60% vanilla candies. The prior
+probability P(A) of having a bag of type A is 0.99, and the prior
+probability P(B) of having a bag of type B is 0.01. What is the
+posterior probability that we have a bag of type A if the first candy
+that we pick is a vanilla candy?
+<p><strong>Answer:
+</strong></p>
+<p><strong></strong></p>
+<pre><strong>P(A | vanilla) = P(vanilla | A) * P(A) / P(vanilla) = 0.2 * 0.99 / P(vanilla)<br><br>P(vanilla) = P(vanilla AND A) + P(vanilla AND B) <br>= P(vanilla | A) * P(A) + P(vanilla | B) * P(B) <br>= 0.2 * 0.99 + 0.6 * 0.01 <br>= 0.2040<br></strong></pre>
+<strong>Consequently:
+<pre>P(A | vanilla) = P(vanilla | A) * P(A) / P(vanilla) = 0.2 * 0.99 / 0.204 = 0.9706<br></pre>
+</strong>
+<p></p></li><li> Textbook exercise 11.2 (second edition), exercise 10.2
+(third edition).
+<p><strong>Answer:
+</strong></p>
+<p><strong></strong></p>
+<pre><strong>Fly(P1, JFK, SFO)<br>Fly(P2, SFO, JFK)<br>Fly(P1, JFK, JFK)<br>Fly(P2, SFO,SFO)<br></strong></pre>
+<strong></strong>
+<p></p>
+</li><li> Textbook figure 10.3 in 3rd edition (figure 11.4 in 2nd
+edition) provides a description for a deterministic version of the
+blocks world. We want to make a modification to that description, so as
+to model a nondeterministic version, in which the effect of action
+move(b, x, y) is sometimes on(b, y) and sometimes on(b, table). How
+would you modify the description of the move action to make it reflect
+the above two possible outcomes of move(b, x, y)?
+<p><strong>Answer:
+</strong></p>
+<p><strong>We would replace the effect of the <tt>move</tt>
+action shown on that figure with the following effect:
+</strong></p>
+<pre><strong>(On(b, y) and Clear(x) and (not On(b, x)) and (not Clear(y))) or<br>(On(b, table) and Clear(x) and (not (On(b, x))))<br></strong></pre>
+<strong></strong>
+</li><li> In the nondeterministic blocks world described in the
+previous exercise, suppose that the initial state and the goal are as
+as follows:
+<pre>Initial state:<br>On(A, Table) and On(B, Table) and On(C, Table) and Block(A) <br>and Block(B) and Block(C) and Clear(A) and Clear(B) and Clear(C)<br><br>Goal:<br>On(A, B) and On(B, C)<br></pre>
+Is there a conditional plan that achieves this goal with guaranteed
+success? If yes, list the sequence of actions in that plan. If no,
+explain why not.
+<p><strong>Answer:
+</strong></p>
+<p><strong>No, there is no conditional plan that
+guarantees success, because it is theoretically possible that an
+infinite number of moves be required to successfully move a block on
+top of another block.
+</strong></p>
+<p></p>
+</li></ol>
+</body></html>

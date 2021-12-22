@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+  
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Optional Assignment 2</title>
+
+  
+</head><body style="background-color: rgb(231, 246, 253);">
+<h1>Optional Assignment 2<br>
+</h1>
+
+<h2>Programming Assignment - Posterior Proabilites and Bayesian
+Networks</h2>
+
+The assignment should be submitted via Canvas.<br>
+
+<br>
+
+Sample output for the Tasks is given <a href="optassmt2_files/samples.zip">here</a>.<br>
+
+<hr>
+<h3 style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-style: normal; font-variant: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">Task
+1&nbsp;</h3>
+
+<span style="font-family: 'Times New Roman';"><span style="font-weight: bold;">50 points</span></span><br>
+
+<br>
+
+<span style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px; line-height: normal; widows: 1; float: none; display: inline ! important;">The
+task in this part is to implement a system that:</span><span style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; display: inline ! important; float: none;"></span>
+<ul style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px; line-height: normal; widows: 1;">
+
+  <li>Can determine the posterior probability of different
+hypotheses, given priors for these hypotheses, and given a sequence of
+observations.</li>
+  <li>Can determine the probability that the next observation
+will be of a specific type, priors for different hypotheses, and given
+a sequence of observations.</li>
+</ul>
+
+<span style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px; line-height: normal; widows: 1; float: none; display: inline ! important;">As
+in the slides that we saw in class, there are five types of bags of
+candies. Each bag has an infinite amount of candies. We have one of
+those bags, and we are picking candies out of it. We don't know what
+type of bag we have, so we want to figure out the probability of each
+type based on the candies that we have picked.</span><span style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; display: inline ! important; float: none;"></span>
+<p style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px; line-height: normal; widows: 1;">The
+five possible hypotheses for our bag are:</p>
+
+<ul style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px; line-height: normal; widows: 1;">
+
+  <li>h<sub>1</sub><span class="Apple-converted-space">&nbsp;</span>(prior:
+10%): This type of bag contains 100% cherry candies.</li>
+  <li>h<sub>2</sub><span class="Apple-converted-space">&nbsp;</span>(prior:
+20%): This type of bag contains 75% cherry candies and 25% lime candies.</li>
+  <li>h<sub>3</sub><span class="Apple-converted-space">&nbsp;</span>(prior:
+40%): This type of bag contains 50% cherry candies and 50% lime candies.</li>
+  <li>h<sub>4</sub><span class="Apple-converted-space">&nbsp;</span>(prior:
+20%): This type of bag contains 25% cherry candies and 75% lime candies.</li>
+  <li>h<sub>5</sub><span class="Apple-converted-space">&nbsp;</span>(prior:
+10%): This type of bag contains 100% lime candies.</li>
+</ul>
+
+<span style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; font-weight: bold;">Command
+Line arguments:</span><br style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;">
+
+<br style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;">
+
+<span style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px; line-height: normal; widows: 1; float: none; display: inline ! important;">The
+program takes a single command line argument, which is a string, for
+example CLLCCCLLL. This string represents a sequence of observations,
+i.e., a sequence of candies that we have already picked. Each character
+is C if we picked a cherry candy, and L if we picked a lime candy.
+Assuming that characters in the string are numbered starting with 1,
+the i-th character of the string corresponds to the i-th observation.
+The program should be invoked from the commandline as follows:</span><span style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; display: inline ! important; float: none;"></span>
+<pre style="color: rgb(0, 0, 0); font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; word-spacing: 0px; line-height: normal; widows: 1;">compute_a_posteriori observations<br></pre>
+
+<span style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px; line-height: normal; widows: 1; float: none; display: inline ! important;">For
+example:</span><span style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; display: inline ! important; float: none;"></span>
+<pre style="color: rgb(0, 0, 0); font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; word-spacing: 0px; line-height: normal; widows: 1;">compute_a_posteriori CLLCCLLLCCL<br></pre>
+
+<span style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px; line-height: normal; widows: 1; float: none; display: inline ! important;">We
+also allow the case of not having a command line argument at all, this
+represents the case where we have made no observations yet.<br>
+<br>
+<span style="font-weight: bold;">Output:</span><br>
+<br>
+</span><span style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px; line-height: normal; widows: 1; float: none; display: inline ! important;">Your
+program should create a text file called "result.txt", that is
+formatted exactly as shown below. ??? is used where your program should
+print values that depend on its command line argument. Five decimal
+points should appear for any floating point number.</span><span style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; display: inline ! important; float: none;"></span>
+<pre style="color: rgb(0, 0, 0); font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; word-spacing: 0px; line-height: normal; widows: 1;">Observation sequence Q: ???<br>Length of Q: ???<br><br>After Observation ??? = ???: <span style="font-style: italic;">(This and all remaining lines are repeated for every observation)</span><br><br>P(h1 | Q) = ???<br>P(h2 | Q) = ???<br>P(h3 | Q) = ???<br>P(h4 | Q) = ???<br>P(h5 | Q) = ???<br><br>Probability that the next candy we pick will be C, given Q: ???<br>Probability that the next candy we pick will be L, given Q: ???</pre>
+
+<hr>
+<h3 style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-style: normal; font-variant: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">Task 2&nbsp;</h3>
+
+<span style="font-family: 'Times New Roman';"><span style="font-weight: bold;">50 points<br>
+<br>
+</span></span><a style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"><img style="border: 1px solid ; width: 564px; height: 327px;" alt="Earthquake_Burglary Net as discussed in Class" src="./optassmt2_files/burglary.gif">
+<p><strong>Figure 1: A Bayesian network establishing
+relations between events on the burglary-earthquake-alarm domain,
+together with complete specifications of all probability distributions.</strong></p>
+<strong><br>
+</strong>
+<p>For the Bayesian network of Figure 1, implement a program that
+computes and prints out the probability of any combination of events
+given any other combination of events. If the executable is called
+bnet, here are some example invocations of the program:</p>
+<ol>
+  <li>To print out the probability P(Burglary=true and
+Alarm=false | MaryCalls=false).
+    <pre>bnet Bt Af given Mf<br></pre>
+  </li>
+  <li>To print out the probability P(Alarm=false and
+Earthquake=true).
+    <pre>bnet Af Et<br></pre>
+  </li>
+  <li>To print out the probability P(JohnCalls=true and
+Alarm=false | Burglary=true and Earthquake=false).
+    <pre>bnet Jt Af given Bt Ef<br></pre>
+  </li>
+  <li>To print out the probability P(Burglary=true and
+Alarm=false and MaryCalls=false and JohnCalls=true and
+Earthquake=true).
+    <pre>bnet Bt Af Mf Jt Et<br></pre>
+  </li>
+</ol>
+In general, bnet takes 1 to 6(no more, no fewer) command line
+arguments, as follows:
+<ul>
+  <li>First, there are one to five arguments, each argument
+specifying a variable among Burglary, Earthquake, Alarm, JohnCalls, and
+MaryCalls and a value equal to true or false. Each of these arguments
+is a string with two letters. The first letter is B (for Burglary), E
+(for Earthquake), A (for Alarm), J (for JohnCalls) or M (for
+MaryCalls). The second letter is t (for true) or f (for false). These
+arguments specify a combination C1 of events whose probability we want
+to compute. For example, in the first example above, C1 =
+(Burglary=true and Alarm=false), and in the second example above C1 =
+(Alarm=false and Earthquake=true).</li>
+  <li>Then, optionally, the word "given" follows, followed by one
+to four arguments. Each of these one to four arguments is again a
+string with two letters, where, as before the first letter is B (for
+Burglary), E (for Earthquake), A (for Alarm), J (for JohnCalls) or M
+(for MaryCalls). The second letter is t (for true) or f (for false).
+These last arguments specify a combination of events C2 such that we
+need to compute the probability of C1 given C2. For example, in the
+first example above C2 = (MaryCalls=false), and in the second example
+there is no C2, so we simply compute the probability of C1, i.e.,
+P(Alarm=false and Earthquake=true).</li>
+</ul>
+The implementation should not contain hardcoded values for all
+combinations of arguments. Instead, your code should use the tables
+shown on Figure 1 and the appropriate formulas to evaluate the
+probability of the specified event. It is OK to hardcode values from
+the tables on Figure 1 in your code, but it is not OK to hard code
+values for all possible command arguments, or probability values for
+all possible atomic events. More specifically, for full credit, the
+code should include and use a Bayesian network class. The class should
+include a member function called computeProbability(b, e, a, j, m),
+where each argument is a boolean, specifying if the corresponding event
+(burglary, earthquake, alarm, john-calls, mary-calls) is true or false.
+This function should return the joint probability of the five events.</a><br>
+
+<span style="font-family: 'Times New Roman';"><span style="font-weight: bold;"><br>
+</span></span>
+<hr>
+<h2>Other Instructions</h2>
+
+<ul>
+
+  <li>Your implementation can be in C, C++, Java or Python. They
+should only use the base versions of the language (No Addl Packages)</li>
+  <li>Please include a readme.txt file that has:</li>
+  <ul>
+    <li>Name and UTA ID of the student.</li>
+  </ul>
+  <ul>
+    <li>What programming language is used.</li>
+  </ul>
+  <ul>
+    <li>How the code is structured.</li>
+  </ul>
+  <li>Zip the files of your submission into
+optassmt_&lt;netid&gt;.zip and submit the .zip file.</li>
+</ul>
+
+<mytubeelement id="myTubeRelayElementToPage" event="preferencesUpdated" data="{&quot;bundle&quot;:{&quot;label_delimitor&quot;:&quot;:&quot;,&quot;percentage&quot;:&quot;%&quot;,&quot;smart_buffer&quot;:&quot;Smart Buffer&quot;,&quot;start_playing_when_buffered&quot;:&quot;Start playing when buffered&quot;,&quot;sound&quot;:&quot;Sound&quot;,&quot;desktop_notification&quot;:&quot;Desktop Notification&quot;,&quot;continuation_on_next_line&quot;:&quot;-&quot;,&quot;loop&quot;:&quot;Loop&quot;,&quot;only_notify&quot;:&quot;Only Notify&quot;,&quot;estimated_time&quot;:&quot;Estimated Time&quot;,&quot;global_preferences&quot;:&quot;Global Preferences&quot;,&quot;no_notification_supported_on_your_browser&quot;:&quot;No notification style supported on your browser version&quot;,&quot;video_buffered&quot;:&quot;Video Buffered&quot;,&quot;buffered&quot;:&quot;Buffered&quot;,&quot;hyphen&quot;:&quot;-&quot;,&quot;buffered_message&quot;:&quot;The video has been buffered as requested and is ready to play.&quot;,&quot;not_supported&quot;:&quot;Not Supported&quot;,&quot;on&quot;:&quot;On&quot;,&quot;off&quot;:&quot;Off&quot;,&quot;click_to_enable_for_this_site&quot;:&quot;Click to enable for this site&quot;,&quot;desktop_notification_denied&quot;:&quot;You have denied permission for desktop notification for this site&quot;,&quot;notification_status_delimitor&quot;:&quot;;&quot;,&quot;error&quot;:&quot;Error&quot;,&quot;adblock_interferance_message&quot;:&quot;Adblock (or similar extension) is known to interfere with SmartVideo. Please add this url to adblock whitelist.&quot;,&quot;calculating&quot;:&quot;Calculating&quot;,&quot;waiting&quot;:&quot;Waiting&quot;,&quot;will_start_buffering_when_initialized&quot;:&quot;Will start buffering when initialized&quot;,&quot;will_start_playing_when_initialized&quot;:&quot;Will start playing when initialized&quot;,&quot;completed&quot;:&quot;Completed&quot;,&quot;buffering_stalled&quot;:&quot;Buffering is stalled. Will stop.&quot;,&quot;stopped&quot;:&quot;Stopped&quot;,&quot;hr&quot;:&quot;Hr&quot;,&quot;min&quot;:&quot;Min&quot;,&quot;sec&quot;:&quot;Sec&quot;,&quot;any_moment&quot;:&quot;Any Moment&quot;,&quot;popup_donate_to&quot;:&quot;Donate to&quot;,&quot;extension_id&quot;:&quot;lnkdbjbjpnpjeciipoaflmpcddinpjjp&quot;},&quot;prefs&quot;:{&quot;desktopNotification&quot;:true,&quot;soundNotification&quot;:true,&quot;logLevel&quot;:0,&quot;enable&quot;:true,&quot;loop&quot;:false,&quot;hidePopup&quot;:false,&quot;autoPlay&quot;:false,&quot;autoBuffer&quot;:false,&quot;autoPlayOnBuffer&quot;:false,&quot;autoPlayOnBufferPercentage&quot;:42,&quot;autoPlayOnSmartBuffer&quot;:true,&quot;quality&quot;:&quot;default&quot;,&quot;fshd&quot;:false,&quot;onlyNotification&quot;:false,&quot;enableFullScreen&quot;:true,&quot;saveBandwidth&quot;:false,&quot;hideAnnotations&quot;:false,&quot;turnOffPagedBuffering&quot;:false}}"></mytubeelement><mytubeelement id="myTubeRelayElementToTab" event="relayPrefs" data="{&quot;loadBundle&quot;:true}"></mytubeelement><img onselect="return false" onselectstart="return false" id="zoomIcon" src="chrome-extension://kdfgigbjonaniokmpfflpflkhahhbaej/images/zoom.png" style="cursor: pointer; position: fixed; right: 50px; top: 25px; width: 70px; height: 70px; z-index: 200000; display: none;"><input id="zoomLabel" style="border: 3px solid rgb(102, 102, 102); padding: 3px ! important; background: gray none repeat scroll 0% 50%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; color: white; font-size: 10pt; font-family: &quot;MS Sans Serif&quot;; font-weight: bolder; text-align: center; cursor: pointer; position: fixed; right: 80px; top: 75px; z-index: 200000; opacity: 0.2; width: 50px ! important; height: 20px ! important; display: none;" value="100 %" title=" • Scroll up to Zoom In • Scroll down to Zoom out • Double click to hide this • Holding Left mouse button and Right click to show it again">
+</body></html>

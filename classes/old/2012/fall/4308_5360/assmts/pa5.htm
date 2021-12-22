@@ -1,0 +1,258 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Programming Assignment 5</title>
+
+</head>
+
+<body style="" _texified="true">
+<h1>Programming
+Assignment 5</h1>
+<h3>
+Due dates:<br>
+Interim report: Tuesday 11/20/2012, 11:59pm<br>
+Full assignment: Tuesday 11/27/2012, 11:59pm.</h3>
+<h3> Summary </h3>
+The goal in this assignment is to get practice on designing Bayesian
+networks, estimating probability distributions in Bayesian networks,
+and implementing Bayesian networks.
+<p> </p>
+<hr>
+<h3> Part 1: Designing a Bayesian network graph</h3>
+<strong>
+20 points
+</strong>
+<p>George doesn't watch much TV in the evening, unless there is a
+baseball game on. When there is baseball on TV, George is very likely
+to watch. George has a cat that he feeds most evenings, although he
+forgets every now and then. He's much more likely to forget when he's
+watching TV. He's also very unlikely to feed the cat if he has run out
+of cat food (although sometimes he gives the cat some of his own food).
+Design a Bayesian network for modeling the relations between these four
+events:
+</p>
+<ul>
+<li> baseball_game_on_TV
+</li>
+<li> George_watches_TV
+</li>
+<li> out_of_cat_food
+</li>
+<li> George_feeds_cat
+</li>
+</ul>
+Your task is to connect these nodes with arrows pointing from
+causes to effects. No programming is needed for this part, just include
+an electronic document (PDF, Word file, or OpenOffice document) showing
+your Bayesian network design.
+<p></p>
+<hr>
+<h3> Part 2: Learning Probabilities from Training Data</h3>
+<strong>
+20 points
+</strong>
+<p>For the Bayesian network of Part 1, the text file <a href="pa5_files/training_data.txt">
+at this link </a><a>
+contains training data from every evening of an entire year. Every line
+in this text file corresponds to an evening, and contains four numbers.
+Each number is a 0 or a 1. In more detail:
+</a></p>
+<ul>
+<a><li> The first number is 0 if there is no baseball
+game on TV, and 1 if there is a baseball game on TV.
+</li>
+<li> The second number is 0 if George does not watch TV, and 1
+if George watches TV.
+</li>
+<li> The third number is 0 if George is not out of cat food,
+and 1 if George is out of cat food.
+</li>
+<li> The fourth number is 0 if George does not feed the cat,
+and 1 if George feeds the cat.
+</li>
+</a>
+</ul>
+<a>Based on the data in this file, determine the
+probability table for each node in the Bayesian network you have
+designed for Part 1. You need to include these four tables in the
+drawing that you produce for question 1. You also need to submit the
+code/script that computes these probabilities.
+<p></p>
+<hr><img src="./pa5_files/burglary.gif" border="1">
+<p><strong> Figure 1: A Bayesian network establishing
+relations between
+events on the burglary-earthquake-alarm domain, together with complete
+specifications of all probability distributions.</strong>
+</p>
+<h3> Part 3: Implementing a Bayesian Network</h3>
+<strong>
+60 points
+</strong>
+<p>For the Bayesian network of Figure 1, implement a program that
+computes
+and prints out the probability of any combination of events given any
+other combination of events. If the executable is called bnet, here are
+some example invocations of the program:
+</p>
+<ol>
+<li>
+To print out the probability P(Burglary=true and Alarm=false |
+MaryCalls=false).
+<pre>bnet Bt Af given Mf<br></pre>
+</li>
+<li>To print out the probability P(Alarm=false and
+Earthquake=true).
+<pre>bnet Af Et<br></pre>
+</li>
+<li>To print out the probability P(JohnCalls=true and
+Alarm=false | Burglary=true and Earthquake=false).
+<pre>bnet Jt Af given Bt Ef<br></pre>
+</li>
+<li>To print out the probability P(Burglary=true and
+Alarm=false and MaryCalls=false and JohnCalls=true and
+Earthquake=true).
+<pre>bnet Bt Af Mf Jt Et<br></pre>
+</li>
+</ol>
+In general, bnet takes 1 to 6(no more, no fewer) command line
+arguments, as follows:
+<ul>
+<li> First, there are one to five arguments, each argument
+specifying a
+variable among Burglary, Earthquake, Alarm, JohnCalls, and MaryCalls
+and a value equal to true or false. Each of these arguments is a string
+with two letters. The first letter is B (for Burglary), E (for
+Earthquake), A (for Alarm), J (for JohnCalls) or M (for MaryCalls). The
+second letter is t (for true) or f (for false). These arguments specify
+a combination C1 of events whose probability we want to compute. For
+example, in the first example above, C1 = (Burglary=true and
+Alarm=false), and in the second example above C1 = (Alarm=false and
+Earthquake=true).
+</li>
+<li> Then, optionally, the word "given" follows, followed by
+one
+to four arguments. Each of these one to four arguments is again a
+string with two letters, where, as before the first letter is B (for
+Burglary), E (for Earthquake), A (for Alarm), J (for JohnCalls) or M
+(for MaryCalls). The second letter is t (for true) or f (for false).
+These last arguments specify a combination of events C2 such that we
+need to compute the probability of C1 given C2. For example, in the
+first example above C2 = (MaryCalls=false), and in the second example
+there is no C2, so we simply compute the probability of C1, i.e.,
+P(Alarm=false and Earthquake=true).
+</li>
+</ul>
+The implementation should not contain hardcoded values for
+all combinations of arguments. Instead, your code should use the tables
+shown on Figure 1 and the appropriate formulas to evaluate the
+probability of the specified event. It is OK to hardcode values from
+the tables on Figure 1 in your code, but it is not OK to hard code
+values for all possible command arguments, or probability values for
+all possible atomic events.
+More specifically, for full credit, the code should include and use a
+Bayesian network class. The class should include a member function
+called computeProbability(b, e, a, j, m), where each argument is a
+boolean, specifying if the corresponding event (burglary, earthquake,
+alarm, john-calls, mary-calls) is true or false. This function should
+return the joint probability of the five events.
+<h3>Interim report </h3>
+The interim report should be submitted via e-mail to the instructor and
+the TA, and should contain the following:
+<ul>
+<li>On subject line: "CSE 4308/5360 - Programming Assignment 5
+- Interim report".
+</li>
+<li>On body of message: Your name and UTA ID (all 10 digits, no
+spaces).
+</li>
+<li>On body of message, or as an attachment (in text, Word,
+PDF,
+or OpenOffice format): a description (as brief or long as you want) of
+what you have done so far for the assignment, and any
+difficulties/bottlenecks you may have reached (in case you encounter
+such difficulties, it is highly recommended to contact the instructor
+and/or TA for help).
+</li>
+</ul>
+For purposes of grading, it is absolutely fine if your
+interim report simply states that you have done nothing so far (you
+still get the 10 points allocated for the interim report, AS LONG AS
+YOU SUBMIT THE REPORT ON TIME). At the same time, starting early and
+identifying potential bottlenecks by the deadline for the interim
+report is probably a good strategy for doing well in this assignment
+<p></p>
+<hr>
+<h3> Grading </h3>
+Each part will be graded as follows:
+<ul>
+<li> Part 1
+<ul>
+<li> 8 points: Establishing a correct correspondence
+between nodes in the Bayesian network and events in the problem
+description.
+</li>
+<li> 8 points: Establishing correct connections between
+nodes in the Bayesian network, according to the problem description.
+</li>
+<li> 4 points: Using the correct direction for each arrow
+in the Bayesian network.
+</li>
+</ul>
+</li>
+<li> Part 2:
+<ul>
+<li> 20 points: Estimating correctly each probability table
+from the training data.
+</li>
+</ul>
+</li>
+<li> Part 3:
+<ul>
+<li> 30 points: Creating an executable that provides the
+correct output for each input.
+</li>
+<li> 30 points: Correctly implementing the Bayesian network
+class. </li>
+</ul>
+</li>
+</ul>
+<h3>How to submit</h3>
+Submissions should be made using </a><a href="http://elearn.uta.edu/">Blackboard</a>.
+<p>Submit a ZIPPED directory called <tt>programming5.zip</tt>
+(no
+other
+forms of compression accepted, contact the instructor or TA if you do
+not know how to produce .zip files). The directory should
+contain source code, the answer for part 1 in a document, the answer
+(and code) for part 2, and the code for part 3. The submission should
+also contain a file called
+readme.txt,
+which should specify precisely:</p>
+<ul>
+<li>Name and UTA ID of the student. </li>
+<li>Where the answers are for part 1 and part 2. </li>
+<li>What programming language is used.</li>
+<li>How the code is structured.</li>
+<li>How to run the code, including very specific compilation
+instructions, if compilation is needed. Instructions such as "compile
+using g++" are NOT
+considered specific. Providing all the command lines that are needed to
+complete the compilation on omega is specific.</li>
+</ul>
+Insufficient or unclear instructions will be penalized by up to 20
+points.
+Code that does not run on omega machines gets AT MOST half credit (50
+points).
+<h3>Submission checklist</h3>
+<ul>
+<li> DID YOU INCLUDE the answer for part 1, answer AND code for
+part 2, and the code for part 3?
+</li>
+<li> Is the code running on omega?
+</li>
+<li> Is the submitted zipped file called <tt>programming5.zip</tt>?
+</li>
+<li> Does the submission include a readme.txt file, as
+specified?
+</li>
+</ul>
+</body></html>

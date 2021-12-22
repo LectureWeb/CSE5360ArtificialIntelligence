@@ -1,0 +1,250 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><title>Assignment 5</title>
+
+</head>
+
+<body style="">
+<h1>Assignment 5</h1>
+<h2>Written Assignment - CSP, Propositional and Predicate Logic</h2>Max points:<br>
+<ul><li>CSE 4308: 100 (110 with EC)</li><li>CSE 5360: 100 (110 with EC)</li></ul>
+<span style="font-weight: bold;"></span>The
+assignment should be submitted via <a href="http://elearn.uta.edu/">Blackboard</a>.<br>
+<h2>Instructions</h2>
+<ul>
+<li>The answers can be typed as a document or handwritten and
+scanned.&nbsp;</li>
+<li>Name files as
+assignment5_&lt;net-id&gt;.&lt;format&gt;</li>
+<li>Accepted document formats are (.pdf).&nbsp;If you are
+using Word or&nbsp;OpenOffice or LibreOffice, make sure
+to
+save as .pdf</li>
+<li>Please do not submit
+.txt files.</li>
+<li>If
+you are scanning handwritten documents make sure to scan it at a
+minimum of 600dpi and save as a&nbsp;.pdf or .png file. Do not
+insert images in word document and submit.&nbsp;</li>
+<li>If there are multiple files in your submission, zip them
+together as assignment5_&lt;net-id&gt;.zip and submit the .zip
+file.</li>
+</ul>
+<hr>
+<h2>Problem 1</h2>
+20 points (+10 points EC).<br>
+<br>The following outline map was obtained from a map of the Indian Subcontinent.<br><br><div style="text-align: center;"><img style="width: 436px; height: 571px;" alt="Indian Subcontinent Outline" src="assmt5_files/S_Ind_SubContinent.png"><br>Figure 1. Outline Map of Southern part of Indian Subcontinent.<br></div><br>Your
+job is to color the various sections such that no two&nbsp;sections
+sharing a border have the same color. You are allowed to use the colors
+(Red, Green, Blue, Yellow).<br><br><span style="font-weight: bold;">Part a</span>: Draw the Constraint Graph for this problem. Can you use this information to simplify the problem?<br><br><span style="font-weight: bold;">Part b</span>:
+Assuming you are using Backtracking search to solve this problem and
+that you are using both MRV and Degree heuristic to select the
+variable, Which variable will be selected at each level of the search
+tree [You do not need to draw the tree. Just let me know which variable
+will be selected and why (MRV and degree values)]. Note: Multiple
+possible answers. You only have to give one.<span style="font-weight: bold;"><br><br>Part c: EC (10 points)</span>: Give one valid solution to this problem.
+<hr>
+<h2>Problem 2</h2>10 points.<br>
+<br>
+Two logical statements A and B are logically equivalent if A
+&lt;=&gt;
+B. We have two knowledge bases, KB1 and KB2.. Write a function
+CHECK_EQUIVALENCE(KB1, KB2) that:
+<ul>
+<li> returns true if KB1 and KB2 are logically equivalent.
+</li>
+<li> returns false otherwise. </li>
+</ul>
+Your pseudocode can use or modify any code from the textbook or
+slides, and can call any of the functions given in the textbook or
+slides, as long as such code and functions are used correctly, with
+correct names for the functions, and with well-specified values for all
+variables and arguments.<br>
+<br>
+<hr>
+<h2>Problem 3</h2>
+10 points.<br>
+<br>
+<table style="text-align: center;" border="1" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td>A</td>
+<td>B</td>
+<td>C</td>
+<td>KB</td>
+<td>S1</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;True&nbsp;&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;True&nbsp;&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;True&nbsp;&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;True&nbsp;&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;True&nbsp;&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td>True</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+<td>True</td>
+</tr>
+<tr>
+<td>True</td>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+<td> True</td>
+</tr>
+<tr>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>True</td>
+</tr>
+<tr>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>False</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<p>
+KB and S1 are two propositional logic statements, that are constructed
+using symbols A, B, C, and using various connectives. The above truth
+table shows, for each combination of values of A, B, C, whether KB and
+S1 are true or false.
+</p>
+<p><strong>Part a</strong>: Given the above
+information, does KB entail S1? Justify your answer.
+</p>
+<p><strong>Part b</strong>: Given the above
+information, does statement NOT(KB) entail statement NOT(S1)? Justify
+your answer.
+</p>
+<br>
+<hr>
+<h2>Problem 4</h2>
+10 points.<br>
+<br>
+Suppose that some&nbsp; knowledge base contains various
+propositional-logic sentences that utilize symbols A, B, C, D
+(connected with various connectives). There are only two cases when the
+knowledge base is <span style="font-weight: bold;">false</span>:<br>
+- First case: when A is true, B is true, C is true, D is true. <br>
+- Second case: when A is true, B is false, C is true, D is false.<br>
+<br>
+In all other cases, the knowledge base is true. Write a conjunctive
+normal form (CNF)&nbsp; for the knowledge base.<br>
+<br>
+<hr>
+<h2> Problem 5</h2>15 points.<br>
+<br>
+On April 20, 2017, John and Mary sign the following contract:<br>
+<br>
+- If it rains on May 1, 2017, then John must give Mary a check for
+$10,000 on May 2, 2017<br>
+- If John gives Mary a check for $10,000 on May 2, 2017, Mary must mow
+the lawn on May 3, 2017.<br>
+<br>
+What truly happened those days is the following:<br>
+-&nbsp; it did not rain on May 1, 2017<br>
+- John gave Mary a check for $10,000 on May 2, 2017<br>
+- Mary mowed the lawn on May 3, 2017.<br>
+<br>
+<strong>Part a</strong>: Write a propositional-logic
+statement to express the contract. Make sure that, for each symbol that
+you use, you clearly define what that symbol stands for.<br>
+<br>
+<br>
+<strong>Part b</strong>: Write a logical statement to
+express what truly happened. When possible, use the same symbols as in
+question 4a. If you need to define any new symbols, clearly define what
+those new symbols stand for.<br>
+<br>
+<br>
+<strong>Part c</strong>:&nbsp;Was the contract violated
+or not, Justify your answer<br>
+<br>
+<hr>
+<h2>Problem 6</h2>15 points.<br>
+<p>Consider a knowledge base with these facts:
+</p>
+<ul>
+<li> There is a dog called Shadow.
+</li>
+<li> John gave Shadow to Mary.
+</li>
+<li> If Shadow is male, Mary gave a smartphone to John.
+</li>
+<li> If Shadow is female, Mary gave John a laptop.
+</li>
+<li> John only gives male dogs to people.
+</li>
+<li> Mary gave John a laptop.
+</li>
+</ul>
+Convert the above knowledge-base to a first-order logic knowledge base.
+For each predicate, function, constant, or variable that you use,
+explicitly state:
+<ul>
+<li> What type of entity it is (is it a predicate, function,
+constant, or variable).
+</li>
+<li> What its semantics are (what it means).
+</li>
+</ul>
+<br>
+<hr>
+<h2>Problem 7</h2>20 points.<br>
+<p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">Consider
+this first-order logic knowledge base:</p>
+<pre style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; widows: 1; word-spacing: 0px;">taller(John, Bill)<br>(&#8704;x) taller(x, Bill) =&gt; tall(x)<br></pre>
+<span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;">In
+this first-order logic knowledge base,<span class="Apple-converted-space">&nbsp;</span></span><tt style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">taller</tt><span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;"><span class="Apple-converted-space">&nbsp;</span>and<span class="Apple-converted-space">&nbsp;</span></span><tt style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">tall</tt><span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;"><span class="Apple-converted-space">&nbsp;</span>are
+predicates,<span class="Apple-converted-space">&nbsp;</span></span><tt style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">x</tt><span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;"><span class="Apple-converted-space">&nbsp;</span>is a
+variable, and<span class="Apple-converted-space">&nbsp;</span></span><tt style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">John</tt><span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;">,<span class="Apple-converted-space">&nbsp;</span></span><tt style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">Bill</tt><span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;"><span class="Apple-converted-space">&nbsp;</span>are
+constants. Convert this first-order logic knowledge base into a
+propositional logic knowledge base, by performing the following two
+steps:</span>
+<ol style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">
+<li>Define symbols for the propositional-logic version of the
+knowledge base, and specify what their equivalents are in the original
+first-order logic knowledge base.</li>
+<li>Define the statements that should be stored in the
+propositional-logic version of the knowledge base.</li>
+</ol>
+<span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;">The
+symbols you define should be comprehensive enough to allow us to
+translate any well-defined inference problem in the original knowledge
+base to an equivalent problem for the propositional knowledge base.
+Anything that we can infer from the original first-order logic
+knowledge base we should also be able to infer from the
+propositionalized knowledge base, and vice versa.</span>&nbsp;<br>
+<br>
+<hr><br>
+<img onselect="return false" onselectstart="return false" id="zoomIcon" src="chrome-extension://kdfgigbjonaniokmpfflpflkhahhbaej/images/zoom.png" style="cursor: pointer; position: fixed; right: 50px; top: 25px; width: 70px; height: 70px; z-index: 200000; display: none;"><input id="zoomLabel" style="border: 3px solid rgb(102, 102, 102); padding: 3px ! important; background: gray none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; color: white; font-size: 10pt; font-family: &quot;MS Sans Serif&quot;; font-weight: bolder; text-align: center; cursor: pointer; position: fixed; right: 80px; top: 75px; z-index: 200000; opacity: 0.2; width: 50px ! important; height: 20px ! important; display: none;" value="100 %" title=" • Scroll up to Zoom In • Scroll down to Zoom out • Double click to hide this • Holding Left mouse button and Right click to show it again"><mytubeelement id="myTubeRelayElementToPage" event="preferencesUpdated" data="{&quot;bundle&quot;:{&quot;label_delimitor&quot;:&quot;:&quot;,&quot;percentage&quot;:&quot;%&quot;,&quot;smart_buffer&quot;:&quot;Smart Buffer&quot;,&quot;start_playing_when_buffered&quot;:&quot;Start playing when buffered&quot;,&quot;sound&quot;:&quot;Sound&quot;,&quot;desktop_notification&quot;:&quot;Desktop Notification&quot;,&quot;continuation_on_next_line&quot;:&quot;-&quot;,&quot;loop&quot;:&quot;Loop&quot;,&quot;only_notify&quot;:&quot;Only Notify&quot;,&quot;estimated_time&quot;:&quot;Estimated Time&quot;,&quot;global_preferences&quot;:&quot;Global Preferences&quot;,&quot;no_notification_supported_on_your_browser&quot;:&quot;No notification style supported on your browser version&quot;,&quot;video_buffered&quot;:&quot;Video Buffered&quot;,&quot;buffered&quot;:&quot;Buffered&quot;,&quot;hyphen&quot;:&quot;-&quot;,&quot;buffered_message&quot;:&quot;The video has been buffered as requested and is ready to play.&quot;,&quot;not_supported&quot;:&quot;Not Supported&quot;,&quot;on&quot;:&quot;On&quot;,&quot;off&quot;:&quot;Off&quot;,&quot;click_to_enable_for_this_site&quot;:&quot;Click to enable for this site&quot;,&quot;desktop_notification_denied&quot;:&quot;You have denied permission for desktop notification for this site&quot;,&quot;notification_status_delimitor&quot;:&quot;;&quot;,&quot;error&quot;:&quot;Error&quot;,&quot;adblock_interferance_message&quot;:&quot;Adblock (or similar extension) is known to interfere with SmartVideo. Please add this url to adblock whitelist.&quot;,&quot;calculating&quot;:&quot;Calculating&quot;,&quot;waiting&quot;:&quot;Waiting&quot;,&quot;will_start_buffering_when_initialized&quot;:&quot;Will start buffering when initialized&quot;,&quot;will_start_playing_when_initialized&quot;:&quot;Will start playing when initialized&quot;,&quot;completed&quot;:&quot;Completed&quot;,&quot;buffering_stalled&quot;:&quot;Buffering is stalled. Will stop.&quot;,&quot;stopped&quot;:&quot;Stopped&quot;,&quot;hr&quot;:&quot;Hr&quot;,&quot;min&quot;:&quot;Min&quot;,&quot;sec&quot;:&quot;Sec&quot;,&quot;any_moment&quot;:&quot;Any Moment&quot;,&quot;popup_donate_to&quot;:&quot;Donate to&quot;,&quot;extension_id&quot;:&quot;lnkdbjbjpnpjeciipoaflmpcddinpjjp&quot;},&quot;prefs&quot;:{&quot;desktopNotification&quot;:true,&quot;soundNotification&quot;:true,&quot;logLevel&quot;:0,&quot;enable&quot;:true,&quot;loop&quot;:false,&quot;hidePopup&quot;:false,&quot;autoPlay&quot;:false,&quot;autoBuffer&quot;:false,&quot;autoPlayOnBuffer&quot;:false,&quot;autoPlayOnBufferPercentage&quot;:42,&quot;autoPlayOnSmartBuffer&quot;:true,&quot;quality&quot;:&quot;default&quot;,&quot;fshd&quot;:false,&quot;onlyNotification&quot;:false,&quot;enableFullScreen&quot;:true,&quot;saveBandwidth&quot;:false,&quot;hideAnnotations&quot;:false,&quot;turnOffPagedBuffering&quot;:false}}"></mytubeelement><mytubeelement id="myTubeRelayElementToTab" event="relayPrefs" data="{&quot;loadBundle&quot;:true}"></mytubeelement>
+</body></html>

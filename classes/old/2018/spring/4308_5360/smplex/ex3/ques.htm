@@ -1,0 +1,145 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Preparation for Third Midterm</title>
+
+</head>
+<body style="" _texified="true">
+<h1>Preparation for Third Midterm
+</h1>
+<h3> Practice Questions</h3>
+<ol>
+<li> Textbook exercise 11.2 (second edition), exercise 10.2
+(third edition).<br><br>
+</li>
+<li> Textbook figure 10.3 in 3nd edition (figure 11.4 in 2nd
+edition) provides a description for a deterministic version of the
+blocks world. We want to make a modification to that description, so as
+to model a nondeterministic version, in which the effect of action
+move(b, x, y) is sometimes on(b, y) and sometimes on(b, table). How
+would you modify the description of the move action to make it reflect
+the above two possible outcomes of move(b, x, y)?<br><br>
+</li>
+<li> In the nondeterministic blocks world described in the
+previous exercise, suppose that the initial state and the goal are as
+as follows:
+<pre>Initial state:<br>On(A, Table) and On(B, Table) and On(C, Table) and Block(A) <br>and Block(B) and Block(C) and Clear(A) and Clear(B) and Clear(C)<br><br>Goal:<br>On(A, B) and On(B, C)<br></pre>
+Is there a conditional plan that achieves this goal with guaranteed
+success? If yes, list the sequence of actions in that plan. If no,
+explain why not.<br>
+</li>
+<li>
+<ul>
+<li>
+Is the following function P a valid probability function? If you answer
+"no", explain why not.
+<pre>P(day == Monday) = 0.4<br>P(day == Tuesday) = 0.4<br>P(day == Wednesday) = 0.2<br></pre>
+</li>
+<li>Is the following function P a valid probability
+function? If you answer "no", explain why not.
+<pre>P(day == Monday) = 0.4<br>P(day == Tuesday) = 0.4<br>P(day == Wednesday) = 0.2<br>P(day == Thursday) = 0.1<br></pre>
+</li>
+<li>Is the following function P a valid probability density
+function? If you answer "no", explain why not.
+<pre>P(x) = 0.1, if 10 &lt;= x &lt;= 20.<br>P(x) = 0 otherwise.<br></pre>
+</li>
+<li>Is the following function P a valid probability density
+function? If you answer "no", explain why not.
+<pre>P(x) = 0.01, if 10 &lt;= x &lt;= 20.<br>P(x) = 0 otherwise.<br></pre>
+</li>
+</ul>
+</li>
+<li> Compute P(fire | alarm), given the following information:
+<pre>P(alarm | fire) = A<br>P(alarm | not fire) = B<br>P(fire) = C<br></pre>
+</li>
+<li> We are given the following information:
+<pre>P(fire) = 0.1<br>P(earthquake) = 0.2<br>P(flood) = 0.4<br></pre>
+<ol>
+<li> Suppose that we do not know whether fire, earthquake,
+and flood, are independent events. Can we compute the probability
+P(fire and earthquake and flood)? If yes, what is P(fire and earthquake
+and flood)?
+</li>
+<li> Suppose that we know that fire, earthquake, and flood,
+are independent events. Can we compute the probability P(fire and
+earthquake and flood)? If yes, what is P(fire and earthquake and
+flood)?
+</li>
+<li> Suppose that we know that fire, earthquake, and flood,
+are not independent events. Can we compute the probability P(fire and
+earthquake and flood)? If yes, what is P(fire and earthquake and
+flood)?
+</li>
+</ol>
+<p>
+</p>
+</li>
+<li> Compute P(commute time &lt; 20 min | temperature
+&gt; 80), given the following joint probability distribution:
+<pre>Commute time 40-60 Fahrenheit 60-80 Fahrenheit above 80 Fahrenheit<br>&lt; 20 min 0.1 0.05 0.1 <br>20-40 min 0.2 0.1 0.1<br>&gt; 40 min 0.05 0.1 0.2<br></pre>
+</li>
+<li>For the Bayesian network shown in textbook figure 14.2: is
+P(Earthquake | Alarm) larger, equal to, or smaller than P(Earthquake |
+Alarm and Burglary)? You can either (not recommended) compute both
+probabilities, or (recommended) provide an intuitive (but correct)
+justification for your answer.
+<p></p>
+</li>
+<li> For the Bayesian network shown in textbook figure 14.2: is
+P(Earthquake | Alarm) larger, equal to, or smaller than P(Earthquake |
+Alarm and MaryCalls)? You can either (not recommended) compute both
+probabilities, or (recommended) provide an intuitive (but correct)
+justification for your answer.
+<p></p>
+</li>
+<li> We are building a decision tree to determine if the next
+car of a person will be a regular car or a minivan. We have 100 cases
+as examples. The following is true for those cases:
+<ul>
+<li> 40 people bought minivans. Out of those 40 people, 30
+people were over 35 years of age, and 10 people were under 35 years of
+age.
+</li>
+<li> 60 people bought regular cars. Out of those 60 people,
+12 people were over 35 years of age, and 48 people were under 35 years
+of age.
+</li>
+</ul>
+What is the entropy gain of selecting the "over 35 years of age"
+attribute as a test for the root node of the decision tree?
+<p></p>
+</li>
+<li> Given a set of training examples, is there always a
+decision tree that perfectly classifies all training examples in that
+set? If yes, prove your answer. If no, provide a counter example.
+<p></p>
+</li>
+<li> There are two types of candy bags, type A and type B. Both
+types of bags contain an infinite number of candies. A bag of type A
+contains 80% chocolate candies and 20% vanilla candies. A bag of type B
+contains 40% chocolate candies and 60% vanilla candies. The prior
+probability P(A) of having a bag of type A is 0.99, and the prior
+probability P(B) of having a bag of type B is 0.01. What is the
+posterior probability that we have a bag of type A if the first candy
+that we pick is a vanilla candy?
+<p></p>
+</li>
+<li> Design a perceptron takes two inputs X1 and X2, and that
+outputs +1 if X1 &gt; X2 + 5, and that outputs 0 if X1 &lt;= X2
++ 5.
+<p></p>
+</li>
+<li> Consider a function F that takes three Boolean inputs and
+gives a +1 response when exactly two (no more, no fewer) of those
+inputs are set to true (for the inputs, true is encoded by value 1,
+false is encoded by value 0). Can we construct a perceptron that models
+function F perfectly? Why, or why not?
+<p></p>
+</li>
+<li> Design a neural network that implements the XOR function.
+You can use any number and any type of perceptrons you like. You do not
+have to specify the weights inside each perceptron, but you need to
+specify what function each perceptron implements (and, of course, the
+function should be a function that a perceptron can indeed model).
+</li>
+</ol>
+</body></html>

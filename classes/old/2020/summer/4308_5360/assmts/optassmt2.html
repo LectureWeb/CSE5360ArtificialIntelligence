@@ -1,0 +1,273 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+  
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+  <title>Optional Assignment 2</title>
+
+  
+</head><body>
+<h1>Optional Assignment 2<br>
+</h1>
+
+<h2>Written Assignment - Posterior Proabilites and Bayesian
+Networks</h2>
+
+Max points:<br>
+
+<ul>
+
+  <li>CSE 4308: 100</li>
+  <li>CSE 5360: 100</li>
+</ul>
+
+The assignment should be submitted via Canvas<br>
+
+<br>
+
+<hr>
+<h3 style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-style: normal; font-variant: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">Task
+1&nbsp;</h3>
+
+<span style="font-family: 'Times New Roman';"><span style="font-weight: bold;">20 points<br>
+<br>
+</span></span><span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;">You
+are a meteorologist that places temperature sensors all of the world,
+and you set them up so that they automatically e-mail you, each day,
+the high temperature for that day. Unfortunately, you have forgotten
+whether you placed a certain sensor S in Maine or in the Sahara desert
+(but you are sure you placed it in one of those two places) . The
+probability that you placed sensor S in Maine is 5%. The probability of
+getting a daily high temperature of 80 degrees or more is 20% in Maine
+and 90% in Sahara. Assume that probability of a daily high for any day
+is conditionally independent of the daily high for the previous day,
+given the location of the sensor.</span>
+<p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;"><strong>Part
+a:</strong><span class="Apple-converted-space">&nbsp;</span>If
+the first e-mail you got from sensor S indicates a daily high over 80
+degrees, what is the probability that the sensor is placed in Maine?</p>
+
+<p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;"><strong>Part
+b:</strong><span class="Apple-converted-space">&nbsp;</span>If
+the first e-mail you got from sensor S indicates a daily high over 80
+degrees, what is the probability that the second e-mail also indicates
+a daily high over 80 degrees?</p>
+
+<p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;"><strong>Part
+c:</strong><span class="Apple-converted-space">&nbsp;</span>What
+is the probability that the first three e-mails all indicate daily
+highs over 80 degrees?</p>
+
+<hr>
+<h3>Task 2</h3>
+
+<strong style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">10
+points.</strong>
+<br>
+
+<br>
+
+<span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;">In
+a certain probability problem, we have 11 variables: A, B</span><sub style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">1</sub><span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;">,
+B</span><sub style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">2</sub><span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;">,
+..., B</span><sub style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">10</sub><span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;">.</span>
+<ul style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">
+
+  <li>Variable A has 6 values.</li>
+  <li>Each of variables B<sub>1</sub>, ..., B<sub>10</sub><span class="Apple-converted-space">&nbsp;</span>have 5
+possible values. Each B<sub>i</sub><span class="Apple-converted-space">&nbsp;</span>is
+conditionally indepedent of all other 9 B<sub>j</sub>variables
+(with j != i) given A.</li>
+</ul>
+
+<span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;">Based
+on these facts:</span>
+<p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;"><strong>Part
+a:</strong><span class="Apple-converted-space">&nbsp;</span>How
+many numbers do you need to store in the joint distribution table of
+these 11 variables?</p>
+
+<p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;"><strong>Part
+b:</strong><span class="Apple-converted-space">&nbsp;</span>What
+is the most space-efficient way (in terms of how many numbers you need
+to store) representation for the joint probability distribution of
+these 11 variables? How many numbers do you need to store in your
+solution? Your answer should work with any variables satisfying the
+assumptions stated above.</p>
+
+<hr style="width: 100%; height: 2px;">
+<h3>Task 3</h3>
+
+<h3>15 points</h3>
+
+<br>
+<div style="text-align: center;"><img style="width: 566px; height: 377px;" alt="Bayesian Network" src="optassmt2_files/Bnet.png"><br>
+<strong> Figure 1: A Bayesian Network of 5 Variables.</strong><br>
+<strong></strong></div>
+<br>
+For the given Bayesian Network<br>
+<br>
+Calculate the value of P(A | B = f, E = t)<strong><br>
+</strong>
+<br>
+
+<hr style="width: 100%; height: 2px;">
+<h3> Task 4<br>
+</h3>
+
+<h3>25 points </h3>
+
+<div style="text-align: center;"><a href="optassmt2_files/decision_tree.png"><img alt="Decision Tree" src="optassmt2_files/decision_tree.png" style="border: 2px solid ; width: 635px; height: 494px;"></a>
+</div>
+
+<p style="text-align: center;"><strong> Figure 2: A decision tree for
+estimating
+whether the patron will be willing to wait for a table at a restaurant.
+</strong></p>
+
+<p><strong> Part a:</strong> Suppose that,
+on the
+entire set of training samples available for constructing the decision
+tree of Figure 1, 80 people decided to wait, and 20 people decided not
+to wait. What is the initial entropy at node A (before the test is
+applied)? </p>
+
+<p><strong> Part b</strong><strong></strong><strong>:</strong>
+As mentioned in the
+previous part, at node A 80 people decided to wait, and 20 people
+decided not to wait. </p>
+
+<ul>
+
+  <li> Out of the cases where people decided to wait, in 20 cases
+it was weekend and in 60 cases it was not weekend. </li>
+  <li> Out of the cases where people decided not to wait, in 15
+cases it was weekend and in 5 cases it was not weekend. </li>
+</ul>
+
+What is the information gain for the weekend test at node A?&nbsp;
+<p><strong> Part c</strong><strong></strong><strong>:</strong>
+In the decision tree of
+Figure 1, node E uses the exact same test (whether it is weekend or
+not) as node A. What is the information gain, at node E, of using the
+weekend test? </p>
+
+<p><strong> Part d</strong><strong></strong><strong>:</strong>
+We have a test case of a
+hungry patron who came in on a rainy Tuesday. Which leaf node does this
+test case end up in? What does the decision tree output for that case?
+</p>
+
+<p><strong> Part e</strong><strong></strong><strong>:</strong>
+We have a test case of a
+not hungry patron who came in on a sunny Saturday. Which leaf node does
+this test case end up in? What does the decision tree output for that
+case?
+</p>
+
+<hr>
+<h3> Task 5<br>
+</h3>
+
+<h3>20 points </h3>
+
+<table style="text-align: center;" border="1" cellpadding="0" cellspacing="0">
+
+  <tbody>
+    <tr>
+      <td>&nbsp;&nbsp;Class&nbsp;&nbsp;</td>
+      <td>&nbsp;&nbsp;A&nbsp;&nbsp;</td>
+      <td>&nbsp;&nbsp;B&nbsp;&nbsp;</td>
+      <td>&nbsp;&nbsp;C&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+      <td>X</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>X</td>
+      <td>2</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>X</td>
+      <td>3</td>
+      <td>2</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>X</td>
+      <td>1</td>
+      <td>3</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>X</td>
+      <td>1</td>
+      <td>2</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>Y</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Y</td>
+      <td>3</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Y</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>Y</td>
+      <td>3</td>
+      <td>3</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Y</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+
+<br>
+
+We want to build a decision tree that determines whether a certain
+pattern is of type X or type Y. The decision tree can only use tests
+that are based on attributes A, B, and C. Each attribute has 3 possible
+values: 1, 2, 3 (we do not apply any thresholding). We have the 10
+training examples, shown on the table (each row corresponds to a
+training example).
+<p>What is the information gain of each attribute at the root?
+Which attribute achieves the highest information gain at the root?
+</p>
+
+<hr>
+<h3> Task 6<br>
+</h3>
+
+<h3>10 points </h3>
+
+Suppose that, at a node N of a decision tree, we have 1000 training
+examples. There are four possible class labels (A, B, C, D) for each of
+these training examples.
+<p><strong> Part a:</strong> What is the highest
+possible and lowest possible entropy value at node N? </p>
+
+<p><strong> Part b:</strong> Suppose that, at node N,
+we choose an attribute K. What is the highest possible and lowest
+possible information gain for that attribute? </p>
+
+</body></html>

@@ -1,0 +1,303 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Preparation for Second Midterm -
+Answers</title>
+
+<script type="text/javascript" src="chrome-extension://bfbmjmiodbnnpllbbbfblcplfjjepjdn/js/injected.js"></script>
+<style type="text/css"></style>
+<link rel="stylesheet" type="text/css" href="data:text/css,">
+</head>
+
+<body style="" _texified="true">
+<h1><a href="ques.htm">Preparation
+for Second Midterm</a> - Answers
+</h1>
+<h3> Answers </h3>
+<ol>
+<li> Convert the following knowledge base to conjunctive normal
+form:
+<pre>A AND B<br>B =&gt; (A OR C)<br></pre>
+<p>
+<strong>Answer: </strong></p>
+<pre><strong>A<br>B<br>(NOT B) OR A OR C<br></strong></pre>
+<strong></strong>
+<p></p>
+</li>
+<li> Consider the following knowledge base:
+<pre>A<br>B<br>NOT A<br></pre>
+Does this knowledge base entail the following sentence:
+<pre>B OR C<br><br></pre>
+Justify your answer.
+<p><strong>Answer: </strong></p>
+<p><strong>The knowledge base given in this question is
+not satisfiable, since it contains both A and NOT A. Since it is not
+satisfiable it entails every possible statement, including B OR C.
+</strong></p>
+<p></p>
+</li>
+<li> Given a propositional-logic vocabulary with only four
+symbols, A, B, C, D, how many models are there for the following
+sentences? In other words, for each of those statements, determine how
+many models that statement is true in. Note that each model is defined
+by assigning boolean values to all four symbols A, B, C, D.
+<p>(a) <tt>(A and B) or (B and C)</tt> <br>
+(b) <tt>A or B</tt> <br>
+(c) <tt>A &lt;=&gt; B &lt;=&gt;C</tt>
+</p>
+<p><strong>
+Answer: </strong></p>
+<p><strong>For each case, the number of possible models
+that entail the given logical sentence are:
+</strong></p>
+<p><strong>(a): The following 3:
+</strong></p>
+<pre><strong>(A AND B AND C)<br>((NOT A) AND B AND C)<br>(A AND B AND (NOT C))<br></strong></pre>
+<strong>(b): The following 3:
+<pre>(A AND NOT B)<br>((NOT A) AND B)<br>(A AND B)<br></pre>
+(c): The following 2:
+<pre>(A AND B AND C)<br>((NOT A) AND (NOT B) AND (NOT C))<br></pre>
+</strong>
+<p></p>
+</li>
+<li> Textbook exercise 7.6 (second edition), exercise 7.8
+(third edition)
+<p><strong>Answer: </strong></p>
+<p><strong>(a): XOR is another connective that people
+often find useful. In general, what is useful or not useful is highly
+subjective. People might also find it useful to define connectives for
+the negation of AND, OR, IF, IFF, XOR.
+</strong></p>
+<p><strong>(b): Each connective is defined using a
+truth table. For two symbols, a truth table has four rows, so there are
+2^4 = 16 unique truth tables. Therefore, we can define up to 16 unique
+binary connectives.
+</strong></p>
+<p><strong>(c): Consider the statement <tt>a and
+not(b)</tt>. While a binary connective could be defined for this
+statement, most people would probably find it more natural to just see
+that statement written as <tt>a and not b</tt>.
+</strong></p>
+<p></p>
+</li>
+<li> Textbook exercise 7.8 (second edition), exercise 7.10
+(third edition)
+<p><strong> Answer: </strong></p>
+<p><strong>(a): valid <br>
+(b): neither <br>
+(c): neither <br>
+(d): valid <br>
+(e): valid <br>
+(f): neither <br>
+(g): valid <br>
+(h) (for 2nd edition only): neither <br>
+</strong>
+</p>
+<p></p>
+</li>
+<li> For some sentence S involving literals A, B, C, here is
+the truth table:
+<table border="1">
+<tbody>
+<tr>
+<td>A</td>
+<td>B</td>
+<td>C</td>
+<td> Sentence </td>
+</tr>
+<tr>
+<td> false </td>
+<td> false </td>
+<td> false </td>
+<td> true </td>
+</tr>
+<tr>
+<td> false </td>
+<td> false </td>
+<td> true </td>
+<td> false </td>
+</tr>
+<tr>
+<td> false </td>
+<td> true </td>
+<td> false </td>
+<td> false </td>
+</tr>
+<tr>
+<td> false </td>
+<td> true </td>
+<td> true </td>
+<td> true </td>
+</tr>
+<tr>
+<td> true </td>
+<td> false </td>
+<td> false </td>
+<td> false </td>
+</tr>
+<tr>
+<td> true </td>
+<td> false </td>
+<td> true </td>
+<td> false </td>
+</tr>
+<tr>
+<td> true </td>
+<td> true </td>
+<td> false </td>
+<td> false </td>
+</tr>
+<tr>
+<td> true </td>
+<td> true </td>
+<td> true </td>
+<td> true </td>
+</tr>
+</tbody>
+</table>
+Give a conjunctive normal form for sentence S.
+<p><strong> Answer: </strong></p>
+<p><strong>Here are some intermediate steps in
+producing a conjunctive normal form, and the actual CNF: </strong></p>
+<pre><strong>1. (B &lt;=&gt; C) AND (A =&gt; B)<br>2. (B =&gt; C) AND (C =&gt; B) AND (A =&gt; B)<br>3. ((NOT B) OR C) AND ((NOT C) OR B) AND ((NOT A) OR B)<br><br></strong></pre>
+<strong></strong>
+<p></p>
+</li>
+<li> What is the negation of each of the following sentences:
+<pre>1. for-every x, exists y: son(x) = y<br>2. for-every x, for-every y: son(x) = y &lt;=&gt; father(y) = x<br></pre>
+In your answers, any "not" may only appear after the last appearance of
+a universal or existential quantifier.
+<p><strong>Answer: </strong></p>
+<pre><strong>1. exists x, for every y: son(x) != y<br>2. exists x, exists y: not (son(x) = y &lt;=&gt; father(y) = x)<br><br></strong></pre>
+<strong></strong>
+<p></p>
+</li>
+<li>Textbook exercise 8.8 (in both second and third edition).
+<p><strong>Answer for exercise 8.8 in the 2nd edition:
+</strong></p>
+<p><strong>There is an extra axiom needed: </strong></p>
+<pre><strong>(Male(x) and Spouse(x, y)) =&gt; Female(y)<br></strong></pre>
+<strong></strong>
+<p><strong>Answer for exercise 8.8 in the 3nd edition:
+</strong></p>
+<p><strong>No, <tt>not(Spouse(George, Laura))</tt>
+does not follow from the given facts. We need the additional axiom: </strong></p>
+<pre><strong>(Spouse(x, y) and (z != x)) =&gt; not(Spouse(z, y))<br></strong></pre>
+<strong>If <tt>Spouse</tt> becomes a unary
+function, then no additional axiom is needed. Then, the facts would be
+written as:
+<pre>Jim != George<br>Spouse(Laura) = Jim<br></pre>
+and the statement <tt>not(Spouse(Laura) = George)</tt> can
+be proven as follows:
+<pre>((Spouse(Laura) = Jim) and (Jim != George)) =&gt; not(Spouse(Laura) = George)<br></pre>
+If <tt>Spouse</tt> is a function, then it can only return
+a single value for each argument (such as <tt>Laura</tt>).
+</strong>
+<p></p>
+</li>
+<li> Consider the technique of propositionalization. For each
+of the following two knowledge bases, decide if propositionalization
+can be applied successfully. If not, why not?
+<pre>KB 1:<br><br>for-every x: king(x) and greedy(x) =&gt; evil(x)<br>king(John)<br>greedy(John)<br>brother(Richard, John)<br><br><br>KB 2:<br>for-every x: king(x) and greedy(x) =&gt; evil(x)<br>king(John)<br>greedy(John)<br>brother(Richard, John)<br>king(father(John))<br></pre>
+<p>
+<strong>Answer:
+</strong></p>
+<p><strong>For KB1, propositionalization can be applied
+successfully because there are no functions.
+For KB2, propositionalization cannot be applied successfully because
+there are functions.
+</strong></p>
+<p></p>
+</li>
+<li> What is the most general unifier for each of the following
+pairs of expressions:
+<pre>1. major(John, x), major(y, mathematics)<br>2. major(John, x), major(y, z)<br>3. major(John, x), major(y, x)<br>4. major(John, x), major(x, y)<br></pre>
+<p>
+<strong>Answer:
+</strong></p>
+<p><strong></strong></p>
+<pre><strong>1. {y/John, x/mathematics}<br>2. {y/John, x/z}<br>3. {y/John}<br>4. {x/John, y/John}<br></strong></pre>
+<strong></strong>
+<p></p>
+</li>
+<li> Textbook exercise 9.3 (in both second and third edition).
+<p><strong>Answer:
+</strong></p>
+<p><strong>Only (b) is valid, because in (b) we replace
+the existential quantifier with a variable that does not appear
+elsewhere in the database, whereas in (a) we have replaced the
+existential quantifier with a variable that already appeared in the
+database, and in (c) we have introduced two new variables (Kilimanjaro
+and BenNevis) instead of one.
+</strong></p>
+<p></p>
+</li>
+<li> Textbook exercise 9.4 (in both second and third edition).
+<p><strong>Answer:
+</strong></p>
+<p><strong></strong></p>
+<pre><strong>1. {x/A, y/B, z/B}<br>2. none<br>3. {y/John, x/John}<br>4. none<br></strong></pre>
+<strong></strong>
+<p></p>
+</li>
+<li> Textbook exercise 9.19, parts (a), (b), (c) (second
+edition), exercise 9.24, parts (a), (b), (c) (third edition).
+<p><strong>Answer: <br>
+(a): (A) becomes: for every natural number x there exists a natural
+number y such that x is greater than or equal to y.
+<br>
+(B) becomes: there exists a natural number y such that every natural
+number x is greater than or equal to y.
+<br>
+(b): (A) is true: any natural number is &gt;= 0.
+<br>
+(c): (B) is true: If y = 0, then any natural number x is greater than
+or equal to 0.
+<br>
+</strong>
+</p>
+<p> </p>
+</li>
+<li> Textbook exercise 11.2 (second edition), exercise 10.2
+(third edition).
+<p><strong>Answer:
+</strong></p>
+<p><strong></strong></p>
+<pre><strong>Fly(P1, JFK, SFO)<br>Fly(P2, SFO, JFK)<br>Fly(P1, JFK, JFK)<br>Fly(P2, SFO,SFO)<br></strong></pre>
+<strong></strong>
+<p></p>
+</li>
+<li> Textbook figure 10.3 in 3rd edition (figure 11.4 in 2nd
+edition) provides a description for a deterministic version of the
+blocks world. We want to make a modification to that description, so as
+to model a nondeterministic version, in which the effect of action
+move(b, x, y) is sometimes on(b, y) and sometimes on(b, table). How
+would you modify the description of the move action to make it reflect
+the above two possible outcomes of move(b, x, y)?
+<p><strong>Answer:
+</strong></p>
+<p><strong>We would replace the effect of the <tt>move</tt>
+action shown on that figure with the following effect:
+</strong></p>
+<pre><strong>(On(b, y) and Clear(x) and (not On(b, x)) and (not Clear(y))) or<br>(On(b, table) and Clear(x) and (not (On(b, x))))<br></strong></pre>
+<strong></strong>
+</li>
+<li> In the nondeterministic blocks world described in the
+previous exercise, suppose that the initial state and the goal are as
+as follows:
+<pre>Initial state:<br>On(A, Table) and On(B, Table) and On(C, Table) and Block(A) <br>and Block(B) and Block(C) and Clear(A) and Clear(B) and Clear(C)<br><br>Goal:<br>On(A, B) and On(B, C)<br></pre>
+Is there a conditional plan that achieves this goal with guaranteed
+success? If yes, list the sequence of actions in that plan. If no,
+explain why not.
+<p><strong>Answer:
+</strong></p>
+<p><strong>No, there is no conditional plan that
+guarantees success, because it is theoretically possible that an
+infinite number of moves be required to successfully move a block on
+top of another block.
+</strong></p>
+<p></p>
+</li>
+</ol>
+<img onselect="return false" onselectstart="return false" id="zoomIcon" src="chrome-extension://kdfgigbjonaniokmpfflpflkhahhbaej/images/zoom.png" style="cursor: pointer; position: fixed; right: 50px; top: 25px; width: 70px; height: 70px; z-index: 10000; display: none;"><input id="zoomLabel" style="border: 3px solid rgb(102, 102, 102); padding: 3px; background-color: gray; color: white; font-size: 10pt; font-family: 'MS Sans Serif'; font-weight: bolder; text-align: center; cursor: pointer; position: fixed; right: 80px; top: 75px; width: 50px; height: 20px; z-index: 10000; opacity: 0.2; display: none;" value="100 %" title=" • Scroll up to Zoom In • Scroll down to Zoom out • Double click to hide this • Holding Left mouse button and Right click to show it again">
+<div id="sbi_camera_button" class="sbi_search" style="border: medium none ; margin: 0px; padding: 0px; left: 0px; top: 0px; position: absolute; width: 29px; height: 27px; z-index: 2147483647; display: none;"></div>
+</body></html>

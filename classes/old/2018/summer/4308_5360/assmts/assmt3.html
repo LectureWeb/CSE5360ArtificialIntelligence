@@ -1,0 +1,236 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Asssignment 3</title></head>
+<body>
+<h1>Assignment 3</h1>
+<h2>Written Assignment - CSP and Propositional Logic</h2><span style="font-weight: bold;">NOTE</span>: THIS ASSIGNMENT IS DUE <span style="font-weight: bold;">BEFORE</span> START OF CLASS. <span style="font-weight: bold;">NO</span> LATE SUBMISSIONS WILL BE ACCEPTED.
+<hr>
+<h2>Problem 1</h2>
+30 points (+10 Points EC).<br>
+<br>
+The following outline map was obtained from a map of the Indian
+Subcontinent.<br>
+<br>
+<div style="text-align: center;"><img style="width: 436px; height: 571px;" alt="Indian Subcontinent Outline" src="assmt3_files/S_Ind_SubContinent.png"><br>
+Figure 1. Outline Map of Southern part of Indian Subcontinent.<br>
+</div>
+<br>
+Your
+job is to color the various sections such that no two&nbsp;sections
+sharing a border have the same color. You are allowed to use the colors
+(Red, Green, Blue).<br>
+<br>
+<span style="font-weight: bold;">Part a</span>: Draw
+the Constraint Graph for this problem. Can you use this information to
+simplify the problem?<br>
+<br>
+<span style="font-weight: bold;">Part b</span>:
+Assuming you are using Backtracking search to solve this problem and
+that you are using both MRV and Degree heuristic to select the
+variable, Which variable will be selected at each level of the search
+tree [You do not need to draw the tree. Just let me know which variable
+will be selected and why (MRV and degree values)]. Note: Multiple
+possible correct answers. You only have to give one.<span style="font-weight: bold;"><br>
+<br>
+Part c: </span>Assume you assign the color 'Red' to the first
+variable selected in part b. Show the steps involved in checking the
+remaining legal values for all other variables using Arc Consistency.<br>
+<span style="font-weight: bold;"><br>
+Part d: EC (10 points)</span>: Give one valid solution to this
+problem. (You just have to give the solution. No need to give all the
+steps)<br>
+<br>
+<hr>
+<h2>Problem 2</h2>
+10 points.<br>
+<br>
+Two logical statements A and B are logically equivalent if A
+&lt;=&gt;
+B. We have two knowledge bases, KB1 and KB2.. Write a function
+CHECK_EQUIVALENCE(KB1, KB2) that:
+<ul>
+<li> returns true if KB1 and KB2 are logically equivalent.
+</li>
+<li> returns false otherwise. </li>
+</ul>
+Your pseudocode can use or modify any code from the textbook or
+slides, and can call any of the functions given in the textbook or
+slides, as long as such code and functions are used correctly, with
+correct names for the functions, and with well-specified values for all
+variables and arguments.<br>
+<br>
+<hr>
+<h2>Problem 3</h2>
+10 points.<br>
+<br>
+<table style="text-align: center;" border="1" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td>A</td>
+<td>B</td>
+<td>C</td>
+<td>KB</td>
+<td>S1</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;True&nbsp;&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;True&nbsp;&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;True&nbsp;&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;True&nbsp;&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;True&nbsp;&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td>True</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+<td>True</td>
+</tr>
+<tr>
+<td>True</td>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+<td> True</td>
+</tr>
+<tr>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>True</td>
+</tr>
+<tr>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>False</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<p>
+KB and S1 are two propositional logic statements, that are constructed
+using symbols A, B, C, and using various connectives. The above truth
+table shows, for each combination of values of A, B, C, whether KB and
+S1 are true or false.
+</p>
+<p><strong>Part a</strong>: Given the above
+information, does KB entail S1? Justify your answer.
+</p>
+<p><strong>Part b</strong>: Given the above
+information, does statement NOT(KB) entail statement NOT(S1)? Justify
+your answer.
+</p>
+<br>
+<hr>
+<h2>Problem 4</h2>
+10 points.<br>
+<br>
+Suppose that some&nbsp; knowledge base contains various
+propositional-logic sentences that utilize symbols A, B, C, D
+(connected with various connectives). There are only two cases when the
+knowledge base is <span style="font-weight: bold;">false</span>:<br>
+- First case: when A is true, B is true, C is true, D is true. <br>
+- Second case: when A is true, B is false, C is true, D is false.<br>
+<br>
+In all other cases, the knowledge base is true. Write a conjunctive
+normal form (CNF)&nbsp; for the knowledge base. [<span style="font-weight: bold;">Hint</span>: Generate a
+statement that is false in the cases given above. Then convert it into
+CNF].<br>
+<br>
+<hr>
+<h2> Problem 5</h2>
+15 points.<br>
+<br>
+On April 20, 2017, John and Mary sign the following contract:<br>
+<br>
+- If it rains on May 1, 2017, then John must give Mary a check for
+$10,000 on May 2, 2017<br>
+- If John gives Mary a check for $10,000 on May 2, 2017, Mary must mow
+the lawn on May 3, 2017.<br>
+<br>
+What truly happened those days is the following:<br>
+-&nbsp; it did not rain on May 1, 2017<br>
+- John gave Mary a check for $10,000 on May 2, 2017<br>
+- Mary mowed the lawn on May 3, 2017.<br>
+<br>
+<strong>Part a</strong>: Write a propositional-logic
+statement to express the contract. Make sure that, for each symbol that
+you use, you clearly define what that symbol stands for.<br>
+<br>
+<strong>Part b</strong>: Write a logical statement to
+express what truly happened. When possible, use the same symbols as in
+question 4a. If you need to define any new symbols, clearly define what
+those new symbols stand for.<br>
+<br>
+<strong>Part c</strong>:&nbsp;Was the contract violated
+or not, Justify your answer (For contract violation, the Contract must
+be false in a model where the Events are true)<br>
+<br>
+<hr>
+<h2> Problem 6</h2>
+15 points.<br>
+<br>
+Consider the KB<br>
+<br>
+(A &lt;=&gt; B) AND ((B AND C) =&gt; D)) AND (C
+&lt;=&gt; E) AND A AND E<br>
+<br>
+Is this KB in Horn Form? If not, can you convert it into Horn from? If you can, give the Horn form representation.<br>
+<br>
+Using Backward chaining (if possible), check if this KB entails the statement: D<br>
+<br>
+<hr>
+<h2> Problem 6</h2>
+10 points.<br>
+<br>
+Convert the following scentences to CNF<br>
+<br>
+<span style="font-weight: bold;">Part a</span>. (A
+&lt;=&gt; (B AND C))<br>
+<br>
+<span style="font-weight: bold;">Part b</span>. (NOT
+(B AND A)) =&gt; C<br><br>
+<hr>
+<h2>How to submit</h2>
+<ul>
+<li>The answers can be typed as a document or handwritten and
+scanned.&nbsp;</li>
+<li>Name files as
+assignment3_&lt;net-id&gt;.&lt;format&gt;</li>
+<li>Accepted document formats .pdf.&nbsp;If you are using
+Word, OpenOffice or LibreOffice, make sure
+to
+save as .pdf</li>
+<li>Please do not submit
+.txt files.</li>
+<li>If
+you are scanning handwritten documents make sure to scan it at a
+minimum of 600dpi and save as a&nbsp;.pdf or .png file. Do not
+insert images in word document and submit.&nbsp;</li>
+<li>If there are multiple files in your submission, zip them
+together as assignment3_&lt;net-id&gt;.zip.</li>
+</ul>
+</body></html>

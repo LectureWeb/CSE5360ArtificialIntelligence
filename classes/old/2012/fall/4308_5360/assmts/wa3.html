@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Written Assignment 3</title></head>
+<body>
+<h1>Written Assignment 3</h1>
+<h2>Due date: <span style="text-decoration: line-through;">Tuesday 10/23/2012</span> Friday 10/26/2012, 11:59 PM.</h2>
+The assignment should be submitted via <a href="http://elearn.uta.edu">Blackboard</a>.<br><br>The questions in this assignment refer to the same problem as
+<a href="pa3.html">programming assignment 3</a>,
+please refer to the description of that
+assignment for additional details. Also, please note that, for CSE 4308
+students, written assignment 3 and programming assignment 3 together
+will be used as the <a href="assessment.html">CSE 4308 assessment</a>, worth 6.7% of the grade.<br>
+<br>
+<hr>
+<h2>Problem 1</h2>
+10 points.<br>
+<ol style="list-style-type: lower-alpha;">
+<li>(5 points) Are there inference algorithms for propositional
+logic
+that are sound and complete?<br>
+</li>
+<li>(5 points) If you answered yes for 1a, what aspects of
+propositional logic make it possible to have such algorithms? If you
+answered no, what aspects of propositional logic make it impossible to
+have such algorithms?</li>
+</ol>
+<hr>
+<h2>Problem 2</h2>
+20 points.<br>
+<br>
+Suppose that an agent using the program described in <a href="pa3.html">programming assignment 3</a> for inference, has gone through squares (1,1), (1,2),
+(1,3), (1,4) sensing no stench or breeze anywhere, except for a stench
+at square (1,4). You can assume that an agent dies if it moves to a
+square containing a monster or a pit, and that this particular agent
+did not die at any of the four squares. Specify a set of statements
+that we need to add to the knowledge base to represent the information
+that the agent collected out of those four squares. The set of
+statements should be sufficient, meaning that the inference engine will
+always give results that are correct and consistent with the
+information that the agent obtained from those four squares. Your set
+of statements should also be MINIMAL, i.e., it should not be possible
+to leave out any of those statements without sacrificing the
+correctness of the inference algorithm. You should assume that the
+knowledge base already contains the wumpus rules, and in particular the
+version of the rules specified in programming assignment 3, not the
+version specified in the textbook.<br>
+<br>
+<hr>
+<h2>Problem 3</h2>
+20 points.<br>
+<br>
+Suppose that your agent has already been through 12 of the 16 squares,
+and that your knowledge base has been updated accordingly. What can you
+say about the efficiency of inference in this knowledge base, compared
+to the efficiency of inference in a knowledge base where the agent has
+only been at square (1,1) and nothing (except for the wumpus rules) is
+known about the rest of the squares? What quantity determines the
+worst-case efficiency of the algorithm? What is the value of that
+quantity in each of the two cases? How can you exploit the information
+from the 12 squares to speed up inference?<br>
+<br>
+<hr>
+<h2>Problem 4</h2>
+5 points.<br>
+<br>
+Name two inference algorithms for propositional logic that can be used
+to implement the inference engine in <a href="pa3.html">programming
+assignment 3.<br>
+</a><br>
+<hr>
+<h2>Problem 5</h2>
+10 points.<br>
+<br>
+Suppose that you have a function f(kb, statement) that returns true iff
+kb (the knowledge base) entails the statement (a logical sentence) and
+false otherwise. Write pseudocode that, using function f, defines a
+function g(kb, statement) that returns +1 iff the statement is
+definitely true given kb, -1 iff the statement is definitely false
+given kb, and 0 otherwise.<br>
+<br>
+<hr>
+<h2>Problem 6</h2>
+10 points.<br>
+<br>
+Write pseudocode for a function extract_symbols(statement) that
+extracts the list of all unique symbols appearing in statement, where
+statement is a logical expression. What is the base case for
+extract_symbols? What are the recursive cases? Your function should
+work with arbitrarily complex statements following the syntax specified
+in <a href="pa3.html">programming assignment 3</a>.<br>
+<br>
+Your pseudocode should assume that the statement has already been
+stored in an object of type logical_expression, as defined in sample
+code file <a href="pa3_files/check_true_false.h">check_true_false.h</a>
+from programming assignment 3. Your
+pseudocode should use the member variables "connective", "symbol", and
+"subexpressions" of class logical_expression.<br>
+<br>
+<hr>
+<h2>Problem 7</h2>
+25 points.<br>
+<br>
+Suppose that you have an omniscient function f(symbol) that tells you
+for any symbol in your wumpus world whether that symbol is true or
+false in that world. Write pseudocode that, using that function,
+defines a recursive function g(statement) that can always tell if
+statement is true or false, and works for any statement (however
+complex it may be) defined using the propositional logic syntax of
+programming assignment 3. Remember that only six connectors are defined
+in that syntax: and, or, xor, not, if, and iff.<br>
+<br>
+What is the base case for function g? Which are the recursive cases?
+How many recursive cases are there?<br>
+<br>
+As in problem 6, your pseudocode should assume that the statement has
+already been stored in an object of type logical_expression, as defined
+in sample code file <a href="pa3_files/check_true_false.h">check_true_false.h</a>
+from <a href="pa3.html">programming assignment 3</a>.
+Your pseudocode should use the member variables "connective", "symbol",
+and "subexpressions" of class logical_expression. The pseudocode should
+be specific enough to show exactly how to deal with each connective.<br>
+</body></html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+
+  
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Assignment 5</title></head><body style="background-color: rgb(231, 246, 253);">
+<h1>Assignment 5</h1>
+
+<h2>Written Assignment - Machine Learning &amp; Decision Trees</h2>
+
+<h3><span style="font-weight: bold;">Max possible score:</span></h3>
+
+<ul>
+
+  <li>4308: 50 Points<br>
+  </li>
+  <li>5360: 50 Points</li>
+</ul>
+
+<hr>
+<h3>Task 1</h3>
+
+<strong style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;"></strong>
+<h3>20 points </h3>
+
+<div style="text-align: center;"><img alt="Decisiontree" style="border: 1px solid ; width: 696px; height: 541px;" src="assmt5_files/decision_tree.png">
+</div>
+
+<p style="text-align: center;"><strong> Figure 1: A decision tree for
+estimating
+whether the patron will be willing to wait for a table at a restaurant.
+</strong></p>
+
+<p><strong> Part a (5 points):</strong> Suppose that,
+on the
+entire set of training samples available for constructing the decision
+tree of Figure 1, 65 people decided to wait, and 35 people decided not
+to wait. What is the initial entropy at node A (before the test is
+applied)? </p>
+
+<p><strong> Part b</strong><strong> (5 points)</strong><strong>:</strong>
+As mentioned in the
+previous part, at node A, 65 people decided to wait and 35 people
+decided not to wait. </p>
+
+<ul>
+
+  <li> Out of the cases where people decided to wait, in 25 cases
+it was weekend and in 40 cases it was not weekend. </li>
+  <li> Out of the cases where people decided not to wait, in 20
+cases it was weekend and in 15 cases it was not weekend. </li>
+</ul>
+
+What is the information gain for the weekend test at node A?&nbsp;
+<p><strong> Part c</strong><strong> (5 points)</strong><strong>:</strong>
+In the decision tree of
+Figure 1, node E uses the exact same test (whether it is weekend or
+not) as node A. What is the information gain, at node E, of using the
+weekend test? </p>
+
+<p><strong> Part d</strong><strong> (5 points)</strong><strong>:</strong>
+We have a test case of a
+hungry patron who came in on a rainy Sunday. Which leaf node does this
+test case end up in? What does the decision tree output for that case?</p>
+
+<hr>
+<h3> Task 2</h3>
+
+<h3>15 points </h3>
+
+<table style="text-align: center;" border="1" cellpadding="0" cellspacing="0">
+
+  <tbody>
+    <tr>
+      <td>&nbsp;&nbsp;Class&nbsp;&nbsp;</td>
+      <td>&nbsp;&nbsp;A&nbsp;&nbsp;</td>
+      <td>&nbsp;&nbsp;B&nbsp;&nbsp;</td>
+      <td>&nbsp;&nbsp;C&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+      <td>X</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>X</td>
+      <td>2</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>X</td>
+      <td>3</td>
+      <td>2</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>X</td>
+      <td>1</td>
+      <td>3</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>X</td>
+      <td>1</td>
+      <td>2</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>Y</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Y</td>
+      <td>3</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Y</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>Y</td>
+      <td>3</td>
+      <td>3</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Y</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+
+<br>
+
+We want to build a decision tree that determines whether a given
+pattern is class X or class Y. The decision tree can only use tests
+that are based on attributes A, B, and C. Each attribute has 3 possible
+values: 1, 2, 3. We have the 10
+training examples, shown on the table (each row corresponds to a
+training example, the first column is the class label and the other 3 columns are the pattern).
+What is the information gain of each attribute at the root?
+Which attribute achieves the highest information gain at the root?
+<hr>
+<h3> Task 3<br>
+</h3>
+
+<h3>10 points </h3>
+
+Suppose that, at a node N of a decision tree, we have 1000 training
+examples. There are four possible class labels (A, B, C, D) for each of
+these training examples.
+<p><strong> Part a:</strong> What is the highest
+possible and lowest possible entropy value at node N? </p>
+
+<p><strong> Part b:</strong> Suppose that, at node N,
+we choose an attribute K. What is the highest possible and lowest
+possible information gain for that attribute? </p>
+
+<hr>
+<h3> Task 4</h3>
+
+<h3>5 points </h3>
+
+Your boss at a software company gives you a binary classifier (i.e., a
+classifier with only two possible output values) that predicts, for any
+basketball game, whether the home team will win or not. This classifier
+has a 28% accuracy, and your boss assigns you the task of improving
+that classifier, so that you get an accuracy that is better than 60%.
+How do you achieve that task? Can you guarantee achieving better than
+60% accuracy?
+</body></html>

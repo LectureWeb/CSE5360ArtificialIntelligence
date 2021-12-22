@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+
+<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Assignment 2</title></head><body>
+<h1>Assignment 2</h1>
+
+<h2>Written Assignment - Game Playing &amp; CSP<br>
+</h2>
+
+
+<h3><span style="font-weight: bold;">Max possible score:</span></h3>
+
+<ul>
+<li>4308: 85 Points (+5 Points EC)</li><li>5360: 85 Points (+5 Points EC)</li>
+</ul>
+
+
+<hr>
+<h3>Task 1 </h3>
+
+<span style="font-weight: bold;">Max: [4308: 15 Points,
+5360: 15 Points]</span>
+<p style="text-align: center;">
+</p><table style="text-align: left; margin-left: auto; margin-right: auto;" border="1">
+<tbody>
+<tr>
+<td style="text-align: center;"><br>
+</td>
+<td style="text-align: center;">X </td>
+<td style="text-align: center;"><br>
+</td>
+</tr>
+<tr>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">&nbsp;</td>
+<td style="text-align: center;">O</td>
+</tr>
+<tr>
+<td style="text-align: center;">X<br>
+</td>
+<td style="text-align: center;">O </td>
+<td style="text-align: center;">X&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<br>
+<div style="text-align: center;">
+Figure 1. A tic-tac-toe board state.
+
+
+</div>
+<p>Consider the tic-tac-toe board state shown in Figure 1. Draw
+the full
+minimax search tree starting from this state, and ending in terminal
+nodes. Show the utility value for each terminal and non-terminal node.
+Also show which move the Minimax algorithm decides to play for X.
+Utility values are +1 if X wins, 0 for a tie, and -1 if O wins. (Note: X is the MAX player).
+</p>
+
+<hr>
+<h3>Task 2 </h3>
+
+<span style="font-weight: bold;">Max: [4308: 15 Points,
+5360: 15 Points]</span>
+<p style="text-align: center;"><img style="width: 970px; height: 463px;" alt="MinmaxTree" src="assmt2_files/minimax1.gif"><br>
+<br>
+Figure 2. A game search tree.
+</p>
+
+<p>a. (4308: 10 points, 5360: 10 points)
+In the game search tree of Figure 2, indicate what nodes will be pruned
+using alpha-beta search, and what the estimated utility values are for
+the rest of the nodes. Assume that, when given a choice, alpha-beta
+search expands nodes in a left-to-right order. Also, assume the MAX
+player plays first. Finally incidcate which action the Minmax algorithm
+will pick to exectute.
+</p>
+
+<p>b. (4308: 5 points, 5360: 5 points) This question is also on
+the game search tree
+of Figure 2. Suppose we are given some additional knowledge about the
+game: the maximum utility value is 10, i.e., it is not mathematically
+possible for the MAX player to get an outcome greater than 10. How can
+this knowledge be used to further improve the efficiency of alpha-beta
+search? Indicate the nodes that will be pruned using this improvement.
+Again, assume that, when given a choice, alpha-beta search expands
+nodes in a left-to-right order, and that the MAX player plays first.
+</p>
+
+<hr>
+<h3>Task 3 </h3>
+
+<span style="font-weight: bold;">Max: [4308: 10 Points,
+5360: 10 Points]</span><br>
+
+<br>
+
+Suppose that you want to implement an algorithm that will compete on a
+two-player deterministic game of perfect information. Your opponent is
+a supercomputer called DeepGreen. DeepGreen does not use Minimax. You
+are given a library function DeepGreenMove(S), that takes any state S
+as an argument, and returns the move that DeepGreen will choose for
+that state S (more precisely, DeepGreenMove (S) returns the state
+resulting from the opponent's move).
+<p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">Write
+an algorithm in pseudocode (following the style of the Minimax
+pseudocode) that will always make an optimal decision given the
+knowledge we have about DeepGreen. You are free to use the library
+function DeepGreenMove(S) in your pseudocode. What advantage would this
+algorithm have over Minimax? (if none, Justify).<br>
+</p>
+
+<hr>
+<h3>Task 4 </h3>
+
+<span style="font-weight: bold;">Max: [4308: 10 Points,
+5360: 10 Points]</span><br>
+
+<br>
+
+<div style="text-align: center;"><img style="width: 555px; height: 388px;" alt="Expectiminmax Tree" src="assmt2_files/expectiminmax.png"><br>
+Figure 3: An Expectiminmax tree.<br>
+</div>
+
+<br>
+Find
+the value of every non-terminal node in the expectiminmax tree given
+above. Also indicate which action will be performed by the algoirithm.
+What is lowest and highest possible outcome of a single game if the
+minmax strategy is followed.<br>
+
+<br>
+
+<span style="font-family: 'Times New Roman';"></span>
+<hr>
+<h3>Task 5<br>
+ </h3>
+
+<span style="font-weight: bold;">Max: [4308: 10 Points,
+5360: 10 Points]</span><br>
+
+<br>
+
+<div style="text-align: center;"><img style="width: 400px; height: 294px;" alt="Figure 3: Yet another game search tree" title="Figure 3: Yet another game search tree" src="assmt2_files/best_worst_outcome.png"><br>
+Figure 4: Yet another game search tree<br>
+</div>
+
+<br>
+
+<p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">Consider
+the MINIMAX tree above. Suppose that we are the MAX player, and we
+follow the MINIMAX algorithm to play a full game against an opponent.
+However,<span class="Apple-converted-space">&nbsp;</span><strong>we
+do not know what algorithm the opponent uses</strong>.</p>
+
+<p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">Under
+these conditions, what is the best possible outcome of playing the full
+game for the MAX player? What is the worst possible outcome for the MAX
+player? Justify your answer.</p>
+
+<p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">NOTE:
+the question is not asking you about what MINIMAX will compute for the
+start node. It is asking you what is the best and worst outcome of a<span class="Apple-converted-space">&nbsp;</span><strong>complete
+game</strong><span class="Apple-converted-space">&nbsp;</span>under
+the assumptions stated above.
+</p>
+<hr><br>
+<h3>Task 6<br>
+ </h3>
+
+
+<span style="font-weight: bold;">Max: [4308: 25 Points (+5 Pts EC),
+5360: 25 Points </span><span style="font-weight: bold;">(+5 Pts EC)</span><span style="font-weight: bold;">]<br>
+</span><br>
+Consider the following map.<br>
+
+<br>
+
+<div style="text-align: center;"><img style="width: 1026px; height: 2046px;" alt="Map Outline" src="assmt2_files/map_west.png"><br>
+Figure 5. Outline of a Map<br>
+</div>
+
+<br>The problem is to color the sections such that no two&nbsp;sections
+sharing a border have the same color. You are allowed to use the colors
+(Red, Green, Blue). [Note: Territories V and N share a boundary]<br>
+
+<br>
+
+<span style="font-weight: bold;">Part a (2 points):</span> Draw
+the Constraint Graph for this problem.<br>
+
+<br>
+
+<span style="font-weight: bold;">Part b (10 points):</span>
+Assuming you are using Backtracking search to solve this problem and
+that you are using both MRV and Degree heuristic to select the
+variable, Which variable will be selected at each level of the search
+tree [You do not need to draw the tree. Just let me know which variable
+will be selected and why (MRV and degree values)]. Note: Multiple
+possible correct answers. You only have to give one.<span style="font-weight: bold;"><br>
+<br>
+Part c (10 points): </span>Assume you assign the color 'Red' to the first
+variable selected in part b. Show the steps involved in checking the
+remaining legal values for all other variables using Arc Consistency.<br>
+<br>
+<span style="font-weight: bold;">Part d (3 points):</span> Can you use
+the constraint graph to simplify the process of solving this problem?
+(Seperating into independent subproblems and/or cutset conditioning)<br>
+
+<span style="font-weight: bold;"><br>
+Part e: (5 points EC)</span>: Give one valid solution to this
+problem. (You just have to give the solution. No need to give all the
+steps)
+  
+
+</body></html>

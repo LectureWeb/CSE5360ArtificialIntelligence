@@ -1,0 +1,511 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><!-- saved from url=(0084)https://omega.uta.edu/~gopikrishnav/classes/2017/spring/4308_5360/assmts/assmt3.html -->
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><!-- saved from url=(0076)https://omega.uta.edu/~gopikrishnav/classes/2015/fall/ai1/assmts/wa/wa2.html -->
+
+
+<title>Assignment 2</title><style type="text/css"></style>
+<link rel="stylesheet" type="text/css" href="data:text/css,">
+<link href="chrome-extension://lnkdbjbjpnpjeciipoaflmpcddinpjjp/mytube.css" rel="stylesheet" type="text/css">
+<script src="chrome-extension://lnkdbjbjpnpjeciipoaflmpcddinpjjp/mutationObserver.js"></script>
+<link href="chrome-extension://lnkdbjbjpnpjeciipoaflmpcddinpjjp/mytube.css" rel="stylesheet" type="text/css">
+<script src="chrome-extension://lnkdbjbjpnpjeciipoaflmpcddinpjjp/mytube.js"></script>
+<script src="chrome-extension://lnkdbjbjpnpjeciipoaflmpcddinpjjp/mutationObserver.js"></script>
+<script src="chrome-extension://lnkdbjbjpnpjeciipoaflmpcddinpjjp/mytube.js"></script><mytubeelement id="myTubeRelayElementToPage" event="preferencesUpdated" data="{&quot;bundle&quot;:{&quot;label_delimitor&quot;:&quot;:&quot;,&quot;percentage&quot;:&quot;%&quot;,&quot;smart_buffer&quot;:&quot;Smart Buffer&quot;,&quot;start_playing_when_buffered&quot;:&quot;Start playing when buffered&quot;,&quot;sound&quot;:&quot;Sound&quot;,&quot;desktop_notification&quot;:&quot;Desktop Notification&quot;,&quot;continuation_on_next_line&quot;:&quot;-&quot;,&quot;loop&quot;:&quot;Loop&quot;,&quot;only_notify&quot;:&quot;Only Notify&quot;,&quot;estimated_time&quot;:&quot;Estimated Time&quot;,&quot;global_preferences&quot;:&quot;Global Preferences&quot;,&quot;no_notification_supported_on_your_browser&quot;:&quot;No notification style supported on your browser version&quot;,&quot;video_buffered&quot;:&quot;Video Buffered&quot;,&quot;buffered&quot;:&quot;Buffered&quot;,&quot;hyphen&quot;:&quot;-&quot;,&quot;buffered_message&quot;:&quot;The video has been buffered as requested and is ready to play.&quot;,&quot;not_supported&quot;:&quot;Not Supported&quot;,&quot;on&quot;:&quot;On&quot;,&quot;off&quot;:&quot;Off&quot;,&quot;click_to_enable_for_this_site&quot;:&quot;Click to enable for this site&quot;,&quot;desktop_notification_denied&quot;:&quot;You have denied permission for desktop notification for this site&quot;,&quot;notification_status_delimitor&quot;:&quot;;&quot;,&quot;error&quot;:&quot;Error&quot;,&quot;adblock_interferance_message&quot;:&quot;Adblock (or similar extension) is known to interfere with SmartVideo. Please add this url to adblock whitelist.&quot;,&quot;calculating&quot;:&quot;Calculating&quot;,&quot;waiting&quot;:&quot;Waiting&quot;,&quot;will_start_buffering_when_initialized&quot;:&quot;Will start buffering when initialized&quot;,&quot;will_start_playing_when_initialized&quot;:&quot;Will start playing when initialized&quot;,&quot;completed&quot;:&quot;Completed&quot;,&quot;buffering_stalled&quot;:&quot;Buffering is stalled. Will stop.&quot;,&quot;stopped&quot;:&quot;Stopped&quot;,&quot;hr&quot;:&quot;Hr&quot;,&quot;min&quot;:&quot;Min&quot;,&quot;sec&quot;:&quot;Sec&quot;,&quot;any_moment&quot;:&quot;Any Moment&quot;,&quot;popup_donate_to&quot;:&quot;Donate to&quot;,&quot;extension_id&quot;:&quot;lnkdbjbjpnpjeciipoaflmpcddinpjjp&quot;},&quot;prefs&quot;:{&quot;desktopNotification&quot;:true,&quot;soundNotification&quot;:true,&quot;logLevel&quot;:0,&quot;enable&quot;:true,&quot;loop&quot;:false,&quot;hidePopup&quot;:false,&quot;autoPlay&quot;:false,&quot;autoBuffer&quot;:false,&quot;autoPlayOnBuffer&quot;:false,&quot;autoPlayOnBufferPercentage&quot;:42,&quot;autoPlayOnSmartBuffer&quot;:true,&quot;quality&quot;:&quot;default&quot;,&quot;fshd&quot;:false,&quot;onlyNotification&quot;:false,&quot;enableFullScreen&quot;:true,&quot;saveBandwidth&quot;:false,&quot;hideAnnotations&quot;:false,&quot;turnOffPagedBuffering&quot;:false}}"></mytubeelement><mytubeelement id="myTubeRelayElementToTab" event="relayPrefs" data="{&quot;loadBundle&quot;:true}"></mytubeelement>
+<link rel="stylesheet" type="text/css" href="chrome-extension://pkehgijcmpdhfbdbbnkijodmdjhbjlgp/skin/socialwidgets.css">
+<style type="text/css">.backpack.dropzone {
+font-family: 'SF UI Display', 'Segoe UI';
+font-size: 15px;
+text-align: center;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+width: 250px;
+height: 150px;
+font-weight: lighter;
+color: white;
+will-change: right;
+z-index: 2147483647;
+bottom: 20%;
+background: #333;
+position: fixed;
+user-select: none;
+transition: left .5s, right .5s;
+right: 0px; }
+.backpack.dropzone .animation {
+height: 80px;
+width: 250px;
+background: url("https://sxt.cdn.skype.com/assets/dropzone/hoverstate.png") left center; }
+.backpack.dropzone .title::before {
+content: 'Save to'; }
+.backpack.dropzone.closed {
+right: -250px; }
+.backpack.dropzone.hover .animation {
+animation: sxt-play-anim-hover 0.91s steps(21);
+animation-fill-mode: forwards;
+background: url("https://sxt.cdn.skype.com/assets/dropzone/hoverstate.png") left center; }
+@keyframes sxt-play-anim-hover {
+from {
+background-position: 0px; }
+to {
+background-position: -5250px; } }
+.backpack.dropzone.saving .title::before {
+content: 'Saving to'; }
+.backpack.dropzone.saving .animation {
+background: url("https://sxt.cdn.skype.com/assets/dropzone/saving_loop.png") left center;
+animation: sxt-play-anim-saving steps(59) 2.46s infinite; }
+@keyframes sxt-play-anim-saving {
+100% {
+background-position: -14750px; } }
+.backpack.dropzone.saved .title::before {
+content: 'Saved to'; }
+.backpack.dropzone.saved .animation {
+background: url("https://sxt.cdn.skype.com/assets/dropzone/saved.png") left center;
+animation: sxt-play-anim-saved steps(20) 0.83s forwards; }
+@keyframes sxt-play-anim-saved {
+100% {
+background-position: -5000px; } }
+</style></head>
+<body style="" _texified="true">
+<h1>Assignment 2</h1>
+<h2>Written and Programming Assignment - Game Playing</h2>
+
+<br>
+<hr>
+<h3> Problem 1 </h3>
+<span style="font-weight: bold;">Max: [4308: 15 Points,
+5360: 12 Points]</span>
+<p style="text-align: center;">
+<table style="text-align: left; margin-left: auto; margin-right: auto;" border="1">
+<tbody>
+<tr>
+<td>X<br>
+</td>
+<td> O </td>
+<td><br>
+</td>
+</tr>
+<tr>
+<td>O</td>
+<td>&nbsp;</td>
+<td>X</td>
+</tr>
+<tr>
+<td>X<br>
+</td>
+<td>O </td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<br>
+Figure 1. A tic-tac-toe board state.
+</p>
+<p>Consider the tic-tac-toe board state shown in Figure 1. Draw
+the full
+minimax search tree starting from this state, and ending in terminal
+nodes. Show the utility value for each terminal and non-terminal node.
+Also show which move the Minimax algorithm decides to play.
+Utility values are +1 if X wins, 0 for a tie, and -1 if O wins. Assume
+that X makes the next move (X is the MAX player).
+</p>
+<hr>
+<h3> Problem 2 </h3>
+<span style="font-weight: bold;">Max: [4308: 13 Points,
+5360: 10 Points]</span>
+<p style="text-align: center;"><img src="./assmt2_files/minimax1.gif"><br>
+<br>
+Figure 2. A game search tree.
+</p>
+<p>a. (4308: 20 points, 5360: 15 points)
+In the game search tree of Figure 2, indicate what nodes will be pruned
+using alpha-beta search, and what the estimated utility values are for
+the rest of the nodes. Assume that, when given a choice, alpha-beta
+search expands nodes in a left-to-right order. Also, assume the MAX
+player plays first. Finally incidcate which action the Minmax algorithm
+will pick to exectute.
+</p>
+<p>b. (4308: 5 points, 5360: 5 points) This question is also on
+the game search tree
+of Figure 2. Suppose we are given some additional knowledge about the
+game: the maximum utility value is 10, i.e., it is not mathematically
+possible for the MAX player to get an outcome greater than 10. How can
+this knowledge be used to further improve the efficiency of alpha-beta
+search? Indicate the nodes that will be pruned using this improvement.
+Again, assume that, when given a choice, alpha-beta search expands
+nodes in a left-to-right order, and that the MAX player plays first.
+</p>
+<hr>
+<h3> Problem 3 </h3>
+<span style="font-weight: bold;">Max: [4308: 10 Points,
+5360: 8 Points]</span><br>
+<br>
+Suppose that you want to implement an algorithm tht will compete on a
+two-player deterministic game of perfect information. Your opponent is
+a supercomputer called DeepGreen. DeepGreen does not use Minimax. You
+are given a library function DeepGreenMove(S), that takes any state S
+as an argument, and returns the move that DeepGreen will choose for
+that state S (more precisely, DeepGreenMove (S) returns the state
+resulting from the opponent's move).
+<p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">Write
+an algorithm in pseudocode (following the style of the Minimax
+pseudocode) that will always make an optimal decision given the
+knowledge we have about DeepGreen. You are free to use the library
+function DeepGreenMove(S) in your pseudocode. What advantage would this
+algorithm have over Minimax? (if none, Justify).<br>
+</p>
+<hr>
+<h3> Problem 4 </h3>
+<span style="font-weight: bold;">Max: [4308: 12 Points,
+5360: 10 Points]</span><br>
+<br>
+<div style="text-align: center;"><img style="width: 555px; height: 388px;" alt="Expectiminmax Tree" src="assmt2_files/expectiminmax.png"><br>
+Figure 3: An Expectiminmax tree.<br>
+</div>
+<br>
+Find
+the value of every non-terminal node in the expectiminmax tree given
+above. Also indicate which action will be performed by the algoirithm<br>
+<br>
+<span style="font-family: 'Times New Roman';"></span>
+<hr>
+<h3> Problem 5 (Extra Credit for 4308, Required for 5360) </h3>
+<span style="font-weight: bold;">Max: [4308: 10 Points EC,
+5360: 10 Points]</span><br>
+<br>
+<div style="text-align: center;"><img style="width: 400px; height: 294px;" alt="Figure 3: Yet another game search tree" title="Figure 3: Yet another game search tree" src="assmt2_files/best_worst_outcome.png"><br>
+Figure 4: Yet another game search tree<br>
+</div>
+<br>
+<p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">Consider
+the MINIMAX tree above. Suppose that we are the MAX player, and we
+follow the MINIMAX algorithm to play a full game against an opponent.
+However,<span class="Apple-converted-space">&nbsp;</span><strong>we
+do not know what algorithm the opponent uses</strong>.</p>
+<p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">Under
+these conditions, what is the best possible outcome of playing the full
+game for the MAX player? What is the worst possible outcome for the MAX
+player? Justify your answer.</p>
+<p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">NOTE:
+the question is not asking you about what MINIMAX will compute for the
+start node. It is asking you what is the best and worst outcome of a<span class="Apple-converted-space">&nbsp;</span><strong>complete
+game</strong><span class="Apple-converted-space">&nbsp;</span>under
+the assumptions stated above.</p>
+<span style="font-weight: bold;">
+</span>
+<hr><img onselect="return false" onselectstart="return false" id="zoomIcon" src="chrome-extension://kdfgigbjonaniokmpfflpflkhahhbaej/images/zoom.png" style="cursor: pointer; position: fixed; right: 50px; top: 25px; width: 70px; height: 70px; z-index: 200000; display: none;"><input id="zoomLabel" style="border: 3px solid rgb(102, 102, 102); padding: 3px ! important; background: gray none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; color: white; font-size: 10pt; font-family: &quot;MS Sans Serif&quot;; font-weight: bolder; text-align: center; cursor: pointer; position: fixed; right: 80px; top: 75px; z-index: 200000; opacity: 0.2; width: 50px ! important; height: 20px ! important; display: none;" value="100 %" title=" • Scroll up to Zoom In • Scroll down to Zoom out • Double click to hide this • Holding Left mouse button and Right click to show it again"><mytubeelement id="myTubeRelayElementToPage" event="preferencesUpdated" data="{&quot;bundle&quot;:{&quot;label_delimitor&quot;:&quot;:&quot;,&quot;percentage&quot;:&quot;%&quot;,&quot;smart_buffer&quot;:&quot;Smart Buffer&quot;,&quot;start_playing_when_buffered&quot;:&quot;Start playing when buffered&quot;,&quot;sound&quot;:&quot;Sound&quot;,&quot;desktop_notification&quot;:&quot;Desktop Notification&quot;,&quot;continuation_on_next_line&quot;:&quot;-&quot;,&quot;loop&quot;:&quot;Loop&quot;,&quot;only_notify&quot;:&quot;Only Notify&quot;,&quot;estimated_time&quot;:&quot;Estimated Time&quot;,&quot;global_preferences&quot;:&quot;Global Preferences&quot;,&quot;no_notification_supported_on_your_browser&quot;:&quot;No notification style supported on your browser version&quot;,&quot;video_buffered&quot;:&quot;Video Buffered&quot;,&quot;buffered&quot;:&quot;Buffered&quot;,&quot;hyphen&quot;:&quot;-&quot;,&quot;buffered_message&quot;:&quot;The video has been buffered as requested and is ready to play.&quot;,&quot;not_supported&quot;:&quot;Not Supported&quot;,&quot;on&quot;:&quot;On&quot;,&quot;off&quot;:&quot;Off&quot;,&quot;click_to_enable_for_this_site&quot;:&quot;Click to enable for this site&quot;,&quot;desktop_notification_denied&quot;:&quot;You have denied permission for desktop notification for this site&quot;,&quot;notification_status_delimitor&quot;:&quot;;&quot;,&quot;error&quot;:&quot;Error&quot;,&quot;adblock_interferance_message&quot;:&quot;Adblock (or similar extension) is known to interfere with SmartVideo. Please add this url to adblock whitelist.&quot;,&quot;calculating&quot;:&quot;Calculating&quot;,&quot;waiting&quot;:&quot;Waiting&quot;,&quot;will_start_buffering_when_initialized&quot;:&quot;Will start buffering when initialized&quot;,&quot;will_start_playing_when_initialized&quot;:&quot;Will start playing when initialized&quot;,&quot;completed&quot;:&quot;Completed&quot;,&quot;buffering_stalled&quot;:&quot;Buffering is stalled. Will stop.&quot;,&quot;stopped&quot;:&quot;Stopped&quot;,&quot;hr&quot;:&quot;Hr&quot;,&quot;min&quot;:&quot;Min&quot;,&quot;sec&quot;:&quot;Sec&quot;,&quot;any_moment&quot;:&quot;Any Moment&quot;,&quot;popup_donate_to&quot;:&quot;Donate to&quot;,&quot;extension_id&quot;:&quot;lnkdbjbjpnpjeciipoaflmpcddinpjjp&quot;},&quot;prefs&quot;:{&quot;desktopNotification&quot;:true,&quot;soundNotification&quot;:true,&quot;logLevel&quot;:0,&quot;enable&quot;:true,&quot;loop&quot;:false,&quot;hidePopup&quot;:false,&quot;autoPlay&quot;:false,&quot;autoBuffer&quot;:false,&quot;autoPlayOnBuffer&quot;:false,&quot;autoPlayOnBufferPercentage&quot;:42,&quot;autoPlayOnSmartBuffer&quot;:true,&quot;quality&quot;:&quot;default&quot;,&quot;fshd&quot;:false,&quot;onlyNotification&quot;:false,&quot;enableFullScreen&quot;:true,&quot;saveBandwidth&quot;:false,&quot;hideAnnotations&quot;:false,&quot;turnOffPagedBuffering&quot;:false}}"></mytubeelement><mytubeelement id="myTubeRelayElementToTab" event="relayPrefs" data="{&quot;loadBundle&quot;:true}"></mytubeelement>
+<h3>Problem 6</h3>
+<span style="font-weight: bold;">Max: [4308: 50 Points,
+5360: 50 Points]</span>
+<div style="text-align: justify;"><br>
+The task in this
+programming part is to implement an agent that
+plays the Max-Connect4 game using search. Figure 5 shows the first few
+moves of a game. The game is played on a 6x7 grid, with six rows and
+seven columns. There are two players, player A (red) and player B
+(green). The two players take turns placing pieces on the board: the
+red player can only place red pieces, and the green player can only
+place green pieces.<br>
+<br>
+It is best to think of the board as standing upright. We will assign a
+number to every row and column, as follows: columns are numbered from
+left to right, with numbers 1, 2, ..., 7. Rows are numbered from bottom
+to top, with numbers 1, 2, ..., 6. When a player makes a move, the move
+is completely determined by specifying the COLUMN where the piece will
+be placed. If all six positions in that column are occupied, then the
+move is invalid, and the program should reject it and force the player
+to make a valid move. In a valid move, once the column is specified,
+the piece is placed on that column and "falls down", until it reaches
+the lowest unoccupied position in that column.<br>
+<br>
+The game is over when all positions are occupied. Obviously, every
+complete game consists of 42 moves, and each player makes 21 moves. The
+score, at the end of the game is determined as follows: consider each
+quadruple of four consecutive positions on board, either in the
+horizontal, vertical, or each of the two diagonal directions (from
+bottom left to top right and from bottom right to top left). The red
+player gets a point for each such quadruple where all four positions
+are occupied by red pieces. Similarly, the green player gets a point
+for each such quadruple where all four positions are occupied by green
+pieces. The player with the most points wins the game.<br>
+<br>
+Your program will run in two modes: an interactive mode, that is best
+suited for the program playing against a human player, and a one-move
+mode, where the program reads the current state of the game from an
+input file, makes a single move, and writes the resulting state to an
+output file. The one-move mode can be used to make programs play
+against each other. Note that THE PROGRAM MAY BE EITHER THE RED OR THE
+GREEN PLAYER, THAT WILL BE SPECIFIED BY THE STATE, AS SAVED IN THE
+INPUT FILE.<br>
+<br>
+As part of this assignment, you will also need to measure and report
+the time that your program takes, as a function of the number of moves
+it explores. All time measurements should report CPU time, not total
+time elapsed. CPU time does not depend on other users of the system,
+and thus is a meaningful measurement of the efficiency of the
+implementation.<br>
+</div>
+<div style="text-align: center;"><img style="width: 684px; height: 1113px;" title="Sample Max-Connect Game" alt="Sample Max-Connect Game" src="assmt2_files/game.gif"><br>
+Figure 5: Sample Max-Connect Game (15 moves in)
+</div>
+<span style="font-weight: bold;"><br>
+Interactive Mode</span><br>
+<br>
+In the interactive mode, the game should run from the command line with
+the following arguments (assuming a Java implementation, with obvious
+changes for C++ or other implementations):<br>
+<br>
+<span style="font-style: italic; font-weight: bold;">java
+maxconnect4
+interactive [input_file] [computer-next/human-next]
+[depth]</span><br>
+<br>
+For example:<br>
+<br>
+<span style="font-style: italic;">java maxconnect4
+interactive input1.txt computer-next 7</span><br>
+<ul>
+<li>Argument interactive specifies that the program runs in
+interactive
+mode.</li>
+<li>Argument [input_file] specifies an input file that contains
+an initial
+board state. This way we can start the program from a non-empty board
+state. If the input file does not exist, the program should just create
+an empty board state and start again from there.</li>
+<li>Argument [computer-first/human-first] specifies whether the
+computer
+should make the next move or the human.</li>
+<li>Argument [depth] specifies the number of moves in advance
+that the
+computer should consider while searching for its next move. In other
+words, this argument specifies the depth of the search tree.
+Essentially, this argument will control the time takes for the computer
+to make a move.</li>
+</ul>
+After reading the input file, the program gets into the following loop:<br>
+<ol>
+<li>If computer-next, goto 2, else goto 5.</li>
+<li>Print the current board state and score. If the board is
+full, exit.</li>
+<li>Choose and make the next move.</li>
+<li>Save the current board state in a file called computer.txt
+(in same
+format as input file).</li>
+<li>Print the current board state and score. If the board is
+full, exit.</li>
+<li>Ask the human user to make a move (make sure that the move
+is valid,
+otherwise repeat request to the user).</li>
+<li>Save the current board state in a file called human.txt (in
+same format
+as input file).</li>
+<li>Goto 2.</li>
+</ol>
+<span style="font-weight: bold;">One-Move Mode</span><br>
+<br>
+The purpose of the one-move mode is to make it easy for programs to
+compete against each other, and communicate their moves to each other
+using text files. The one-move mode is invoked as follows:<br>
+<br>
+<span style="font-style: italic; font-weight: bold;">java
+maxconnect4
+one-move [input_file] [output_file] [depth]</span><br>
+<br>
+For example:<br>
+<br>
+<span style="font-style: italic;">java maxconnect4
+one-move red_next.txt green_next.txt 5</span><br>
+<br>
+In this case, the program simply makes a single move and terminates. In
+particular, the program should:<br>
+<ul>
+<li>Read the input file and initialize the board state and
+current score,
+as in interactive mode.</li>
+<li>Print the current board state and score. If the board is
+full, exit.</li>
+<li>Choose and make the next move.</li>
+<li>Print the current board state and score.</li>
+<li>Save the current board state to the output file <span style="font-weight: bold;">IN EXACTLY THE SAME
+FORMAT THAT IS USED FOR INPUT FILES</span>.</li>
+<li>Exit</li>
+</ul>
+<span style="font-weight: bold;">Sample code</span><br>
+<br>
+The sample code needs an input file to run. Sample input files that you
+can download are <a href="assmt2_files/input1.txt">input1.txt</a>
+and <a href="assmt2_files/input2.txt">input2.txt</a>.
+You are free to make other
+input files to experiment with, as long as they follow the same format.
+In the input files, a 0 stands for an empty spot, a 1 stands for a
+piece played by the first player, and a 2 stands for a piece played by
+the second player. The last number in the input file indicates which
+player plays NEXT (and NOT which player played last). Sample code is
+available in:
+<ul>
+<li>Java: download files <a href="assmt2_files/maxconnect4.java">maxconnect4.java</a>,
+<a href="assmt2_files/GameBoard.java">GameBoard.java</a>,
+and
+<a href="assmt2_files/AiPlayer.java">AiPlayer.java</a>.
+Compile on omega using:<br>
+<br>
+<span style="font-style: italic;">javac
+maxconnect4.java GameBoard.java AiPlayer.java</span><br>
+<br>
+An example command line that runs the program (assuming that you have
+input1.txt saved in the same directory) is:<br>
+<br>
+<span style="font-style: italic;">java maxconnect4
+one-move input1.txt output1.txt 10</span><br>
+<br>
+</li>
+<li>C++: download file <a href="assmt2_files/maxconnect4.cpp">maxconnect4.cpp</a>.
+Compile on omega using:<br>
+<br>
+<span style="font-style: italic;">g++ -o maxconnect4
+maxconnect.cpp</span><br>
+<br>
+An example command line that runs the program (assuming that you have
+input1.txt saved in the same directory) is:<br>
+<br>
+<span style="font-style: italic;">maxconnect4 one-move
+input1.txt output1.txt 10</span><br>
+<br>
+</li>
+<li>Python (Version 2.4): download file <a href="assmt2_files/maxconnect4.py">maxconnect4.py</a>
+and
+<a href="assmt2_files/MaxConnect4Game.py">MaxConnect4Game.py</a>.
+<br>
+<br>
+An example command line that runs the program (assuming that you have
+input1.txt saved in the same directory) is:<br>
+<br>
+<span style="font-style: italic;">./maxconnect4.py
+one-move input1.txt output1.txt 10</span>
+</li>
+</ul>
+The sample code implements a system playing max-connect4 (in one-move
+mode only) by making random moves. While the AI part of the sample code
+leaves much to be desired (your assignment is to fix that), the code
+can get you started by showing you how to represent and generate board
+states, how to save/load the game state to and from files in the
+desired format, and how to count the score (though faster
+score-counting methods are possible).
+<br>
+<br>
+<span style="font-weight: bold;">Measuring Execution Time</span><br>
+<br>
+You can measure the execution time for your program on omega by
+inserting the word "time" in the beginning of your command line. For
+example, if you want to measure how much time it takes for your system
+to make one move with the depth parameter set to 10, try this:<br>
+<br>
+time java maxconnect4 one-move red_next.txt green_next.txt 10<br>
+<br>
+Your output will look something like:<br>
+<span style="font-style: italic;">&nbsp;&nbsp;&nbsp;
+real&nbsp;&nbsp;&nbsp; 0m0.003s</span><br style="font-style: italic;">
+<span style="font-style: italic;">&nbsp;&nbsp;&nbsp;
+user&nbsp;&nbsp;&nbsp; 0m0.002s</span><br style="font-style: italic;">
+<span style="font-style: italic;">&nbsp;&nbsp;&nbsp;
+sys&nbsp;&nbsp;&nbsp;&nbsp; 0m0.001s</span><br>
+<br>
+Out of the above three lines, the <span style="font-weight: bold;">user</span>
+line is what you should report.
+<br>
+<br>
+<span style="font-weight: bold;">Grading</span><br>
+<br>
+The programming section will be graded out of 50 points.<br>
+<ul>
+<li>20 points: Implementing plain minimax.</li>
+<li>12 points: Implementing alpha-beta pruning (if correctly
+implemented, will algo get&nbsp;points for plain minimax, <span style="font-weight: bold;">you don't need to
+have separate implementation for it</span>)</li>
+<li>10 points: Implementing the depth-limited version of
+minimax (if
+correctly implemented, and includes alpha-beta pruning, you also get
+the points for plain minimax and the&nbsp; points for alpha-beta
+search,
+<span style="font-weight: bold;">you don't need to
+have separate implementations for those</span>).&nbsp;</li>
+<ul>
+<li>For full
+credit, you obviously need to come up with a reasonable evaluation
+function to be used in the context of depth-limited search.&nbsp;</li>
+<li>A
+"reasonable" evaluation function is defined to be an evaluation
+function that allows your program to consistently beat a player who
+just plays randomly.</li>
+</ul>
+<li>3&nbsp;points: Include a file, <span style="font-weight: bold;">eval_explanation.txt (can also
+use .pdf)</span>,
+that explains the evaluation function used for depth-limited search.</li>
+<li>5&nbsp;points: Include in your submission an
+accurate table
+of depth limit vs CPU runtime (for making a single move using one move
+mode) when the&nbsp;board is
+empty. Document the number of measurements for each entry on the table.
+All measurements should be performed on omega. Your table should
+include every single depth, until (and including) the first depth for
+which the time exceeds one minute.</li>
+</ul>
+<hr>
+<h2>How to submit</h2>
+For Written part: <br>
+<ul>
+<li>The answers can be typed as a document or handwritten and
+scanned.&nbsp;</li>
+<li>Name files as
+assignment2_written_&lt;net-id&gt;.&lt;format&gt;</li>
+<li>Accepted document formats .pdf.&nbsp;If you are using
+Word, OpenOffice or LibreOffice, make sure
+to
+save as .pdf</li>
+<li>Please do not submit
+.txt files.</li>
+<li>If
+you are scanning handwritten documents make sure to scan it at a
+minimum of 600dpi and save as a&nbsp;.pdf or .png file. Do not
+insert images in word document and submit.&nbsp;</li>
+<li>If there are multiple files in your submission, zip them
+together as assignment2_written_&lt;net-id&gt;.zip.</li>
+</ul>
+For Programming part: Implementations in C, C++, Java, and Python will
+be accepted. Points will be taken off
+for failure to comply
+with this requirement.<br>
+<br>
+Create a ZIPPED
+directory called assignment2_code_&lt;net-id&gt;.zip (no other
+forms
+of compression
+accepted, contact the instructor or TA if you do not know how to
+produce .zip files). The directory should contain source code.The
+folder should also contain a file called readme.txt, which
+should specify precisely:<br>
+<ul>
+<li>Name and UTA ID of the student.</li>
+<li>What programming language is used.</li>
+<li>How the code is structured.</li>
+<li>How to run the code, including very specific compilation
+instructions,
+if compilation is needed. Instructions such as "compile using g++" are
+NOT considered specific.</li>
+<li>Insufficient or unclear instructions will be penalized by
+up to 10
+points.</li>
+<li><span style="font-weight: bold;">Code that
+does not run on omega machines gets AT MOST 30 points</span>.
+</li>
+</ul>
+The assignment should be submitted via <a href="http://elearn.uta.edu/">Blackboard</a>.&nbsp;
+Zip all the files for both the programming and written files together
+into&nbsp;assignment2_&lt;net-id&gt;.zip and submit it.
+<h2>Submission checklist</h2>
+Is the code running on omega?<br>
+Does the submission include a readme.txt file, as specified?<br>
+Have scanned all the documents for the written section as specified?
+</body></html>

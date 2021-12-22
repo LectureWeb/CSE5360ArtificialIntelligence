@@ -1,0 +1,179 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<!-- saved from url=(0080)http://vlm1.uta.edu/~athitsos/courses/cse4308_fall2015/assignments/assignment9b/ -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Written Assignment 6</title>
+
+<link href="chrome-extension://lnkdbjbjpnpjeciipoaflmpcddinpjjp/mytube.css" rel="stylesheet" type="text/css">
+<style type="text/css"></style>
+<script src="chrome-extension://lnkdbjbjpnpjeciipoaflmpcddinpjjp/mutationObserver.js"></script>
+<script src="chrome-extension://lnkdbjbjpnpjeciipoaflmpcddinpjjp/mytube.js"></script>
+<link rel="stylesheet" type="text/css" href="chrome-extension://pkehgijcmpdhfbdbbnkijodmdjhbjlgp/skin/socialwidgets.css">
+</head>
+
+<body>
+<h1>Written Assignment 6</h1>
+The assignment should be submitted via <a href="http://elearn.uta.edu/">Blackboard</a>.&nbsp;
+<hr>
+<h3> Task 1 (30 points) </h3>
+<img src="./wa6_files/decision_tree.png" border="1" width="600">
+<p><strong> Figure 1: A decision tree for estimating
+whether the patron will be willing to wait for a table at a restaurant.
+</strong></p>
+<p><strong> Part a:</strong> Suppose that, on the
+entire set of training samples available for constructing the decision
+tree of Figure 1, 80 people decided to wait, and 20 people decided not
+to wait. What is the initial entropy at node A (before the test is
+applied)? </p>
+<p><strong> Part b:</strong> As mentioned in the
+previous part, at node A 80 people decided to wait, and 20 people
+decided not to wait. </p>
+<ul>
+<li> Out of the cases where people decided to wait, in 20 cases
+it was weekend and in 60 cases it was not weekend. </li>
+<li> Out of the cases where people decided not to wait, in 15
+cases it was weekend and in 5 cases it was not weekend.
+</li>
+</ul>
+What is the information gain for the weekend test at node A?
+
+<p><strong> Part c:</strong> In the decision tree of
+Figure 1, node E uses the exact same test (whether it is weekend or
+not) as node A. What is the information gain, at node E, of using the
+weekend test? </p>
+<p><strong> Part d:</strong> We have a test case of a
+hungry patron who came in on a rainy Tuesday. Which leaf node does this
+test case end up in? What does the decision tree output for that case?
+</p>
+<p><strong> Part e:</strong> We have a test case of a
+not hungry patron who came in on a sunny Saturday. Which leaf node does
+this test case end up in? What does the decision tree output for that
+case?
+</p>
+<p></p>
+<hr>
+<h3> Task 2 (20 points) </h3>
+<table style="text-align: center;" border="1" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td>&nbsp;&nbsp;Class&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;A&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;B&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;C&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td>X</td>
+<td>1</td>
+<td>2</td>
+<td>1</td>
+</tr>
+<tr>
+<td>X</td>
+<td>2</td>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr>
+<td>X</td>
+<td>3</td>
+<td>2</td>
+<td>2</td>
+</tr>
+<tr>
+<td>X</td>
+<td>1</td>
+<td>3</td>
+<td>3</td>
+</tr>
+<tr>
+<td>X</td>
+<td>1</td>
+<td>2</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Y</td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Y</td>
+<td>3</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Y</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Y</td>
+<td>3</td>
+<td>3</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Y</td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<br>
+We want to build a decision tree that determines whether a certain
+pattern is of type X or type Y. The decision tree can only use tests
+that are based on attributes A, B, and C. Each attribute has 3 possible
+values: 1, 2, 3 (we do not apply any thresholding). We have the 10
+training examples, shown on the table (each row corresponds to a
+training example).
+<p>What is the information gain of each attribute at the root?
+Which attribute achieves the highest information gain at the root?
+</p>
+<p></p>
+<hr>
+<h3> Task 3 (20 points) </h3>
+Let T1 be a decision tree with root node R1, and T2 be a decision tree
+with root node R2. We define that T1 and T2 are equal if and only if
+either of the following two cases is true:
+<ul>
+<li> Base case 1: R1 and R2 are leaf nodes, and they output the
+same answer (i.e., the same classification result).
+</li>
+<li> Recursive ase: R1 and R2 ask the same question Q, and for
+every possible answer A to question Q, the children of R1 and R2 that
+correspond to answer A are equal.
+</li>
+</ul>
+Suppose that we have a domain where every example consists of 5 boolean
+variables. We have a set X of decision trees for that domain, and no
+two elements of X are equal to each other. What is the largest possible
+number of elements for X? Justify your answer.
+<p></p>
+<hr>
+<h3> Task 4 (20 points) </h3>
+Suppose that, at a node N of a decision tree, we have 1000 training
+examples. There are four possible class labels (A, B, C, D) for each of
+these training examples.
+<p><strong> Part a:</strong> What is the highest
+possible and lowest possible entropy value at node N? </p>
+<p><strong> Part b:</strong> Suppose that, at node N,
+we choose an attribute K. What is the highest possible and lowest
+possible information gain for that attribute? </p>
+<p></p>
+<hr>
+<h3> Task 5 (10 points) </h3>
+Your boss at a software company gives you a binary classifier (i.e., a
+classifier with only two possible output values) that predicts, for any
+basketball game, whether the home team will win or not. This classifier
+has a 28% accuracy, and your boss assigns you the task of improving
+that classifier, so that you get an accuracy that is better than 60%.
+How do you achieve that task? Can you guarantee achieving better than
+60% accuracy?
+
+<p></p>
+<p></p>
+<mytubeelement id="myTubeRelayElementToPage" event="preferencesUpdated" data="{&quot;bundle&quot;:{&quot;label_delimitor&quot;:&quot;:&quot;,&quot;percentage&quot;:&quot;%&quot;,&quot;smart_buffer&quot;:&quot;Smart Buffer&quot;,&quot;start_playing_when_buffered&quot;:&quot;Start playing when buffered&quot;,&quot;sound&quot;:&quot;Sound&quot;,&quot;desktop_notification&quot;:&quot;Desktop Notification&quot;,&quot;continuation_on_next_line&quot;:&quot;-&quot;,&quot;loop&quot;:&quot;Loop&quot;,&quot;only_notify&quot;:&quot;Only Notify&quot;,&quot;estimated_time&quot;:&quot;Estimated Time&quot;,&quot;global_preferences&quot;:&quot;Global Preferences&quot;,&quot;no_notification_supported_on_your_browser&quot;:&quot;No notification style supported on your browser version&quot;,&quot;video_buffered&quot;:&quot;Video Buffered&quot;,&quot;buffered&quot;:&quot;Buffered&quot;,&quot;hyphen&quot;:&quot;-&quot;,&quot;buffered_message&quot;:&quot;The video has been buffered as requested and is ready to play.&quot;,&quot;not_supported&quot;:&quot;Not Supported&quot;,&quot;on&quot;:&quot;On&quot;,&quot;off&quot;:&quot;Off&quot;,&quot;click_to_enable_for_this_site&quot;:&quot;Click to enable for this site&quot;,&quot;desktop_notification_denied&quot;:&quot;You have denied permission for desktop notification for this site&quot;,&quot;notification_status_delimitor&quot;:&quot;;&quot;,&quot;error&quot;:&quot;Error&quot;,&quot;adblock_interferance_message&quot;:&quot;Adblock (or similar extension) is known to interfere with SmartVideo. Please add this url to adblock whitelist.&quot;,&quot;calculating&quot;:&quot;Calculating&quot;,&quot;waiting&quot;:&quot;Waiting&quot;,&quot;will_start_buffering_when_initialized&quot;:&quot;Will start buffering when initialized&quot;,&quot;will_start_playing_when_initialized&quot;:&quot;Will start playing when initialized&quot;,&quot;completed&quot;:&quot;Completed&quot;,&quot;buffering_stalled&quot;:&quot;Buffering is stalled. Will stop.&quot;,&quot;stopped&quot;:&quot;Stopped&quot;,&quot;hr&quot;:&quot;Hr&quot;,&quot;min&quot;:&quot;Min&quot;,&quot;sec&quot;:&quot;Sec&quot;,&quot;any_moment&quot;:&quot;Any Moment&quot;,&quot;popup_donate_to&quot;:&quot;Donate to&quot;,&quot;extension_id&quot;:&quot;lnkdbjbjpnpjeciipoaflmpcddinpjjp&quot;},&quot;prefs&quot;:{&quot;desktopNotification&quot;:true,&quot;soundNotification&quot;:true,&quot;logLevel&quot;:0,&quot;enable&quot;:true,&quot;loop&quot;:false,&quot;hidePopup&quot;:false,&quot;autoPlay&quot;:false,&quot;autoBuffer&quot;:false,&quot;autoPlayOnBuffer&quot;:false,&quot;autoPlayOnBufferPercentage&quot;:42,&quot;autoPlayOnSmartBuffer&quot;:true,&quot;quality&quot;:&quot;default&quot;,&quot;fshd&quot;:false,&quot;onlyNotification&quot;:false,&quot;enableFullScreen&quot;:true,&quot;saveBandwidth&quot;:false,&quot;hideAnnotations&quot;:false,&quot;turnOffPagedBuffering&quot;:false}}"></mytubeelement><mytubeelement id="myTubeRelayElementToTab" event="relayPrefs" data="{&quot;loadBundle&quot;:true}"></mytubeelement>
+</body></html>

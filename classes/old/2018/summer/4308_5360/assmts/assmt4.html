@@ -1,0 +1,210 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Assignment 4</title></head>
+<body>
+<h1>Assignment 4</h1>
+<h2>Programming &amp; Written Assignment - First order Logic, Planning</h2>
+<span style="font-weight: bold;"></span>The
+assignment should be submitted via <a href="http://elearn.uta.edu/">Blackboard</a>.<br>
+<br>
+<hr><h2>Task 1 (CSE 4308: 15 Points; CSE 5360: 10 points)</h2>
+Consider a knowledge base with these facts:
+<ul>
+<li> There is a dog called Shadow.
+</li>
+<li> John gave Shadow to Mary.
+</li>
+<li> If Shadow is male, Mary gave a smartphone to John.
+</li>
+<li> If Shadow is female, Mary gave John a laptop.
+</li>
+<li> John only gives male dogs to people.
+</li>
+<li> Mary gave John a laptop.
+</li>
+</ul>
+Convert the above knowledge-base to a first-order logic knowledge base.
+For each predicate, function, constant, or variable that you use,
+explicitly state:
+<ul>
+<li> What type of entity it is (is it a predicate, function,
+constant, or variable).
+</li>
+<li> What its semantics are (what it means).
+</li>
+</ul>
+<br>
+<hr>
+<h2>Task 2 (15 points)</h2><p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">Consider
+this first-order logic knowledge base:</p>
+<pre style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; widows: 1; word-spacing: 0px;">taller(John, Bill)<br>(∀x) taller(x, Bill) =&gt; tall(x)<br></pre>
+<span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;">In
+this first-order logic knowledge base,<span class="Apple-converted-space">&nbsp;</span></span><tt style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">taller</tt><span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;"><span class="Apple-converted-space">&nbsp;</span>and<span class="Apple-converted-space">&nbsp;</span></span><tt style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">tall</tt><span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;"><span class="Apple-converted-space">&nbsp;</span>are
+predicates,<span class="Apple-converted-space">&nbsp;</span></span><tt style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">x</tt><span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;"><span class="Apple-converted-space">&nbsp;</span>is a
+variable, and<span class="Apple-converted-space">&nbsp;</span></span><tt style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">John</tt><span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;">,<span class="Apple-converted-space">&nbsp;</span></span><tt style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">Bill</tt><span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;"><span class="Apple-converted-space">&nbsp;</span>are
+constants. Convert this first-order logic knowledge base into a
+propositional logic knowledge base, by performing the following two
+steps:</span>
+<ol style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">
+<li>Define symbols for the propositional-logic version of the
+knowledge base, and specify what their equivalents are in the original
+first-order logic knowledge base.</li>
+<li>Define the statements that should be stored in the
+propositional-logic version of the knowledge base.</li>
+</ol>
+<span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;">The
+symbols you define should be comprehensive enough to allow us to
+translate any well-defined inference problem in the original knowledge
+base to an equivalent problem for the propositional knowledge base.
+Anything that we can infer from the original first-order logic
+knowledge base we should also be able to infer from the
+propositionalized knowledge base, and vice versa.</span>&nbsp;<br>
+<br>
+<hr><h2>Task 3 (35 points) </h2>
+The task in this programming assignment is to design appropriate
+descriptions of facts, actions, and goals, using the PDDL language,
+for the <a href="http://en.wikipedia.org/wiki/Tower_of_Hanoi">Tower
+of
+Hanoi problem</a>. You will
+use your descriptions as inputs to a Graphplan implementation. If your
+descriptions are correct, Graphplan will produce appropriate plans.
+<h3> Compiling and Running the Software </h3>
+The Graphplan software can be downloaded from <a href="./assmt4_files/graphplan.zip">graphplan.zip</a>.
+See
+the README file in that package for additional information. To compile
+the software on <tt>omega</tt>, unzip the directory, and,
+from that directory, type
+<pre>make graphplan<br></pre>
+Once the program compiles, it can be invoked from the commandline as
+follows:
+<pre>graphplan -o [operators_file] -f [facts_file]<br></pre>
+For example:
+<pre>graphplan -o block_ops.txt -f block_facts3.txt<br></pre>
+<ul>
+<li>Argument <tt>operators_file</tt> specifies the
+location of a text file containing definitions of actions. For example,
+see <a href="./assmt4_files/block_ops.txt">block_ops.txt</a>
+for definitions of actions appropriate for the blocks world.
+</li>
+<li>Argument <tt>facts_file</tt> specifies the
+location of a text file containing definitions of facts about the
+environment, including objects (and types for those objects), general
+predicates that are always true, initial state description, and goal
+description. For example, see <a href="./assmt4_files/block_facts2.txt">block_facts2.txt</a>,
+<a href="./assmt4_files/block_facts3.txt">block_facts3.txt</a>,
+and <a href="./assmt4_files/block_facts4.txt">block_facts4.txt</a>
+for example fact descriptions for the blocks world.
+</li>
+</ul>
+Once you start running the software, it will ask you three questions.
+<span style="font-weight: bold;">Just hit enter for each
+question</span>, so as to use the default settings. If
+your descriptions of actions and facts are correct, the program will
+print out a plan achieving the stated goal.
+<p>Note that the preconds in each fact file will contain both
+statements that are always true in that domain (i.e., in the Tower of
+Hanoi domain), and statements that simply
+describe the initial state for that specific planning problem. In
+addition to the facts files for the specific planning problems you are
+given, you will have to create a separate text file that includes all
+the statements that must be present in ANY facts file for that domain (or mention what they are in your readme file).
+</p>
+<h3>Tower of Hanoi Description</h3>
+A description of the Tower of Hanoi domain can be found at <a href="http://en.wikipedia.org/wiki/Tower_of_Hanoi">Wikipedia</a>.
+In all problems that your program will be tested with there will be
+five discs (called disk1, disk2, disk3, disk4, disk5) and three pegs
+(called A, B, C). In all your facts files you will have to include both
+a common part (defining objects and relations among objects) and a
+plan-specific part (describing the initial state and goal for each
+plan). Note that some of the five disks may not appear in some of the
+planning problems.
+<p>The two planning problems you have to solve are:
+</p>
+<p><strong>Problem 1</strong>
+</p>
+<pre>initial state:<br>(on disk1 disk2)<br>(on disk2 A) <br>(clear disk1)<br>(clear B)<br>(clear C) <br><br>goal:<br>(on disk1 B)<br>(on disk2 C)</pre>
+<strong>Problem 2</strong>
+<pre>initial state:<br>(on disk1 disk2) <br>(on disk2 disk3)<br>(on disk3 disk4)<br>(on disk4 disk5)<br>(on disk5 C) <br>(clear disk1) <br>(clear A) <br>(clear B)<br><br>goal:<br>(on disk1 disk2) <br>(on disk2 disk3)<br>(on disk3 disk4)<br>(on disk4 disk5)<br>(on disk5 A)<br></pre>
+<h3> Grading </h3>
+This task will be graded for 35 points. Specifically, the point allocation is:
+<ul>
+<li>20 points: defining facts and actions correctly. The
+language that you define (i.e., the actions, objects, and general
+statements that are always true) should be sufficient not only for the
+specific plans that you are required to construct, but also for any
+other planning problems that we can define in the Tower of Hanoi
+domain. As part of grading, we will also test your
+solutions on planning problems that we will make up.
+</li>
+<li>15 points: solving the planning problems
+you
+are given + 1 additional problem per domain. You get 5 points for each
+problem. If you solve all 3
+correctly, you get 15 points.</li>
+</ul>
+<hr>
+<h2>Task 4 (20 points)</h2>
+Two adults and two children are on the left side of the river. Each
+adult
+weighs 150 pounds. Each child has half the weight of an adult, so each
+child weighs 75 pounds. They all want to cross to the right side of the
+river. However, the only means of transportation they can use is a
+boat, and the boat can carry a maximum of 150 pounds. Thus, the boat
+can carry one adult without children, or one child, or two children.
+Any adult or child can operate the boat, but the boat cannot be
+operated without having at least one person on the boat. The goal is to
+come up with a plan for moving everyone from the left side to the right
+side using multiple boat trips.
+<br>
+<br>
+Define
+appropriate actions for this planning problem, in the PDDL language.
+For each action, provide a name, arguments, preconditions, and effects.
+Also, describe the initial state and the goal, using PDDL.<br>
+<br>
+<hr>
+<h2>Task 5 (CSE 4308: 15 Points; CSE 5360: 10 Points)</h2>
+<p style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;">We
+have state descriptions and action definitions written following the
+conventions used in the graphplan software of Task 3. One of the
+actions is defined as follows:</p>
+<pre style="color: rgb(0, 0, 0); font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px;">(operator<br> aaa<br> (params<br> (&lt;b&gt; ttt1) (&lt;c&gt; ttt1))<br> (preconds<br> (ppp1 &lt;b&gt; &lt;c&gt;) (ppp2 &lt;b&gt;) (ppp3 &lt;c&gt;))<br> (effects<br> (eee1 &lt;b&gt; &lt;c&gt;) (eee2 &lt;b&gt;) (del eee2 &lt;c&gt;) (del eee3 &lt;c&gt;)))<br></pre>
+Suppose
+we are at a state S1 described as follows (again, using graphplan
+syntax):<br>
+<pre style="color: rgb(0, 0, 0); font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px;">(A ttt1)<br>(B ttt1)<br>(C ttt1)<br>(ppp1 B C)<br>(ppp2 A)<br>(ppp2 B)<br>(ppp3 C)<br>(eee1 A C)<br>(eee2 C)<br>(eee3 C)<br>(eee3 A)<br></pre>
+<span style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; display: inline ! important; float: none;">What
+is the state resulting from applying action aaa(B,C) to S1? Give a
+complete specification.</span>&nbsp;<br>
+<br>
+<hr>
+<h2>Task 6 (CSE 4308: 10 Points (EC); CSE 5360: 10 points)</h2>
+Suppose that we are using PDDL to describe facts and actions in a
+certain world called JUNGLE. In the JUNGLE world there are 4
+predicates, each predicate takes at most 3 arguments, and there are 5
+constants. Give a reasonably tight bound on the number of unique states
+in the JUNGLE world. Justify your bound.<br>
+<span style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; display: inline ! important; float: none;"><br>
+</span>
+<hr>
+<h2>How to submit</h2>
+Submissions should be made using <a href="http://elearn.uta.edu/">Blackboard</a>.
+<p>Submit a ZIPPED directory called&nbsp;<tt>assignment7_&lt;netid&gt;.zip</tt>
+(no other
+forms of compression accepted, contact the instructor or TA if you do
+not know how to produce a ZIP file) that contains</p>
+<ul>
+<li>Your three text files (hanoi_ops.txt, hanoi_facts1.txt,
+hanoi_facts2.txt) that are your solutions to the
+two Tower of Hanoi problems in Task 3.</li><li>Solutions to the remaining Tasks in .pdf
+format or scanned .png images.</li>
+<li>The submission should also contain a file called
+readme.txt,
+which should specify precisely:</li>
+<ul>
+<li>Name and UTA ID of the student.</li>
+<li>Which parts of facts files is information common to all
+problems in that domain.</li>
+</ul>
+</ul>
+</body></html>

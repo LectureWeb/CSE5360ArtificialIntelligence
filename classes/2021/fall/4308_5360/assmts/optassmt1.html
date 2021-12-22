@@ -1,0 +1,675 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+  
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+  <title>Optional Assignment 1</title>
+
+  
+</head><body style="background-color: rgb(231, 246, 253);">
+<h1>Optional Assignment 1</h1>
+
+<h2>Programming Assignment - Game Playing &amp; Propositional Logic<br>
+</h2>
+
+<h2>Task 1 (MAX 75 points):</h2>
+
+Solve <span style="font-weight: bold;">ONE</span>
+of the given programming tasks
+<h2>Task 1(a):</h2>
+
+<div style="text-align: justify;">The task in this
+programming assignment is to implement an agent that
+plays the Max-Connect4 game using search. Figure 1 shows the first few
+moves of a game. The game is played on a 6x7 grid, with six rows and
+seven columns. There are two players, player A (red) and player B
+(green). The two players take turns placing pieces on the board: the
+red player can only place red pieces, and the green player can only
+place green pieces.<br>
+<br>
+It is best to think of the board as standing upright. We will assign a
+number to every row and column, as follows: columns are numbered from
+left to right, with numbers 1, 2, ..., 7. Rows are numbered from bottom
+to top, with numbers 1, 2, ..., 6. When a player makes a move, the move
+is completely determined by specifying the COLUMN where the piece will
+be placed. If all six positions in that column are occupied, then the
+move is invalid, and the program should reject it and force the player
+to make a valid move. In a valid move, once the column is specified,
+the piece is placed on that column and "falls down", until it reaches
+the lowest unoccupied position in that column.<br>
+<br>
+The game is over when all positions are occupied. Obviously, every
+complete game consists of 42 moves, and each player makes 21 moves. The
+score, at the end of the game is determined as follows: consider each
+quadruple of four consecutive positions on board, either in the
+horizontal, vertical, or each of the two diagonal directions (from
+bottom left to top right and from bottom right to top left). The red
+player gets a point for each such quadruple where all four positions
+are occupied by red pieces. Similarly, the green player gets a point
+for each such quadruple where all four positions are occupied by green
+pieces. The player with the most points wins the game.<br>
+<br>
+Your program will run in two modes: an interactive mode, that is best
+suited for the program playing against a human player, and a one-move
+mode, where the program reads the current state of the game from an
+input file, makes a single move, and writes the resulting state to an
+output file. The one-move mode can be used to make programs play
+against each other. Note that THE PROGRAM MAY BE EITHER THE RED OR THE
+GREEN PLAYER, THAT WILL BE SPECIFIED BY THE STATE, AS SAVED IN THE
+INPUT FILE.<br>
+<br>
+As part of this assignment, you will also need to measure and report
+the time that your program takes, as a function of the number of moves
+it explores. All time measurements should report CPU time, not total
+time elapsed. CPU time does not depend on other users of the system,
+and thus is a meaningful measurement of the efficiency of the
+implementation.
+</div>
+
+<div style="text-align: center;"><img style="width: 684px; height: 1113px;" title="Sample Max-Connect Game" alt="Sample Max-Connect Game" src="optassmt1_files/game.gif"><br>
+Figure 1: Sample Max-Connect Game (15 moves in)
+</div>
+
+<h2>Interactive Mode</h2>
+
+In the interactive mode, the game should run from the command line with
+the following arguments (assuming a Java implementation, with obvious
+changes for C++ or other implementations):<br>
+
+<br>
+
+<span style="font-style: italic; font-weight: bold;">java
+maxconnect4
+interactive [input_file] [computer-next/human-next]
+[depth]</span><br>
+
+<br>
+
+For example:<br>
+
+<br>
+
+<span style="font-style: italic;">java maxconnect4
+interactive input1.txt computer-next 7</span><br>
+
+<ul>
+
+  <li>Argument interactive specifies that the program runs in
+interactive
+mode.</li>
+  <li>Argument [input_file] specifies an input file that contains
+an initial
+board state. This way we can start the program from a non-empty board
+state. If the input file does not exist, the program should just create
+an empty board state and start again from there.</li>
+  <li>Argument [computer-first/human-first] specifies whether the
+computer
+should make the next move or the human.</li>
+  <li>Argument [depth] specifies the number of moves in advance
+that the
+computer should consider while searching for its next move. In other
+words, this argument specifies the depth of the search tree.
+Essentially, this argument will control the time takes for the computer
+to make a move.</li>
+</ul>
+
+After reading the input file, the program gets into the following loop:<br>
+
+<ol>
+
+  <li>If computer-next, goto 2, else goto 5.</li>
+  <li>Print the current board state and score. If the board is
+full, exit.</li>
+  <li>Choose and make the next move.</li>
+  <li>Save the current board state in a file called computer.txt
+(in same
+format as input file).</li>
+  <li>Print the current board state and score. If the board is
+full, exit.</li>
+  <li>Ask the human user to make a move (make sure that the move
+is valid,
+otherwise repeat request to the user).</li>
+  <li>Save the current board state in a file called human.txt (in
+same format
+as input file).</li>
+  <li>Goto 2.</li>
+</ol>
+
+<h2>One-Move Mode</h2>
+
+The purpose of the one-move mode is to make it easy for programs to
+compete against each other, and communicate their moves to each other
+using text files. The one-move mode is invoked as follows:<br>
+
+<br>
+
+<span style="font-style: italic; font-weight: bold;">java
+maxconnect4
+one-move [input_file] [output_file] [depth]</span><br>
+
+<br>
+
+For example:<br>
+
+<br>
+
+<span style="font-style: italic;">java maxconnect4
+one-move red_next.txt green_next.txt 5</span><br>
+
+<br>
+
+In this case, the program simply makes a single move and terminates. In
+particular, the program should:<br>
+
+<ul>
+
+  <li>Read the input file and initialize the board state and
+current score,
+as in interactive mode.</li>
+  <li>Print the current board state and score. If the board is
+full, exit.</li>
+  <li>Choose and make the next move.</li>
+  <li>Print the current board state and score.</li>
+  <li>Save the current board state to the output file <span style="font-weight: bold;">IN EXACTLY THE SAME
+FORMAT THAT IS USED FOR INPUT FILES</span>.</li>
+  <li>Exit</li>
+</ul>
+
+<h2>Sample code</h2>
+
+The sample code needs an input file to run. Sample input files that you
+can download are <a href="optassmt1_files/input1.txt">input1.txt</a>
+and <a href="optassmt1_files/input2.txt">input2.txt</a>.
+You are free to make other
+input files to experiment with, as long as they follow the same format.
+In the input files, a 0 stands for an empty spot, a 1 stands for a
+piece played by the first player, and a 2 stands for a piece played by
+the second player. The last number in the input file indicates which
+player plays NEXT (and NOT which player played last). Sample code is
+available in:
+<ul>
+
+  <li>Java: download files <a href="optassmt1_files/maxconnect4.java">maxconnect4.java</a>,
+    <a href="optassmt1_files/GameBoard.java">GameBoard.java</a>,
+and
+    <a href="optassmt1_files/AiPlayer.java">AiPlayer.java</a>.
+Compile on omega using:<br>
+    <br>
+    <span style="font-style: italic;">javac
+maxconnect4.java GameBoard.java AiPlayer.java</span><br>
+    <br>
+An example command line that runs the program (assuming that you have
+input1.txt saved in the same directory) is:<br>
+    <br>
+    <span style="font-style: italic;">java maxconnect4
+one-move input1.txt output1.txt 10</span><br>
+    <br>
+  </li>
+  <li>C++: download file <a href="optassmt1_files/maxconnect4.cpp">maxconnect4.cpp</a>.
+Compile on omega using:<br>
+    <br>
+    <span style="font-style: italic;">g++ -o maxconnect4
+maxconnect.cpp</span><br>
+    <br>
+An example command line that runs the program (assuming that you have
+input1.txt saved in the same directory) is:<br>
+    <br>
+    <span style="font-style: italic;">maxconnect4 one-move
+input1.txt output1.txt 10</span><br>
+    <br>
+  </li>
+  <li>Python (Version 2.4): download file <a href="optassmt1_files/maxconnect4.py">maxconnect4.py</a>
+and
+    <a href="optassmt1_files/MaxConnect4Game.py">MaxConnect4Game.py</a>.
+(Zipped version of files <a href="optassmt1_files/Gamplaying_py.zip">here</a>).
+    <br>
+    <br>
+An example command line that runs the program (assuming that you have
+input1.txt saved in the same directory) is:<br>
+    <br>
+    <span style="font-style: italic;">./maxconnect4.py
+one-move input1.txt output1.txt 10</span>
+  </li>
+</ul>
+
+The sample code implements a system playing max-connect4 (in one-move
+mode only) by making random moves. While the AI part of the sample code
+leaves much to be desired (your assignment is to fix that), the code
+can get you started by showing you how to represent and generate board
+states, how to save/load the game state to and from files in the
+desired format, and how to count the score (though faster
+score-counting methods are possible).
+<h2>Measuring Execution Time</h2>
+
+You can measure the execution time for your program on omega by
+inserting the word "time" in the beginning of your command line. For
+example, if you want to measure how much time it takes for your system
+to make one move with the depth parameter set to 10, try this:<br>
+
+<br>
+
+time java maxconnect4 one-move red_next.txt green_next.txt 10<br>
+
+<br>
+
+Your output will look something like:<br>
+
+<span style="font-style: italic;">&nbsp;&nbsp;&nbsp;
+real&nbsp;&nbsp;&nbsp; 0m0.003s</span><br style="font-style: italic;">
+
+<span style="font-style: italic;">&nbsp;&nbsp;&nbsp;
+user&nbsp;&nbsp;&nbsp; 0m0.002s</span><br style="font-style: italic;">
+
+<span style="font-style: italic;">&nbsp;&nbsp;&nbsp;
+sys&nbsp;&nbsp;&nbsp;&nbsp; 0m0.001s</span><br>
+
+<br>
+
+Out of the above three lines, the <span style="font-weight: bold;">user</span>
+line is what you should report.
+<h2>Grading</h2>
+
+The assignments will be graded out of 75 points.<br>
+
+<ul>
+
+  <li>30 points: Implementing plain minimax.</li>
+  <li>20 points: Implementing alpha-beta pruning (if correctly
+implemented, will algo get 30 points for plain minimax, <span style="font-weight: bold;">you don't need to
+have separate implementation for it</span>)</li>
+  <li>15 points: Implementing the depth-limited version of
+minimax (if
+correctly implemented, and includes alpha-beta pruning, you also get
+the 30 points for plain minimax and 20 points for alpha-beta search,
+    <span style="font-weight: bold;">you don't need to
+have separate implementations for those</span>).&nbsp;</li>
+  <ul>
+    <li>For full
+credit, you obviously need to come up with a reasonable evaluation
+function to be used in the context of depth-limited search.&nbsp;</li>
+    <li>A
+"reasonable" evaluation function is defined to be an evaluation
+function that allows your program to consistently beat a player who
+just plays randomly.</li>
+  </ul>
+  <li>5 points: Include a file, <span style="font-weight: bold;">eval_explanation.txt
+(can also
+use .pdf, .doc or .docx)</span>,
+that explains the evaluation function used for depth-limited search.</li>
+  <li>5&nbsp;points: Include in your submission an
+accurate table
+of depth limit vs CPU runtime (for making a single move using one move
+mode) when the&nbsp;board is
+empty. Document the number of measurements for each entry on the table.
+All measurements should be performed on omega. Your table should
+include every single depth, until (and including) the first depth for
+which the time exceeds one minute.</li>
+</ul>
+
+<h2>Task 1(b):</h2>
+
+The task in this programming assignment is to implement, a knowledge
+base and an inference engine for the wumpus world. First of all, you
+have to create a knowledge base (stored as a text file) storing the
+rules of the wumpus world, i.e., what we know about pits, monsters,
+breeze, and stench. Second, you have to create an inference engine,
+that given a knowledge base and a statement determines if, based on the
+knowledge base, the statement is definitely true, definitely false, or
+of unknown truth value.
+<h2>Command-line Arguments</h2>
+
+The program should be invoked from the commandline as follows:<br>
+
+<br>
+
+<span style="font-family: Courier New,Courier,monospace;">check_true_false
+wumpus_rules.txt [additional_knowledge_file]
+[statement_file]</span><br>
+
+<br>
+
+For example:<br>
+
+<br>
+
+<span style="font-family: Courier New,Courier,monospace;">check_true_false
+wumpus_rules.txt kb1.txt statement1.txt</span><br>
+
+<ul>
+
+  <li>Argument wumpus_rules.txt specifies the location of a text
+file
+containing the wumpus rules, i.e., the rules that are true in any
+possible wumpus world, as specified above (once again, note that the
+specifications above are not identical to the ones in the book).</li>
+  <li>Argument [additional_knowledge_file] specifies an input
+file that
+contains additional information, presumably collected by the agent as
+it moves from square to square. For example, see <a href="optassmt1_files/kb3.txt">kb3.txt</a>.</li>
+  <li>Argument [statement_file] specifies an input file that
+contains a
+single logical statement. The program should check if, given the
+information in wumpus_rules.txt and [additional_knowledge_file], the
+statement in [statement_file] is definitely true, definitely false, or
+none of the above.
+  </li>
+</ul>
+
+<h2>Output</h2>
+
+<span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;">Your
+program should create a text file called "result.txt". Depending on
+what your inference algorithm determined about the statement being true
+or false, the output file should contain one of the following four
+outputs:</span>
+<ul style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">
+
+  <li><strong>definitely true</strong>.
+This should be the output if the knowledge base entails the statement,
+and the knowledge base does not entail the negation of the statement.</li>
+  <li><strong>definitely false</strong>.
+This should be the output if the knowledge base entails the negation of
+the statement, and the knowledge base does not entail the statement.</li>
+  <li><strong>possibly true, possibly false</strong>.
+This should be the output if the knowledge base entails neither the
+statement nor the negation of the statement.</li>
+  <li><strong>both true and false</strong>.
+This should be the output if the knowledge base entails both the
+statement and the the negation of the statement. This happens when the
+knowledge base is always false (i.e., when the knowledge base is false
+for every single row of the truth table).</li>
+</ul>
+
+<span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;">Note
+that by "knowledge base" we are referring to the conjunction of all
+statements contained in wumpus_rules.txt AND in the additional
+knowledge file.</span>
+<p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">Also
+note that the sample code provided below stores the words "result
+unknown" to the result.txt file. Also, the "both true and false" output
+should be given when the knowledge base (i.e., the info stored in
+wumpus_rules.txt AND in the additional knowledge file) entails both the
+statement from statement_file AND the negation of that statement.</p>
+
+<h2>Syntax</h2>
+
+The wumpus rules file and the additional knowledge file contain
+multiple lines. Each line contains a logical statement. The knowledge
+base constructed by the program should be a conjunction of all the
+statements contained in the two files. The sample code (as described
+later) already does that. The statement file contains a single line,
+with a single logical statement.<br>
+
+Statements are given in prefix notation. Some examples of prefix
+notation are:<br>
+
+<br>
+
+<span style="font-family: Courier New,Courier,monospace;">(or
+M_1_1 B_1_2)</span><br style="font-family: Courier New,Courier,monospace;">
+
+<span style="font-family: Courier New,Courier,monospace;">(and
+M_1_2 S_1_1 (not (or M_1_3 M_1_4)))</span><br style="font-family: Courier New,Courier,monospace;">
+
+<span style="font-family: Courier New,Courier,monospace;">(if
+M_1_1 (and S_1_2 S_1_3))</span><br style="font-family: Courier New,Courier,monospace;">
+
+<span style="font-family: Courier New,Courier,monospace;">(iff
+M_1_2 (and S_1_1 S_1_3 S_2_2))</span><br style="font-family: Courier New,Courier,monospace;">
+
+<span style="font-family: Courier New,Courier,monospace;">(xor
+B_2_2 P_1_2)</span><br style="font-family: Courier New,Courier,monospace;">
+
+<span style="font-family: Courier New,Courier,monospace;">P_1_1</span><br style="font-family: Courier New,Courier,monospace;">
+
+<span style="font-family: Courier New,Courier,monospace;">B_3_4</span><br style="font-family: Courier New,Courier,monospace;">
+
+<span style="font-family: Courier New,Courier,monospace;">(not
+P_1_1)</span><br>
+
+<br>
+
+Statements can be nested, as shown in the above examples.<br>
+
+<br>
+
+Note that:<br>
+
+<ul>
+
+  <li>Any open parenthesis that is not the first character of a
+text line
+must be preceded by white space.</li>
+  <li>Any open parenthesis must be immediately followed by a
+connective
+(without any white space in between).</li>
+  <li>Any close parenthesis that is not the last character of a
+text line
+must be followed by white space.</li>
+  <li>If the logical expression contains just a symbol (and no
+connectives),
+the symbol should NOT be enclosed in parentheses. For example, (P_1_1)
+is not legal, whereas (not P_1_1) is legal. See also the example
+statements given above.</li>
+  <li>Each logical expression should be contained in a single
+line.</li>
+  <li>The wumpus rules file and the additional knowledge file
+contain a set
+of logical expressions. The statement file should contain a single
+logical expression. If it contains more than one logical expression,
+only the first one is read.</li>
+  <li>Lines starting with # are treated as comment lines, and
+ignored.</li>
+  <li>You can have empty lines, but they must be totally empty.
+If a line has
+a single space on it (and nothing more) the program will complain and
+not read the file successfully.</li>
+</ul>
+
+There are six connectives: and, or, xor, not, if, iff. No other
+connectives are allowed to be used in the input files. Here is some
+additional information:<br>
+
+<ul>
+
+  <li>A statement can consist of either a single symbol, or a
+connective
+connecting multiple (sub)statements. Notice that this is a recursive
+definition. In other words, statements are symbols or more complicated
+statements that we can make by connecting simpler statements with one
+of the six connectives.</li>
+  <li>Connectives "and", "or", and "xor" can connect any number
+of
+statements, including 0 statements. It is legal for a statement
+consisting of an "and", "or", or "xor" connective to have no
+substatements, e.g., (and). An "and" statement with zero substatements
+is true. An "or" or "xor" statement with zero substatements is false.
+An "xor" statement is true if exactly 1 substatement is true (no more,
+no fewer).</li>
+  <li>Connectives "if" and "iff" require exactly two
+substatements.</li>
+  <li>Connective "not" requires exactly one substatement.</li>
+</ul>
+
+The only symbols that are allowed to be used are:<br>
+
+<ul>
+
+  <li>M_i_j (standing for "there is a monster at square (i, j)).</li>
+  <li>S_i_j (standing for "there is a stench at square (i, j)).</li>
+  <li>P_i_j (standing for "there is a pit at square (i, j)).</li>
+  <li>B_i_j (standing for "there is a breeze at square (i, j)).</li>
+</ul>
+
+<span style="font-weight: bold;">NO OTHER SYMBOLS ARE
+ALLOWED</span>. Also, note that i and j can take values
+1, 2, 3, and 4. In other words, there will be 16 unique symbols of the
+form M_i_j, 16 unique symbols of the form S_i_j, 16 unique symbols of
+the form P_i_j, and 16 unique symbols of the form B_i_j, for a total of
+64 unique symbols.
+<h2>The Wumpus Rules
+</h2>
+
+Here is what we know to be true in any wumpus world, for the purposes
+of this assignment (<span style="font-weight: bold;">NOTE
+THAT THESE RULES ARE NOT IDENTICAL TO THE ONES
+IN THE TEXTBOOK</span>):<br>
+
+<ul>
+
+  <li>If there is a monster at square (i,j), there is stench at
+all adjacent
+squares.</li>
+  <li>If there is stench at square (i,j), there is a monster at
+one of the
+adjacent squares.</li>
+  <li>If there is a pit at square (i,j), there is breeze at all
+adjacent
+squares.</li>
+  <li>If there is breeze at square (i,j), there is a pit at one
+or more of
+the adjacent squares.</li>
+  <li>There is one and only one monster (no more, no fewer).</li>
+  <li>Squares (1,1), (1,2), (2,1), (2,2) have no monsters and no
+pits.</li>
+  <li>The number of pits can be between 1 and 11.</li>
+  <li>We don't care about gold, glitter, and arrows, there will
+be no
+information about them in the knowledge base, and no reference to them
+in the statement.</li>
+</ul>
+
+<h2>Sample code</h2>
+
+The following code implements, in Java and C++, a system that reads
+text files containing information for the knowledge base and the
+statement whose truth we want to check. Feel free to use that code and
+build on top of it. Also feel free to ignore that code and start from
+scratch.<br>
+
+<ul>
+
+  <li>Java: files <a href="optassmt1_files/CheckTrueFalse.java">CheckTrueFalse.java</a>
+and <a href="optassmt1_files/LogicalExpression.java">LogicalExpression.java</a></li>
+  <li>C++: files <a href="optassmt1_files/check_true_false.cpp">check_true_false.cpp</a>
+and <a href="optassmt1_files/check_true_false.h">check_true_false.h</a></li>
+  <li>Python (ver 2.4): <a href="optassmt1_files/check_true_false.py">check_true_false.py</a>
+and <a href="optassmt1_files/logical_expression.py">logical_expression.py</a>.
+(Zipped version of files <a href="optassmt1_files/TT_Ent_py.zip">here</a>).</li>
+</ul>
+
+You can test this code, by compiling on omega, and running on input
+files <a href="optassmt1_files/a.txt">a.txt</a>,
+<a href="optassmt1_files/b.txt">b.txt</a>,
+and <a href="optassmt1_files/c.txt">c.txt</a>.
+For example, for the
+Java code you can
+run it as:<br>
+
+<br>
+
+<span style="font-family: Courier New,Courier,monospace;">javac
+*.java</span><br style="font-family: Courier New,Courier,monospace;">
+
+<span style="font-family: Courier New,Courier,monospace;">java
+CheckTrueFalse a.txt b.txt c.txt</span><br>
+
+<br>
+
+and for C++, you can do:<br>
+
+<br>
+
+<span style="font-family: Courier New,Courier,monospace;">g++
+-o check_true_false check_true_false.cpp</span><br style="font-family: Courier New,Courier,monospace;">
+
+<span style="font-family: Courier New,Courier,monospace;">./check_true_false
+a.txt b.txt c.txt</span><span style="font-weight: bold;"></span>
+<h2>Efficiency</h2>
+
+<span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;">Brute-force
+enumeration of the 2</span><sup style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">64</sup><span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;"><span class="Apple-converted-space">&nbsp;</span>possible
+assignments to the 64 Boolean variables will be too inefficient to
+produce answers in a reasonable amount of time. Because of that, we
+will only be testing your solutions with cases where the additional
+knowledge file contains specific information about at least 48 of the
+symbols.</span>
+<p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">For
+example, suppose that the agent has already been at square (2,3). Then,
+the agent knows for that square that:</p>
+
+<ul style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">
+
+  <li>There is no monster (otherwise the agent would have died).</li>
+  <li>There is no pit (otherwise the agent would have died).</li>
+</ul>
+
+<span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;">Furthermore,
+the agent knows whether or not there is stench and/or breeze at that
+square. Suppose that, in our example, there is breeze and no stench.</span>
+<p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">Then,
+the additional knowledge file would contain these lines for square 2,3:</p>
+
+<pre style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; widows: 1; word-spacing: 0px;">(not M_2_3)<br>(not P_2_3)<br>B_2_3<br>(not S_2_3)<br></pre>
+
+<span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;">You
+can assume that, in all our test cases, there will be at least 48 lines
+like these four lines shown above, specifying for at least 48 symbols
+whether they are true or false. Assuming that you implement the
+TT-Entails algorithm, your program should identify those symbols and
+their values right at the beginning. You can identify those symbols
+using these guidelines:</span>
+<ul style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">
+
+  <li>Note
+that the sample code stores the knowledge base as a LogicalExpression
+object, whose connective at the root is an AND. Let's call this
+LogicalExpression object knowledge_base.</li>
+  <li>Suppose that you have
+a line such as "B_2_3" in the additional knowledge file. Such a line
+generates a child of knowledge_base that is a leaf, and has its
+"symbol" variable set to "B_2_3". You can write code that explicitly
+looks for such children of knowledge_base.</li>
+  <li>Suppose that you
+have a line such as "(not M_2_3") in the additional knowledge file.
+Such a line generates a child of knowledge_base whose connective is
+NOT, and whose only child is a leaf with its "symbol" variable set to
+"M_2_3". You can write code that explicitly looks for such children of
+knowledge_base.</li>
+</ul>
+
+<span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;">This
+way, your program will be able to initialize the model that TT-Entails
+passes to TT-Check-All with boolean assignments for at least 48
+symbols, as opposed to passing an empty model. The list of symbols
+passed from TT-Entails to TT-Check-All should obviously NOT include the
+symbols that have been assigned values in the initial model. This way,
+at most 16 symbols will have unspecified values, and TT-Check-All will
+need to check at most 2</span><sup style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">16</sup><span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;"><span class="Apple-converted-space">&nbsp;</span>rows in
+the truth table, which is quite doable in a reasonable amount of time
+(a few seconds).</span><name></name>
+<h2>Grading</h2>
+
+The assignment will be graded out of 75 points. <br>
+
+<ul>
+
+  <li>30 points: submitting an appropriate wumpus_rules.txt file
+that can be
+used as the first command-line input to the program, according to the
+propositional logic syntax and symbols defined above. The file should
+contain logical statements corresponding to the wumpus rules stated
+above. For each of the 8 rules, you need to determine if you need to
+add any statements to wumpus_rules.txt because of that rule, and if so,
+what statements to add.</li>
+  <li>9&nbsp;points:
+satisfying the efficiency requirement, terminating in less than roughly
+2 minutes when the additional knowledge file specifies values for at
+least 48 of the 64 symbols.</li>
+  <li><span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;">36
+points: correctness of results. In particular, 9 points will be
+allocated for each of the four output cases, and you get those 9
+points if your program always produces the correct output for each of
+those four cases</span></li>
+</ul>
+
+</body></html>

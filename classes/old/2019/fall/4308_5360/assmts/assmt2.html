@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+
+
+  
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Assignment 2</title></head><body>
+<h1>Assignment 2</h1><span style="font-weight: bold; text-decoration: underline;">IMPORTANT NOTE: NO LATE SUBMISSIONS WILL BE ACCEPTED FOR THIS ASSIGNMENT</span><br>
+<br>
+
+
+<h2>Game Search</h2>
+
+<h3> Problem 1<br>
+</h3>
+
+<span style="font-weight: bold;">Max: [4308: 25 Points,
+5360: 20 Points]</span><br>
+
+<br>
+Draw the full Minmax tree for the game of TicTacToe starting from the
+given game state. Calculate the minmax value of every node and what the
+optimal action for the MAX player (X) to take is. (Note: Winning
+results in a payoff
+of +1 and losing a payoff of -1)<br>
+
+<br>
+
+<div style="text-align: center;">
+<table style="text-align: left; width: 20px; height: 20px; margin-left: auto; margin-right: auto;" border="1" cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top; text-align: center;">X<br>
+      </td>
+      <td style="vertical-align: top;">O<br>
+      </td>
+      <td style="vertical-align: top;">X<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;">X<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: center;">O<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;">O<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+Figure 1: A TicTacToe Game State.<br>
+</div>
+
+<br>
+
+<hr><br>
+
+<h3> Problem 2 </h3>
+
+<span style="font-weight: bold;">Max: [4308: 30 Points,
+5360: 20 Points]</span>
+<p style="text-align: center;"><img style="width: 1493px; height: 461px;" alt="MinimaxSearchTree" src="assmt2_files/minimax1.gif"><br>
+<br>
+Figure 2. A game search tree.
+</p>
+
+<p>a.
+In the game search tree of Figure 2, indicate what nodes will be pruned
+using alpha-beta search, and what the mimax values are for
+the rest of the nodes. Assume that, when given a choice, alpha-beta
+search expands nodes in a left-to-right order. Also, assume the MAX
+player plays first. Finally incidcate which action the Minmax algorithm
+will pick to exectute.
+</p>
+
+<p>b. This question is also on
+the game search tree
+of Figure 2. Suppose we are given some additional knowledge about the
+game: the maximum utility value is 10 and the minimum utility is -10,
+i.e., it is not mathematically
+possible for the MAX player to get an outcome greater than 10 or lesser
+than -10. How can
+this knowledge be used to further improve the efficiency of alpha-beta
+search? Indicate the nodes that will be pruned using this improvement.
+Again, assume that, when given a choice, alpha-beta search expands
+nodes in a left-to-right order, and that the MAX player plays first.
+</p>
+
+<hr>
+<h3> Problem 3 </h3>
+
+<span style="font-weight: bold;">Max: [4308: 20 Points,
+5360: 20 Points]</span><br>
+
+<br>
+
+<div style="text-align: center;"><img style="width: 400px; height: 294px;" alt="Figure 3: Yet another game search tree" title="Figure 3: Yet another game search tree" src="assmt2_files/best_worst_outcome.png"><br>
+Figure 3: Yet another game search tree<br>
+</div>
+
+<br>
+
+<p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">Consider
+the MINIMAX tree above. Suppose that we are the MAX player, and we
+follow the MINIMAX algorithm to play a full game against an opponent.
+However,<span class="Apple-converted-space">&nbsp;</span><strong>we
+do not know what algorithm the opponent uses</strong>.</p>
+
+<p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">Under
+these conditions, what is the best possible outcome of playing the full
+game for the MAX player? What is the worst possible outcome for the MAX
+player? Justify your answer.</p>
+
+<p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">NOTE:
+the question is not asking you about what MINIMAX will compute for the
+start node. It is asking you what is the best and worst outcome of a<span class="Apple-converted-space">&nbsp;</span><strong>complete
+game</strong><span class="Apple-converted-space">&nbsp;</span>under
+the assumptions stated above.</p>
+
+<hr>
+<h3> Problem 4 </h3>
+
+<span style="font-weight: bold;">Max: [4308:25 Points,
+5360: 20 Points]</span><br>
+
+<br>
+
+<div style="text-align: center;"><img style="width: 555px; height: 388px;" alt="Expectiminmax Tree" src="assmt2_files/expectiminmax.png"><br>
+Figure 4: An Expectiminmax tree.<br>
+</div>
+
+<br>
+
+Find
+the value of every non-terminal node in the expectiminmax tree given
+above. Also indicate which action will be performed by the algoirithm.<br>
+
+What
+does the MinMax value obtained by the root node represent. For a
+particular game, what is the maximum and minmum actual payoff the MAX
+player can get if MIN plays the optimal strategy (according to Expectiminmax). What if the opponent plays a random strategy?<br>
+
+<br>
+
+<span style="font-family: 'Times New Roman';"></span>
+<hr>
+<h3> Problem 5 (Extra Credit for 4308, Required for 5360) </h3>
+
+<span style="font-weight: bold;">Max: [4308: 20 Points EC,
+5360: 20 Points]</span><br>
+
+<br>
+
+Suppose that you want to implement an algorithm tht will compete on a
+two-player deterministic game of perfect information. Your opponent is
+a supercomputer called DeepGreen. You do not know what algorithm
+DeepGreen uses. You
+are given a library function DeepGreenMove(S), that takes any state S
+as an argument, and returns the outcome of the move that DeepGreen will
+choose for
+that state S (more precisely, DeepGreenMove (S) returns the state
+resulting from the opponent's move).
+<p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">Write
+an algorithm in pseudocode (following the style of the Minimax
+pseudocode) that will always make an optimal decision given the
+knowledge we have about DeepGreen. You are free to use the library
+function DeepGreenMove(S) in your pseudocode. How does this compare to
+Minimax wrt optimality of solution and the number of states explored.</p>
+
+<hr>
+<br>
+<h2>How to submit</h2>
+The assignment should be submitted via <a target="_blank" href="https://uta.instructure.com/">Canvas</a>. 
+Scan or Type the solutions for all the other Tasks together and create a single pdf titled&nbsp;<span style="font-style: italic;">assignment2_&lt;net-id&gt;</span><span style="font-style: italic;">.pdf</span>.<br>
+
+<h2>Submission checklist</h2>
+
+
+
+Are the solutions to remaining tasks in a pdf file titled assignment1_&lt;net-id&gt;.pdf? (where &lt;net-id&gt; is replaced with
+your net id)<br>
+
+Did you upload the file on the submission page in <a target="_blank" href="https://uta.instructure.com/">Canvas</a> and then click on 'Submit Assignment' to ensure that a submission is made?<br>
+
+<br>
+
+</body></html>

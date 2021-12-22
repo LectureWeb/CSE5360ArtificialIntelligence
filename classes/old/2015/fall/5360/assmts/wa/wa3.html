@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Written Assignment 3</title></head>
+<body>
+<h1>Written Assignment 3</h1>
+The assignment should be submitted via <a href="http://elearn.uta.edu">Blackboard</a>.<br>
+<br>
+Some questions in this assignment refer to the same problem as
+<a href="http://omega.uta.edu/%7Evxg3135/classes/2015/fall/ai1/assmts/pa/pa3.html">programming assignment 3</a>,
+please refer to the description of that
+assignment for additional details. <br>
+<br>
+<hr>
+<h2>Problem 1</h2>
+<p>15 points.</p>
+<p>Let S1 be a statement in propositional logic. Write a function
+CHECK_TRUE(S1) that:
+</p>
+<ul>
+<li> returns true if there exists a model (i.e., a row in the
+truth table) where S1 is true.
+</li>
+<li> returns false otherwise. </li>
+</ul>
+Your pseudocode can re-use any code from the textbook or slides, and
+can call any of the functions given in the textbook or slides, as long
+as such code and functions are used correctly, with correct names for
+the functions, and with well-specified values for all variables and
+arguments.
+<p>Remember that a model is a complete assignment of Boolean
+values for
+each symbol of S1. In other words, a model corresponds to a row of the
+truth table. Thus, given a model, for any symbol of S1 we know whether
+that symbol is true or false in that model.
+</p>
+<hr>
+<h2>Problem 2</h2>
+20 points.<br>
+<br>
+Suppose that an agent using the program described in <a href="http://omega.uta.edu/%7Evxg3135/classes/2015/fall/ai1/assmts/pa/pa3.html">programming assignment 3</a> for
+inference, has gone through squares (1,1), (1,2),
+(1,3), (1,4) sensing no stench or breeze anywhere, except for a stench
+at square (1,4). You can assume that an agent dies if it moves to a
+square containing a monster or a pit, and that this particular agent
+did not die at any of the four squares. Specify a set of statements
+that we need to add to the knowledge base to represent the information
+that the agent collected out of those four squares. The set of
+statements should be sufficient, meaning that the inference engine will
+always give results that are correct and consistent with the
+information that the agent obtained from those four squares. Your set
+of statements should also be MINIMAL, i.e., it should not be possible
+to leave out any of those statements without sacrificing the
+correctness of the inference algorithm. You should assume that the
+knowledge base already contains the wumpus rules, and in particular the
+version of the rules specified in programming assignment 3, not the
+version specified in the textbook.<br>
+<br>
+<hr>
+<h2>Problem 3</h2>
+15 points.<br>
+<br>
+Two logical statements A and B are logically equivalent if A
+&lt;=&gt;
+B. We have two knowledge bases, KB1 and KB2.. Write a function
+CHECK_EQUIVALENCE(KB1, KB2) that:
+<ul>
+<li> returns true if KB1 and KB2 are logically equivalent.
+</li>
+<li> returns false otherwise. </li>
+</ul>
+Your pseudocode can re-use any code from the textbook or
+slides, and can call any of the functions given in the textbook or
+slides, as long as such code and functions are used correctly, with
+correct names for the functions, and with well-specified values for all
+variables and arguments.<br>
+<br>
+<hr>
+<h2>Problem 4</h2>
+15 points.<br>
+
+<table style="text-align: center;" border="1" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td>A</td>
+<td>B</td>
+<td>C</td>
+<td>KB</td>
+<td>S1</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;True&nbsp;&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;True&nbsp;&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;True&nbsp;&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;True&nbsp;&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;True&nbsp;&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td>True</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+<td>True</td>
+</tr>
+<tr>
+<td>True</td>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+<td> True</td>
+</tr>
+<tr>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>True</td>
+</tr>
+<tr>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>False</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<p>
+KB and S1 are two propositional logic statements, that are constructed
+using symbols A, B, C, and using various connectives. The above truth
+table shows, for each combination of values of A, B, C, whether KB and
+S1 are true or false.
+</p>
+<p><strong>Part a</strong>: Given the above
+information, does KB entail S1? Justify your answer.
+</p>
+<p><strong>Part b</strong>: Given the above
+information, does statement NOT(KB) entail statement NOT(S1)? Justify
+your answer.
+</p>
+<a href="pa3.html"><br>
+</a><br>
+<hr>
+<h2>Problem 5</h2>
+10 points.<br>
+<br>
+Suppose that you have a function f(kb, statement) that returns true iff
+kb (the knowledge base) entails the statement (a logical sentence) and
+false otherwise. Write pseudocode that, using function f, defines a
+function g(kb, statement) that returns +1 iff the statement is
+definitely true given kb, -1 iff the statement is definitely false
+given kb, and 0 otherwise.<br>
+<br>
+<hr>
+<h2>Problem 6</h2>
+10 points.<br>
+<p>Consider a knowledge base with these facts:
+</p>
+<ul>
+<li> There is a dog called Shadow.
+</li>
+<li> John gave Shadow to Mary.
+</li>
+<li> If Shadow is male, Mary gave a smartphone to John.
+</li>
+<li> If Shadow is female, Mary gave John a laptop.
+</li>
+<li> John only gives male dogs to people.
+</li>
+<li> Mary gave John a laptop.
+</li>
+</ul>
+Convert the above knowledge-base to a first-order logic knowledge base.
+For each predicate, function, constant, or variable that you use,
+explicitly state:
+<ul>
+<li> What type of entity it is (is it a predicate, function,
+constant, or variable).
+</li>
+<li> What its semantics are (what it means).
+</li>
+</ul>
+<br>
+<hr>
+<h2>Problem 7</h2>
+15 points.<br>
+<br>
+Consider the same knowledge base as in the previous task. Assume that
+the knowledge base has been successfully converted to first-order logic
+statements. Under the rules of first-order logic, does this knowledge
+base entail that Shadow is female? Justify your answer.
+<br><br>
+<hr>
+<h2>Other Instructions</h2>
+<ul>
+<li>The answers can be typed as a document or handwritten and
+scanned.&nbsp;</li>
+<li>Accepted document formats are (.pdf, .doc or
+.docx).&nbsp;Please do not submit
+.txt files. If you are using OpenOffice or LibreOffice, make sure to
+save as .pdf or .doc</li>
+<li>If
+you are scanning handwritten documents make sure to scan it at a
+minimum of 600dpi and save as a&nbsp;.pdf or .png file.&nbsp;</li>
+<li>If there are multiple files in your submission, zip them
+together and submit the .zip file.</li>
+</ul>
+</body></html>

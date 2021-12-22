@@ -1,0 +1,237 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head><!-- saved from url=(0078)file:///C:/Users/Vamsi/Desktop/OffWeb/classes/2015/fall/ai1/assmts/wa/wa3.html -->
+
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><title>Assignment 5</title></head>
+<body>
+<h1>Assignment 5</h1>
+<h2>Written Assignment - Game Playing</h2>
+The assignment should be submitted via <a href="http://elearn.uta.edu/">Blackboard</a>.<br>
+<h2>Instructions</h2>
+<ul>
+<li>The answers can be typed as a document or handwritten and
+scanned.&nbsp;</li>
+<li>Name files as
+assignment5_&lt;net-id&gt;.&lt;format&gt;</li>
+<li>Accepted document formats are (.pdf, .doc or
+.docx).&nbsp;If you are using OpenOffice or LibreOffice, make sure
+to
+save as .pdf or .doc</li>
+<li>Please do not submit
+.txt files.</li>
+<li>If
+you are scanning handwritten documents make sure to scan it at a
+minimum of 600dpi and save as a&nbsp;.pdf or .png file. Do not
+insert images in word document and submit.&nbsp;</li>
+<li>If there are multiple files in your submission, zip them
+together as assignment5_&lt;net-id&gt;.zip and submit the .zip
+file.</li>
+</ul>
+<hr>
+<h2>Problem 1</h2>
+<p>20 points.</p>
+<p>Let S1 be a statement in propositional logic. Write a function
+CHECK_TRUE(S1) that:
+</p>
+<ul>
+<li> returns true if there exists a model (i.e., a row in the
+truth table) where S1 is true.
+</li>
+<li> returns false otherwise. </li>
+</ul>
+Your pseudocode can re-use any code from the textbook or slides, and
+can call any of the functions given in the textbook or slides, as long
+as such code and functions are used correctly, with correct names for
+the functions, and with well-specified values for all variables and
+arguments.
+<p>Remember that a model is a complete assignment of Boolean
+values for
+each symbol of S1. In other words, a model corresponds to a row of the
+truth table. Thus, given a model, for any symbol of S1 we know whether
+that symbol is true or false in that model.
+</p>
+<hr>
+<h2>Problem 2</h2>
+20 points.<br>
+<br>
+Two logical statements A and B are logically equivalent if A
+&lt;=&gt;
+B. We have two knowledge bases, KB1 and KB2.. Write a function
+CHECK_EQUIVALENCE(KB1, KB2) that:
+<ul>
+<li> returns true if KB1 and KB2 are logically equivalent.
+</li>
+<li> returns false otherwise. </li>
+</ul>
+Your pseudocode can re-use any code from the textbook or
+slides, and can call any of the functions given in the textbook or
+slides, as long as such code and functions are used correctly, with
+correct names for the functions, and with well-specified values for all
+variables and arguments.<br>
+<br>
+<hr>
+<h2>Problem 3</h2>
+20 points.<br>
+<br>
+<table style="text-align: center;" border="1" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td>A</td>
+<td>B</td>
+<td>C</td>
+<td>KB</td>
+<td>S1</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;True&nbsp;&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;True&nbsp;&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;True&nbsp;&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;True&nbsp;&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;True&nbsp;&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td>True</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+<td>True</td>
+</tr>
+<tr>
+<td>True</td>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+<td> True</td>
+</tr>
+<tr>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>True</td>
+</tr>
+<tr>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>False</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<p>
+KB and S1 are two propositional logic statements, that are constructed
+using symbols A, B, C, and using various connectives. The above truth
+table shows, for each combination of values of A, B, C, whether KB and
+S1 are true or false.
+</p>
+<p><strong>Part a</strong>: Given the above
+information, does KB entail S1? Justify your answer.
+</p>
+<p><strong>Part b</strong>: Given the above
+information, does statement NOT(KB) entail statement NOT(S1)? Justify
+your answer.
+</p>
+<br>
+<hr>
+<h2>Problem 4</h2>
+10 points.<br>
+<br>
+Convert the following to CNF<br>
+<br>
+<span style="font-weight: bold;">Part a:</span> A
+=&gt; (NOT (C OR B))<br>
+<br>
+<span style="font-weight: bold;">Part b:</span> (NOT
+(C OR B))&nbsp; =&gt; A<br>
+<br>
+<hr>
+<h2>Problem 5</h2>
+10 points.<br>
+<br>Let S1 and S2 be two logical statements in propositional logic.
+Write pseudocode that determines if the statement (S1 XOR S2) is valid
+(a statement is valid if it is true in all models). The XOR of the two
+statements S1 and S2 is true in two cases: <br><br>&nbsp;&nbsp;&nbsp; When S1 is true and S2 is false&nbsp;&nbsp; <br>&nbsp;&nbsp;&nbsp; When S1 is false and S2 is true.<br><br>Your
+pseudocode can use as building blocks any of the functions given in the
+textbook, as long as such functions are called correctly and with
+well-specified arguments.<br>
+<br>
+<hr>
+<h2>Problem 6</h2>
+10 points.<br>
+<p>Consider a knowledge base with these facts:
+</p>
+<ul>
+<li> There is a dog called Shadow.
+</li>
+<li> John gave Shadow to Mary.
+</li>
+<li> If Shadow is male, Mary gave a smartphone to John.
+</li>
+<li> If Shadow is female, Mary gave John a laptop.
+</li>
+<li> John only gives male dogs to people.
+</li>
+<li> Mary gave John a laptop.
+</li>
+</ul>
+Convert the above knowledge-base to a first-order logic knowledge base.
+For each predicate, function, constant, or variable that you use,
+explicitly state:
+<ul>
+<li> What type of entity it is (is it a predicate, function,
+constant, or variable).
+</li>
+<li> What its semantics are (what it means).
+</li>
+</ul>
+<br>
+<hr>
+<h2>Problem 7</h2>
+10 points.<br>
+<p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">Consider
+this first-order logic knowledge base:</p>
+<pre style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; widows: 1; word-spacing: 0px;">taller(John, Bill)<br>for-every x, taller(x, Bill) =&gt; tall(x)<br></pre>
+<span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;">In
+this first-order logic knowledge base,<span class="Apple-converted-space">&nbsp;</span></span><tt style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">taller</tt><span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;"><span class="Apple-converted-space">&nbsp;</span>and<span class="Apple-converted-space">&nbsp;</span></span><tt style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">tall</tt><span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;"><span class="Apple-converted-space">&nbsp;</span>are
+predicates,<span class="Apple-converted-space">&nbsp;</span></span><tt style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">x</tt><span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;"><span class="Apple-converted-space">&nbsp;</span>is a
+variable, and<span class="Apple-converted-space">&nbsp;</span></span><tt style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">John</tt><span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;">,<span class="Apple-converted-space">&nbsp;</span></span><tt style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">Bill</tt><span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;"><span class="Apple-converted-space">&nbsp;</span>are
+constants. Convert this first-order logic knowledge base into a
+propositional logic knowledge base, by performing the following two
+steps:</span>
+<ol style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">
+<li>Define symbols for the propositional-logic version of the
+knowledge base, and specify what their equivalents are in the original
+first-order logic knowledge base.</li>
+<li>Define the statements that should be stored in the
+propositional-logic version of the knowledge base.</li>
+</ol>
+<span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;">The
+symbols you define should be comprehensive enough to allow us to
+translate any well-defined inference problem in the original knowledge
+base to an equivalent problem for the propositional knowledge base.
+Anything that we can infer from the original first-order logic
+knowledge base we should also be able to infer from the
+propositionalized knowledge base, and vice versa.</span>&nbsp;<br>
+<br>
+<hr><br></body></html>

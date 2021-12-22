@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Written Assignment 5</title>
+
+</head>
+<body style="" _texified="true">
+<h1>Written
+Assignment 5</h1>
+The assignment should be submitted via <a href="http://elearn.uta.edu/">Blackboard</a>.<br>
+<hr>
+<h3 style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-style: normal; font-variant: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">Problem
+1&nbsp;</h3>
+<span style="font-family: 'Times New Roman';"><span style="font-weight: bold;">30 points<br>
+<br>
+</span></span><span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;">You
+are a meteorologist that places temperature sensors all of the world,
+and you set them up so that they automatically e-mail you, each day,
+the high temperature for that day. Unfortunately, you have forgotten
+whether you placed a certain sensor S in Maine or in the Sahara desert
+(but you are sure you placed it in one of those two places) . The
+probability that you placed sensor S in Maine is 5%. The probability of
+getting a daily high temperature of 80 degrees or more is 20% in Maine
+and 90% in Sahara. Assume that probability of a daily high for any day
+is conditionally independent of the daily high for the previous day,
+given the location of the sensor.</span>
+<p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;"><strong>Part
+a:</strong><span class="Apple-converted-space">&nbsp;</span>If
+the first e-mail you got from sensor S indicates a daily high under 80
+degrees, what is the probability that the sensor is placed in Maine?</p>
+<p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;"><strong>Part
+b:</strong><span class="Apple-converted-space">&nbsp;</span>If
+the first e-mail you got from sensor S indicates a daily high under 80
+degrees, what is the probability that the second e-mail also indicates
+a daily high under 80 degrees?</p>
+<p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;"><strong>Part
+c:</strong><span class="Apple-converted-space">&nbsp;</span>What
+is the probability that the first three e-mails all indicate daily
+highs under 80 degrees?</p>
+<p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;"><br>
+</p>
+<hr><br>
+<img style="border: 1px solid ; width: 1367px; height: 767px;" alt="BayesianGraph" src="wa5_files/car-net.png">
+<p><strong> Figure 1: A Bayesian network graph establishing
+relations between various car problems and their causes.</strong>
+</p>
+<h3> Problem 2 </h3>
+<strong></strong><strong>10 points.
+</strong>
+<p>Suppose that:
+</p>
+<ul>
+<li> P("alternator broken"=true) = 0.02
+</li>
+<li>P("no charging"=true | "alternator broken"=true) = 0.95
+</li>
+<li>P("no charging"=true | "alternator broken"=false) = 0.01.
+</li>
+</ul>
+What is P("no charging"=false)? How is it derived?
+<p></p>
+<hr>
+<h3> Problem 3 </h3>
+<strong>10 points.
+</strong>
+<p> On the network shown in Figure 1, suppose that:
+</p>
+<ul>
+<li> P("battery age" &lt;= 3 years) = 0.7
+</li>
+<li>P("battery dead"=true | "battery age" &lt;= 3 years) =
+0.02
+</li>
+<li>P("battery dead"=true | "battery age" &gt; 3 years) =
+0.1.
+</li>
+</ul>
+What is P("battery age" &lt;= 3 years | "battery dead"=true)? How
+is it derived?
+<p></p>
+<hr><br>
+<br>
+<img style="border: 1px solid ; width: 1151px; height: 755px;" alt="BayesianNetwork2" src="wa5_files/large-net.png">
+<p><strong> Figure 2: Yet another Bayesian Network.</strong>
+</p>
+<h3> Problem 4</h3>
+<strong style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">30
+points.<br>
+<br>
+Part a:</strong><span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;"><span class="Apple-converted-space">&nbsp;</span>On the
+network shown in Figure 2, what is the Markovian blanket of node L?</span>
+<p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;"><strong>Part
+b:</strong><span class="Apple-converted-space">&nbsp;</span>On
+the network shown in Figure 2, what is P(A, F)? How is it derived?</p>
+<p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;"><strong>Part
+d:</strong><span class="Apple-converted-space">&nbsp;</span>On
+the network shown in Figure 2, what is P(M, not(C) | H)? How is it
+derived?</p>
+<p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;"></p>
+<hr>
+<h3> Problem 5</h3>
+<strong style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">20
+points.</strong>
+<br>
+<br>
+<span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;">In
+a certain probability problem, we have 11 variables: A, B</span><sub style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">1</sub><span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;">,
+B</span><sub style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">2</sub><span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;">,
+..., B</span><sub style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">10</sub><span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;">.</span>
+<ul style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">
+<li>Variable A has 5 values.</li>
+<li>Each of variables B<sub>1</sub>, ..., B<sub>10</sub><span class="Apple-converted-space">&nbsp;</span>have 7
+possible values. Each B<sub>i</sub><span class="Apple-converted-space">&nbsp;</span>is
+conditionally indepedent of all other 9 B<sub>j</sub>variables
+(with j != i) given A.</li>
+</ul>
+<span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;">Based
+on these facts:</span>
+<p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;"><strong>Part
+a:</strong><span class="Apple-converted-space">&nbsp;</span>How
+many numbers do you need to store in the joint distribution table of
+these 11 variables?</p>
+<p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;"><strong>Part
+b:</strong><span class="Apple-converted-space">&nbsp;</span>What
+is the most space-efficient way (in terms of how many numbers you need
+to store) representation for the joint probability distribution of
+these 11 variables? How many numbers do you need to store in your
+solution? Your answer should work with any variables satisfying the
+assumptions stated above.</p><p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;"></p><hr>
+<h2>Other Instructions</h2>
+<ul>
+<li>The answers can be typed as a document or handwritten and
+scanned.&nbsp;</li>
+<li>Accepted document formats are (.pdf, .doc or
+.docx).&nbsp;Please do not submit
+.txt files. If you are using OpenOffice or LibreOffice, make sure to
+save as .pdf or .doc</li>
+<li>If
+you are scanning handwritten documents make sure to scan it at a
+minimum of 600dpi and save as a&nbsp;.pdf or .png file.&nbsp;</li>
+<li>If there are multiple files in your submission, zip them
+together and submit the .zip file.</li>
+</ul>
+</body></html>

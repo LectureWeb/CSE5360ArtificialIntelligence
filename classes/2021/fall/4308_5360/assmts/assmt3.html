@@ -1,0 +1,319 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+  
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+  <title>Assignment 3</title>
+
+  
+</head><body style="background-color: rgb(231, 246, 253);">
+<h2>Written Assignment - Logic and Planning</h2>
+
+Max points:<br>
+
+<ul>
+
+  <li>CSE 4308: 110 (115 with EC)</li>
+  <li>CSE 5360: 110 (115 with EC)<br>
+  </li>
+</ul>
+
+<span style="font-weight: bold;"></span>The
+assignment should be submitted via Canvas.<br>
+
+<h2>Instructions</h2>
+
+<ul>
+
+  <li>The answers can be typed as a document or handwritten and
+scanned.&nbsp;</li>
+  <li>Name files as
+assignment3_&lt;net-id&gt;.&lt;format&gt;</li>
+  <li>Accepted document format is .pdf.</li>
+  <ul>
+    <li>If you are using Word, OpenOffice or LibreOffice, make
+sure
+to
+save as .pdf.</li>
+    <li>If you are using LaTEX, compile into a .pdf file.</li>
+  </ul>
+  <ul>
+    <li>Please do not submit
+.txt files.</li>
+  </ul>
+  <li>If
+you are scanning handwritten documents make sure to scan it at a
+minimum of 600dpi and save as a&nbsp;.pdf or .png file. Do not
+insert images in word document and submit.&nbsp;</li>
+  <li>If there are multiple files in your submission, zip them
+together as assignment6_&lt;net-id&gt;.zip and submit the .zip
+file.</li>
+</ul>
+
+<hr style="width: 100%; height: 2px;"><span style="font-weight: bold;"></span>
+<h2>Task 1 (CSE 4308: 8 Points; CSE 5360: 8 points)</h2>
+
+<table style="text-align: center;" border="1" cellpadding="0" cellspacing="0">
+
+  <tbody>
+    <tr>
+      <td>A</td>
+      <td>B</td>
+      <td>C</td>
+      <td>KB</td>
+      <td>S1</td>
+    </tr>
+    <tr>
+      <td>&nbsp;&nbsp;&nbsp;True&nbsp;&nbsp;&nbsp;</td>
+      <td>&nbsp;&nbsp;&nbsp;True&nbsp;&nbsp;&nbsp;</td>
+      <td>&nbsp;&nbsp;&nbsp;True&nbsp;&nbsp;&nbsp;</td>
+      <td>&nbsp;&nbsp;&nbsp;True&nbsp;&nbsp;&nbsp;</td>
+      <td>&nbsp;&nbsp;&nbsp;True&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+      <td>True</td>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>True</td>
+      <td>False</td>
+      <td>True</td>
+      <td>True</td>
+      <td> True</td>
+    </tr>
+    <tr>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>False</td>
+      <td>True</td>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td>False</td>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+KB and S1 are two propositional logic statements, that are constructed
+using symbols A, B, C, and using various connectives. The above truth
+table shows, for each combination of values of A, B, C, whether KB and
+S1 are true or false.
+</p>
+
+<p><strong>Part a</strong>: Given the above
+information, does KB entail S1? Justify your answer.
+</p>
+
+<p><strong>Part b</strong>: Given the above
+information, does statement NOT(KB) entail statement NOT(S1)? Justify
+your answer.
+</p>
+
+<br>
+
+<hr>
+<h2>Task 2 (CSE 4308: 8 Points; CSE 5360: 8 points)</h2>
+
+<br>
+
+Suppose that some&nbsp; knowledge base contains various
+propositional-logic sentences that utilize symbols A, B, C, D
+(connected with various connectives). There are only two cases when the
+knowledge base is <span style="font-weight: bold;">false</span>:<br>
+
+- First case: when A is true, B is false, C is false, D is true. <br>
+
+- Second case: when A is false, B is false, C is true, D is false.<br>
+
+<br>
+
+In all other cases, the knowledge base is true. Write a conjunctive
+normal form (CNF)&nbsp; for the knowledge base.<br>
+
+<br>
+
+<hr>
+<h2>Task 3 (CSE 4308: 24 Points; CSE 5360: 24 points)</h2>
+
+Consider the KB<br>
+
+<br>
+
+A &lt;=&gt; B<br>
+
+B =&gt; C<br>
+
+D =&gt; A<br>
+
+C&nbsp;AND E =&gt; G<br>
+
+B =&gt; F<br>
+
+E<br>
+
+D<br>
+
+<br>
+
+Show that this entails G by<br>
+
+<br>
+
+i. Forward Chaining<br>
+
+ii. Backward Chaining<br>
+
+iii. Resolution<br>
+
+<br>
+
+<hr><br>
+
+<h2>Task 4 (CSE 4308: 30 Points; CSE 5360: 30 points)</h2>
+
+On April 20, 2017, John and Mary sign the following contract:<br>
+
+<br>
+
+- If it rains on May 1, 2017, then John must give Mary a check for
+$10,000 on May 2, 2017<br>
+
+- If John gives Mary a check for $10,000 on May 2, 2017, Mary must mow
+the lawn on May 3, 2017.<br>
+
+<br>
+
+What truly happened those days is the following:<br>
+
+-&nbsp; it did not rain on May 1, 2017<br>
+
+- John gave Mary a check for $10,000 on May 2, 2017<br>
+
+- Mary mowed the lawn on May 3, 2017.<br>
+
+<br>
+
+<strong>Part a (10 pts)</strong>: Write a first order logic
+statement to express the contract. Make sure that you clearly define
+what constants and predicates that you use are. (NOTE: DO NOT use
+functions)<br>
+
+<br>
+
+<strong>Part b</strong> <strong>(8 pts)</strong>: Write a logical
+statement to
+express what truly happened. When possible, use the same predicates and
+constants as in
+question 6a. If you need to define any new predicates or constants,
+clearly define what
+they stand for.<br>
+
+<br>
+
+<span style="font-weight: bold;">Part c</span><strong> (2 pts)</strong>:
+Was the contract violated
+or not, Justify your answer<br>
+
+<br>
+
+<strong>Part d </strong><strong>(10 pts)</strong>: Define the symbols
+required to convert any KB involved in the above
+domanin from FOL to Propositional logic. Use this to convert the
+answers to part a and b to Propositional Logic.<br>
+
+<br>
+
+<hr>
+<h2>Task 5 (CSE 4308: 18 Points (+5 Points EC); CSE 5360: 18 points (+5
+Points EC))</h2>
+
+Three adults and three children are on the left side of the river. Each
+adult
+weighs 150 pounds. Each child has half the weight of an adult, so each
+child weighs 75 pounds. They all want to cross to the right side of the
+river. However, the only means of transportation they can use is a
+boat, and the boat can carry a maximum of 225 pounds. Thus, the boat
+can carry one adult, one adult and one child, one child or two
+children.
+Any adult or child can operate the boat, but the boat cannot be
+operated without having at least one person on the boat. The goal is to
+come up with a plan for moving everyone from the left side to the right
+side using multiple boat trips.
+<br>
+
+<br>
+
+Describe the initial state and the goal, using PDDL.
+Define
+appropriate actions for this planning problem, in the PDDL language.
+For each action, provide a name, arguments, preconditions, and effects.
+<br>
+
+<br>
+
+<span style="font-weight: bold;">Extra Credit (5 pts)</span>: Also,
+give a complete plan (using the actions described) for getting
+from the start to the goal state<br>
+
+<br>
+
+<hr style="width: 100%; height: 2px;">
+<h2>Task 6 (CSE 4308: 10 Points; CSE 5360: 10 points)</h2>
+
+Suppose that we are using PDDL to describe facts and actions in a
+certain world called JUNGLE. In the JUNGLE world there are 4
+predicates, each predicate takes at most 4 arguments, and there are 5
+constants. Give a reasonably tight bound on the number of unique states
+in the JUNGLE world. Justify your answer.<br>
+
+<br>
+
+<hr>
+<h2>Task 7 (CSE 4308: 12 Points; CSE 5360: 12 points)</h2>
+
+Consider the problem in Task 5. Let us say that, if there is only one
+person in the boat, the boat can be blown off course and end up back on
+the side it originally started from. How would you modify the actions
+you described in Task 1 to account for this if you were going to try
+and handle this scenario by<br>
+
+<ul>
+
+  <li>Execution Monitoring/Online Replanning</li>
+  <li>Conditional Planning</li>
+</ul>
+
+In both cases, show what the modifications are (If no modification is
+necessary, Justify). <br>
+
+<br>
+
+</body></html>

@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Assignment 4</title>
+
+</head>
+<body>
+<h1>Assignment 4</h1>
+<h2>Written Assignment - Planning</h2>
+Max points:<br>
+<ul>
+<li>CSE 4308: 75 (90 with EC)</li>
+<li>CSE 5360: 75</li>
+</ul>
+<span style="font-weight: bold;"></span>The
+assignment should be submitted via <a href="http://elearn.uta.edu/">Blackboard</a>.<br>
+<h2>Instructions</h2>
+<ul>
+<li>The answers can be typed as a document or handwritten and
+scanned.&nbsp;</li>
+<li>Name files as
+assignment4_&lt;net-id&gt;.&lt;format&gt;</li>
+<li>Accepted document format is .pdf.</li>
+<ul>
+<li>If you are using Word, OpenOffice or LibreOffice, make
+sure
+to
+save as .pdf.</li>
+<li>If you are using LaTEX, compile into a .pdf file.</li>
+</ul>
+<ul>
+<li>Please do not submit
+.txt files.</li>
+</ul>
+<li>If
+you are scanning handwritten documents make sure to scan it at a
+minimum of 600dpi and save as a&nbsp;.pdf or .png file. Do not
+insert images in word document and submit.&nbsp;</li>
+<li>If there are multiple files in your submission, zip them
+together as assignment6_&lt;net-id&gt;.zip and submit the .zip
+file.</li>
+</ul>
+<hr style="width: 100%; height: 2px;"><span style="font-weight: bold;"></span>
+<h2>Task 1 (CSE 4308: 30 Points; CSE 5360: 25 points)</h2>
+Three adults and three children are on the left side of the river. Each
+adult
+weighs 150 pounds. Each child has half the weight of an adult, so each
+child weighs 75 pounds. They all want to cross to the right side of the
+river. However, the only means of transportation they can use is a
+boat, and the boat can carry a maximum of 225 pounds. Thus, the boat
+can carry one adult, one adult and one child, one child or two
+children.
+Any adult or child can operate the boat, but the boat cannot be
+operated without having at least one person on the boat. The goal is to
+come up with a plan for moving everyone from the left side to the right
+side using multiple boat trips.
+<br>
+<br>
+Describe the initial state and the goal, using PDDL.
+Define
+appropriate actions for this planning problem, in the PDDL language.
+For each action, provide a name, arguments, preconditions, and effects.
+Also, give a complete plan (using the actions described) for getting
+from the start to the goal state<br>
+<br>
+<hr style="width: 100%; height: 2px;">
+<h2>Task 2 (CSE 4308: 30 Points; CSE 5360: 25 points)</h2>
+Suppose that we are using PDDL to describe facts and actions in a
+certain world called JUNGLE. In the JUNGLE world there are 4
+predicates, each predicate takes at most 4 arguments, and there are 5
+constants. Give a reasonably tight bound on the number of unique states
+in the JUNGLE world. Justify your answer.<br>
+<span style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; display: inline ! important; float: none;"><br>
+</span>
+<hr>
+<h2>Task 3 (CSE 4308: 15 Points; CSE 5360: 10 points)</h2>
+<p style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;">We
+have state descriptions and action definitions written following the
+conventions used in the graphplan software of Optional Assignment 1. One of the
+actions is defined as follows:</p>
+<pre style="color: rgb(0, 0, 0); font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px;">(operator<br> aaa<br> (params<br> (&lt;b&gt; ttt1) (&lt;c&gt; ttt1))<br> (preconds<br> (ppp1 &lt;b&gt; &lt;c&gt;) (ppp2 &lt;b&gt;) (ppp3 &lt;c&gt;))<br> (effects<br> (eee1 &lt;b&gt; &lt;c&gt;) (eee2 &lt;b&gt;) (del eee3 &lt;c&gt;)))<br></pre>
+Suppose
+we are at a state S1 described as follows (again, using graphplan
+syntax):<br>
+<pre style="color: rgb(0, 0, 0); font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px;">(A ttt1)<br>(B ttt1)<br>(C ttt1)<br>(ppp1 B C)<br>(ppp2 A)<br>(ppp2 B)<br>(ppp3 C)<br>(eee1 A C)<br>(eee2 C)<br>(eee3 C)<br>(eee3 A)<br></pre>
+<span style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; display: inline ! important; float: none;">What
+is the state resulting from applying action aaa(B,C) to S1? Give a
+complete specification.</span>&nbsp;<br>
+<br>
+<hr>
+<h2>Task 4 (CSE 4308: 15 Points (EC); CSE 5360: 15 points)</h2>
+Consider the problem in Task 1. Let us say that, if there is only one
+person in the boat, the boat can be blown off course and end up back on
+the side it originally started from. How would you modify the actions
+you described in Task 1 to account for this if you were going to try
+and handle this scenario by<br>
+<ul>
+<li>Execution Monitoring/Online Replanning</li>
+<li>Conditional Planning</li>
+</ul>
+In both cases, show what the modifications are (If no modification is
+necessary, Justify).&nbsp;
+</body></html>

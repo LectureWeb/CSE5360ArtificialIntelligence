@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Written Assignment 1</title></head>
+<body>
+<h1>Written Assignment 1</h1>
+The assignment should be submitted via <a href="http://elearn.uta.edu">Blackboard</a>.<br><h2>Question 1</h2>
+<span style="font-weight: bold;">Max: 20 Points</span><br>
+<br>
+Consider the search tree shown in Figure 1. The number next to each
+edge is the cost of the performing the action corresponding to that
+edge. List the order in which nodes will be visited using:<br>
+<ul>
+<li>breadth-first search.</li>
+<li>depth-first search.</li>
+<li>iterative deepening search.</li>
+<li>uniform cost search.</li>
+</ul>
+<div style="text-align: center;"><img style="width: 490px; height: 370px;" alt="Figure 1: Search Tree" title="Figure 1: Search Tree" src="wa1_files/q1_f1.gif"><br>
+Figure 1: Search Tree for Problem 1
+</div>
+<br>
+<h2>Question 2</h2>
+<span style="font-weight: bold;">Max: 30 Points</span><br>
+<br>
+A social network graph (SNG) is a graph where each vertex is a
+person and each edge represents an acquaintance. In other words, an SNG
+is a graph showing who knows who. For example, in the graph shown on
+Figure 2, George knows Mary and John, Mary knows Christine, Peter and
+George, John knows Christine, Helen and George, Christine knows Mary
+and John, Helen knows John, Peter knows Mary.<br>
+The degrees of separation measure how closely connected two people are
+in the graph. For example, John has 0 degrees of separation from
+himself, 1 degree of separation from Christine, 2 degrees of separation
+from Mary, and 3 degrees of separation from Peter.<br>
+<ol style="list-style-type: lower-roman;">
+<li>From among breadth-first search,
+depth-first search,
+iterative deepening search, and uniform cost search, which one(s)
+guarantee finding the correct number of degrees of separation between
+any two people in the graph? (6 Points)</li>
+<br>
+<li>For the SNG shown in Figure 2, draw the
+first three
+levels of the search tree, with John as the starting point (the first
+level of the tree is the root). Is there a one-to-one correspondence
+between nodes in the search tree and vertices in the SNG? Why, or why
+not? In your answer here, you should assume that the search algorithm
+does not try to avoid revisiting the same state. (6 Points)</li>
+<br>
+<li>Draw an SNG containing exactly 5 people,
+where at least
+two people have 4 degrees of separation between them. (6 Points)</li>
+<br>
+<li>Draw an SNG containing exactly 5 people,
+where all
+people have 1 degree of separation between them. (6 points)</li>
+<br>
+<li>In an implementation of breadth-first
+search for
+finding degrees of separation, suppose that every node in the search
+tree takes 1KB of memory. Suppose that the SNG contains one million
+people. Outline (briefly but precisely) how to make sure that the
+memory required to store search tree nodes will not exceed 1GB (the
+correct answer can be described in one-two lines of text). In your
+answer here you are free to enhance/modify the breadth-first search
+implementation as you wish, as long as it remains breadth-first (a
+modification that, for example, converts breadth-first search into
+depth-first search or iterative deepening search is not allowed). (6
+Points)</li>
+</ol>
+<div style="text-align: center;"><img alt="Figure 2: A Social Network Graph" title="Figure 2: A Social Network Graph" src="wa1_files/q2_f1.gif"><br>
+Figure 2: A Social Network Graph
+</div>
+<h2>Question 3</h2>
+<span style="font-weight: bold;">Max: 15 Points</span><br>
+<br>
+Figures 3 and 4 show maps where all the towns are on a
+grid. Each town T has coordinates (Ti, Tj), where Ti Tj are
+non-negative integers. We use the term Euclidean distance for the
+straight-line distance between two towns, and the term driving distance
+for the length of the shortest driving route connecting two towns. The
+only roads that exist connect towns that have Euclidean (straight-line)
+distance 1 from each other (however, there may be towns with Euclidean
+distance 1 from each other that are NOT directly connected by a road,
+for example in Figure 4).<br>
+<br>
+Consider greedy search, where the node to be expanded is always the one
+with the shortest Euclidean distance to the destination. Also consider
+A* search, where h(n) is the Euclidean distance from n to the
+destination (remember that the next node is picked not based on h(n)
+but based on f(n) = g(n) + h(n)). For each of the maps showing on
+Figures 3 and 4, which of the following statements is true?<br>
+<ul>
+<li>Greedy search always performs better than or the same as A*.</li>
+<li>Greedy search always performs worse than or the same as A*.</li>
+<li>Greedy search performs sometimes better, sometimes worse,
+and sometimes
+the same as A*, depending on the start and end states.</li>
+</ul>
+Justify your answer. For the purposes of this question, the performance
+of a search algorithm is simply measured by the number of nodes visited
+by that algorithm. Note that you have to provide separate answers for
+Figure 3 and for Figure 4.<br>
+<br>
+<div style="text-align: center;"><img alt="Figure 3: Fully connected city grid" title="Figure 3: Fully connected city grid" src="wa1_files/q3_f1.gif"><br>
+Figure 3. A map of cities on a fully connected grid. Every city is
+simply named by its coordinates.<br>
+<br>
+<img alt="Figure 4: Partialy connected city grid" title="Figure 4: Partialy connected city grid" src="wa1_files/q3_f2.gif"><br>
+Figure 4. A map of cities on a partially connected grid. Every city is
+simply named by its coordinates.
+</div>
+<h2>Question 4</h2>
+<span style="font-weight: bold;">Max: 20 Points</span><br>
+<br><div style="text-align: center;"><img style="width: 330px; height: 219px;" alt="Figure 5. A search graph showing states and costs of moving from one state to another. Costs are undirected." src="wa1_files/heuristics.png"><br><span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;">Figure 5. A search graph showing states and costs of moving from one state to another. Costs are undirected.</span><br><span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;"></span></div><span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;"><br></span><span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;">Consider
+the search space shown in Figure 5. D is the only goal state. Costs are
+undirected. For each of the following heuristics, determine if it is
+admissible or not. For non-admissible heuristics, modify their values
+as needed to make them admissible.<br><br>Heuristic 1:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h(A) = 5<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h(B) = 30<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h(C) = 20<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h(D) = 0<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h(E) = 10<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h(F) = 0<br><br>Heuristic 2:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h(A) = 15<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h(B) = 5<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h(C) = 10<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h(D) = 0<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h(E) = 0<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h(F) = 0<br><br>Heuristic 3:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h(A) = 35<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h(B) = 30<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h(C) = 20<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h(D) = 0<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h(E) = 0<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h(F) = 50<br><br>Heuristic 4:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h(A) = 8<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h(B) = 5<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h(C) = 3<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h(D) = 5<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h(E) = 5<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h(F) = 0<br></span><h2>Question 5</h2>
+<span style="font-weight: bold;">Max: 15 Points<br></span><p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">Consider
+a search space, where each state can be red, green, blue, yellow, or
+black. Multiple states may have the same color. The goal is to reach
+any black state. Here are some rules on the successors of different
+states, based on their color:</p><ul style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;"><li>Any path between a red and a green state has cost &gt;= 20.</li><li>Any path between a red and a blue state has cost &gt;= 30.</li><li>Any path between a blue and a yellow state has cost &gt;= 40.</li><li>Any path between a green and a yellow state has cost &gt;= 50.</li><li>Any path between a red and a yellow state must go through a green or blue state.</li><li>Any path connecting a red, green, or blue state to a black state must go through a yellow state.</li></ul><span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;">Define
+the best admissible heuristic H that you can, using the above
+information. H should assign a value to a node based on the color of
+that node's state.</span><pre style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; widows: 1; word-spacing: 0px;">H(red) = <br><br>H(green) = <br><br>H(blue) = <br><br>H(yellow) = <br><br>H(black) = </pre><h2>Question 6 (Extra Credit)</h2>
+<span style="font-weight: bold;">Max: 15 Points<br></span><br><div style="text-align: center;"><img style="width: 552px; height: 260px;" alt="Figure 6. An example of a start state (left) and the goal state (right) for the 24-puzzle." src="wa1_files/24puzzle.png"><br><span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;">Figure 6. An example of a start state (left) and the goal state (right) for the 24-puzzle.</span><br><span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;"></span></div><span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;"><br></span><p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">The
+24-puzzle is an extension of the 8-puzzle, where there are 24 pieces,
+labeled with the numbers from 1 to 24, placed on a 5x5 grid. At each
+move, a tile can move up, down, left, or right, but only if the
+destination location is currently empty. For example, in the start
+state shown above, there are three legal moves: the 12 can move down,
+the 22 can move left, or the 19 can move right. The goal is to achieve
+the goal state shown above. The cost of a solution is the number of
+moves it takes to achieve that solution.</p><p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">For some initial states, the shortest solution is longer than 100 moves.<span class="Apple-converted-space">&nbsp;</span><br>For all initial states, the shortest solution is at most 208 moves.</p><p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">An additional constraint is that, in any implementation, storing a search node takes 1000 bytes, i.e., 1KB of memory.</p><p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">Consider breadth-first search, depth-first search, iterative deepening search, uniform cost search, A*, and IDA*.</p><p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">(a):
+Which (if any), among those methods, can guarantee that you will never
+need more than 50KB of memory to store search nodes? Briefly justify
+your answer.</p><p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">(b):
+Which (if any), among those methods, can guarantee that you will never
+need more than 1200KB of memory to store search nodes? Briefly justify
+your answer.</p><p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">(c): Which method would you recommend as providing all these features together?</p><ul style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;"><li>acceptable space (memory) requirements.</li><li>best hope of obtaining good running time.</li><li>guaranteed optimality of any found solution.</li></ul><span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;">Briefly justify your answer.</span><br><h2>Other Instructions</h2>
+<ul>
+<li>The answers can be typed as a document or handwritten and
+scanned.&nbsp;</li>
+<li>Accepted document formats are (.pdf, .doc or
+.docx).&nbsp;Please do not submit
+.txt files. If you are using OpenOffice or LibreOffice, make sure to
+save as .pdf or .doc</li>
+<li>If
+you are scanning handwritten documents make sure to scan it at a
+minimum of 600dpi and save as a&nbsp;.pdf or .png file.&nbsp;</li>
+<li>If there are multiple files in your submission, zip them
+together and submit the .zip file.</li>
+</ul>
+</body></html>

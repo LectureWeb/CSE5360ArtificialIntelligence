@@ -1,0 +1,347 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+<!-- saved from url=(0076)https://omega.uta.edu/~gopikrishnav/classes/2015/fall/ai1/assmts/pa/pa3.html -->
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><title>Assignment 6</title>
+
+<link href="chrome-extension://lnkdbjbjpnpjeciipoaflmpcddinpjjp/mytube.css" rel="stylesheet" type="text/css">
+<script src="chrome-extension://lnkdbjbjpnpjeciipoaflmpcddinpjjp/mutationObserver.js"></script>
+<link rel="stylesheet" type="text/css" href="chrome-extension://pkehgijcmpdhfbdbbnkijodmdjhbjlgp/skin/socialwidgets.css">
+<script src="chrome-extension://lnkdbjbjpnpjeciipoaflmpcddinpjjp/mytube.js"></script>
+</head>
+
+<body style="">
+<h1>Assignment 6</h1>
+<h2>Programming Assignment - Propositional Logic</h2>
+<h2>Task</h2>
+The task in this programming assignment is to implement, a knowledge
+base and an inference engine for the wumpus world. First of all, you
+have to create a knowledge base (stored as a text file) storing the
+rules of the wumpus world, i.e., what we know about pits, monsters,
+breeze, and stench. Second, you have to create an inference engine,
+that given a knowledge base and a statement determines if, based on the
+knowledge base, the statement is definitely true, definitely false, or
+of unknown truth value.
+<h2>Command-line Arguments</h2>
+The program should be invoked from the commandline as follows:<br>
+<br>
+<span style="font-family: Courier New,Courier,monospace;">check_true_false
+wumpus_rules.txt [additional_knowledge_file]
+[statement_file]</span><br>
+<br>
+For example:<br>
+<br>
+<span style="font-family: Courier New,Courier,monospace;">check_true_false
+wumpus_rules.txt kb1.txt statement1.txt</span><br>
+<ul>
+<li>Argument wumpus_rules.txt specifies the location of a text
+file
+containing the wumpus rules, i.e., the rules that are true in any
+possible wumpus world, as specified above (once again, note that the
+specifications above are not identical to the ones in the book).</li>
+<li>Argument [additional_knowledge_file] specifies an input
+file that
+contains additional information, presumably collected by the agent as
+it moves from square to square. For example, see <a href="./assmt6_files/kb3.txt">kb3.txt</a>.</li>
+<li>Argument [statement_file] specifies an input file that
+contains a
+single logical statement. The program should check if, given the
+information in wumpus_rules.txt and [additional_knowledge_file], the
+statement in [statement_file] is definitely true, definitely false, or
+none of the above.
+</li>
+</ul>
+<h2>Output</h2>
+<span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;">Your
+program should create a text file called "result.txt". Depending on
+what your inference algorithm determined about the statement being true
+or false, the output file should contain one of the following four
+outputs:</span>
+<ul style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">
+<li><strong>definitely true</strong>.
+This should be the output if the knowledge base entails the statement,
+and the knowledge base does not entail the negation of the statement.</li>
+<li><strong>definitely false</strong>.
+This should be the output if the knowledge base entails the negation of
+the statement, and the knowledge base does not entail the statement.</li>
+<li><strong>possibly true, possibly false</strong>.
+This should be the output if the knowledge base entails neither the
+statement nor the negation of the statement.</li>
+<li><strong>both true and false</strong>.
+This should be the output if the knowledge base entails both the
+statement and the the negation of the statement. This happens when the
+knowledge base is always false (i.e., when the knowledge base is false
+for every single row of the truth table).</li>
+</ul>
+<span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;">Note
+that by "knowledge base" we are referring to the conjunction of all
+statements contained in wumpus_rules.txt AND in the additional
+knowledge file.</span>
+<p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">Also
+note that the sample code provided below stores the words "result
+unknown" to the result.txt file. Also, the "both true and false" output
+should be given when the knowledge base (i.e., the info stored in
+wumpus_rules.txt AND in the additional knowledge file) entails both the
+statement from statement_file AND the negation of that statement.</p>
+<h2>Syntax</h2>
+The wumpus rules file and the additional knowledge file contain
+multiple lines. Each line contains a logical statement. The knowledge
+base constructed by the program should be a conjunction of all the
+statements contained in the two files. The sample code (as described
+later) already does that. The statement file contains a single line,
+with a single logical statement.<br>
+Statements are given in prefix notation. Some examples of prefix
+notation are:<br>
+<br>
+<span style="font-family: Courier New,Courier,monospace;">(or
+M_1_1 B_1_2)</span><br style="font-family: Courier New,Courier,monospace;">
+<span style="font-family: Courier New,Courier,monospace;">(and
+M_1_2 S_1_1 (not (or M_1_3 M_1_4)))</span><br style="font-family: Courier New,Courier,monospace;">
+<span style="font-family: Courier New,Courier,monospace;">(if
+M_1_1 (and S_1_2 S_1_3))</span><br style="font-family: Courier New,Courier,monospace;">
+<span style="font-family: Courier New,Courier,monospace;">(iff
+M_1_2 (and S_1_1 S_1_3 S_2_2))</span><br style="font-family: Courier New,Courier,monospace;">
+<span style="font-family: Courier New,Courier,monospace;">(xor
+B_2_2 P_1_2)</span><br style="font-family: Courier New,Courier,monospace;">
+<span style="font-family: Courier New,Courier,monospace;">P_1_1</span><br style="font-family: Courier New,Courier,monospace;">
+<span style="font-family: Courier New,Courier,monospace;">B_3_4</span><br style="font-family: Courier New,Courier,monospace;">
+<span style="font-family: Courier New,Courier,monospace;">(not
+P_1_1)</span><br>
+<br>
+Statements can be nested, as shown in the above examples.<br>
+<br>
+Note that:<br>
+<ul>
+<li>Any open parenthesis that is not the first character of a
+text line
+must be preceded by white space.</li>
+<li>Any open parenthesis must be immediately followed by a
+connective
+(without any white space in between).</li>
+<li>Any close parenthesis that is not the last character of a
+text line
+must be followed by white space.</li>
+<li>If the logical expression contains just a symbol (and no
+connectives),
+the symbol should NOT be enclosed in parentheses. For example, (P_1_1)
+is not legal, whereas (not P_1_1) is legal. See also the example
+statements given above.</li>
+<li>Each logical expression should be contained in a single
+line.</li>
+<li>The wumpus rules file and the additional knowledge file
+contain a set
+of logical expressions. The statement file should contain a single
+logical expression. If it contains more than one logical expression,
+only the first one is read.</li>
+<li>Lines starting with # are treated as comment lines, and
+ignored.</li>
+<li>You can have empty lines, but they must be totally empty.
+If a line has
+a single space on it (and nothing more) the program will complain and
+not read the file successfully.</li>
+</ul>
+There are six connectives: and, or, xor, not, if, iff. No other
+connectives are allowed to be used in the input files. Here is some
+additional information:<br>
+<ul>
+<li>A statement can consist of either a single symbol, or a
+connective
+connecting multiple (sub)statements. Notice that this is a recursive
+definition. In other words, statements are symbols or more complicated
+statements that we can make by connecting simpler statements with one
+of the six connectives.</li>
+<li>Connectives "and", "or", and "xor" can connect any number
+of
+statements, including 0 statements. It is legal for a statement
+consisting of an "and", "or", or "xor" connective to have no
+substatements, e.g., (and). An "and" statement with zero substatements
+is true. An "or" or "xor" statement with zero substatements is false.
+An "xor" statement is true if exactly 1 substatement is true (no more,
+no fewer).</li>
+<li>Connectives "if" and "iff" require exactly two
+substatements.</li>
+<li>Connective "not" requires exactly one substatement.</li>
+</ul>
+The only symbols that are allowed to be used are:<br>
+<ul>
+<li>M_i_j (standing for "there is a monster at square (i, j)).</li>
+<li>S_i_j (standing for "there is a stench at square (i, j)).</li>
+<li>P_i_j (standing for "there is a pit at square (i, j)).</li>
+<li>B_i_j (standing for "there is a breeze at square (i, j)).</li>
+</ul>
+<span style="font-weight: bold;">NO OTHER SYMBOLS ARE
+ALLOWED</span>. Also, note that i and j can take values
+1, 2, 3, and 4. In other words, there will be 16 unique symbols of the
+form M_i_j, 16 unique symbols of the form S_i_j, 16 unique symbols of
+the form P_i_j, and 16 unique symbols of the form B_i_j, for a total of
+64 unique symbols.
+<h2>The Wumpus Rules
+</h2>
+Here is what we know to be true in any wumpus world, for the purposes
+of this assignment (<span style="font-weight: bold;">NOTE
+THAT THESE RULES ARE NOT IDENTICAL TO THE ONES
+IN THE TEXTBOOK</span>):<br>
+<ul>
+<li>If there is a monster at square (i,j), there is stench at
+all adjacent
+squares.</li>
+<li>If there is stench at square (i,j), there is a monster at
+one of the
+adjacent squares.</li>
+<li>If there is a pit at square (i,j), there is breeze at all
+adjacent
+squares.</li>
+<li>If there is breeze at square (i,j), there is a pit at one
+or more of
+the adjacent squares.</li>
+<li>There is one and only one monster (no more, no fewer).</li>
+<li>Squares (1,1), (1,2), (2,1), (2,2) have no monsters and no
+pits.</li>
+<li>The number of pits can be between 1 and 11.</li>
+<li>We don't care about gold, glitter, and arrows, there will
+be no
+information about them in the knowledge base, and no reference to them
+in the statement.</li>
+</ul>
+<h2>Sample code</h2>
+The following code implements, in Java and C++, a system that reads
+text files containing information for the knowledge base and the
+statement whose truth we want to check. Feel free to use that code and
+build on top of it. Also feel free to ignore that code and start from
+scratch.<br>
+<ul>
+<li>Java: files <a href="./assmt6_files/CheckTrueFalse.java">CheckTrueFalse.java</a>
+and <a href="./assmt6_files/LogicalExpression.java">LogicalExpression.java</a></li>
+<li>C++: files <a href="./assmt6_files/check_true_false.cpp">check_true_false.cpp</a>
+and <a href="./assmt6_files/check_true_false.h">check_true_false.h</a></li>
+<li>Python (ver 2.4): <a href="./assmt6_files/check_true_false.py">check_true_false.py</a>
+and <a href="./assmt6_files/logical_expression.py">logical_expression.py</a></li>
+</ul>
+You can test this code, by compiling on omega, and running on input
+files <a href="./assmt6_files/a.txt">a.txt</a>,
+<a href="./assmt6_files/b.txt">b.txt</a>,
+and <a href="./assmt6_files/c.txt">c.txt</a>.
+For example, for the
+Java code you can
+run it as:<br>
+<br>
+<span style="font-family: Courier New,Courier,monospace;">javac
+*.java</span><br style="font-family: Courier New,Courier,monospace;">
+<span style="font-family: Courier New,Courier,monospace;">java
+CheckTrueFalse a.txt b.txt c.txt</span><br>
+<br>
+and for C++, you can do:<br>
+<br>
+<span style="font-family: Courier New,Courier,monospace;">g++
+-o check_true_false check_true_false.cpp</span><br style="font-family: Courier New,Courier,monospace;">
+<span style="font-family: Courier New,Courier,monospace;">./check_true_false
+a.txt b.txt c.txt</span><span style="font-weight: bold;"></span>
+<h2>Efficiency</h2>
+<span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;">Brute-force
+enumeration of the 2</span><sup style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">64</sup><span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;"><span class="Apple-converted-space">&nbsp;</span>possible
+assignments to the 64 Boolean variables will be too inefficient to
+produce answers in a reasonable amount of time. Because of that, we
+will only be testing your solutions with cases where the additional
+knowledge file contains specific information about at least 48 of the
+symbols.</span>
+<p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">For
+example, suppose that the agent has already been at square (2,3). Then,
+the agent knows for that square that:</p>
+<ul style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">
+<li>There is no monster (otherwise the agent would have died).</li>
+<li>There is no pit (otherwise the agent would have died).</li>
+</ul>
+<span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;">Furthermore,
+the agent knows whether or not there is stench and/or breeze at that
+square. Suppose that, in our example, there is breeze and no stench.</span>
+<p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">Then,
+the additional knowledge file would contain these lines for square 2,3:</p>
+<pre style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; widows: 1; word-spacing: 0px;">(not M_2_3)<br>(not P_2_3)<br>B_2_3<br>(not S_2_3)<br></pre>
+<span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;">You
+can assume that, in all our test cases, there will be at least 48 lines
+like these four lines shown above, specifying for at least 48 symbols
+whether they are true or false. Assuming that you implement the
+TT-Entails algorithm, your program should identify those symbols and
+their values right at the beginning. You can identify those symbols
+using these guidelines:</span>
+<ul style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">
+<li>Note
+that the sample code stores the knowledge base as a LogicalExpression
+object, whose connective at the root is an AND. Let's call this
+LogicalExpression object knowledge_base.</li>
+<li>Suppose that you have
+a line such as "B_2_3" in the additional knowledge file. Such a line
+generates a child of knowledge_base that is a leaf, and has its
+"symbol" variable set to "B_2_3". You can write code that explicitly
+looks for such children of knowledge_base.</li>
+<li>Suppose that you
+have a line such as "(not M_2_3") in the additional knowledge file.
+Such a line generates a child of knowledge_base whose connective is
+NOT, and whose only child is a leaf with its "symbol" variable set to
+"M_2_3". You can write code that explicitly looks for such children of
+knowledge_base.</li>
+</ul>
+<span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;">This
+way, your program will be able to initialize the model that TT-Entails
+passes to TT-Check-All with boolean assignments for at least 48
+symbols, as opposed to passing an empty model. The list of symbols
+passed from TT-Entails to TT-Check-All should obviously NOT include the
+symbols that have been assigned values in the initial model. This way,
+at most 16 symbols will have unspecified values, and TT-Check-All will
+need to check at most 2</span><sup style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">16</sup><span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;"><span class="Apple-converted-space">&nbsp;</span>rows in
+the truth table, which is quite doable in a reasonable amount of time
+(a few seconds).</span><name></name>
+<h2>Grading</h2>
+The assignment will be graded out of 100 points. <br>
+<ul>
+<li>40 points: submitting an appropriate wumpus_rules.txt file
+that can be
+used as the first command-line input to the program, according to the
+propositional logic syntax and symbols defined above. The file should
+contain logical statements corresponding to the wumpus rules stated
+above. For each of the 8 rules, you need to determine if you need to
+add any statements to wumpus_rules.txt because of that rule, and if so,
+what statements to add. Correct handling of any of the eight rules is
+worth 5 points.</li>
+<li>12
+points: satisfying the efficiency requirement, terminating in less than
+120 seconds when the additional knowledge file specifies values for at
+least 48 of the 64 symbols.</li>
+<li><span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;">48
+points: correctness of results. In particular, 12 points will be
+allocated for each of the four output cases, and you get those 12
+points if your program always produces the correct output for each of
+those four cases</span></li>
+</ul>
+<h2>How to submit</h2>
+Implementations in C, C++, Java, and Python will be accepted. If you
+would like to use another language, make sure it will compile on omega
+and clear it with the instructor beforehand. Points will be taken off
+for failure to comply
+with this requirement.<br>
+The assignment should be submitted via <a href="http://elearn.uta.edu/">Blackboard</a>. Submit a
+ZIPPED
+directory called assignment6_&lt;net-id&gt;.zip (no other forms
+of compression
+accepted, contact the instructor or TA if you do not know how to
+produce .zip files). The directory should contain source code and the wumpus_rules.txt file.
+Including binaries that work on omega (for Java and C++) is optional.
+The submission should also contain a file called readme.txt, which
+should specify precisely:<br>
+<ul><li>Name and UTA ID of the student.</li><li>What programming language is used.</li><li>How the code is structured.</li><li>How to run the code, including very specific compilation
+instructions,
+if compilation is needed. Instructions such as "compile using g++" are
+NOT considered specific.</li><li>Insufficient or unclear instructions will be penalized by
+up to 10
+points.</li><li><span style="font-weight: bold;">Code that
+does not run on omega machines gets AT MOST&nbsp;75 points</span>.
+</li></ul>
+<h2>Submission checklist</h2>
+<ul>
+<li><span style="font-weight: bold;">DID YOU
+INCLUDE THE wumpus_rules.txt file</span>?</li>
+<li>Is the code running on omega?</li><li>Does the attachment include a readme.txt file, as
+specified?
+</li>
+</ul>
+<img onselect="return false" onselectstart="return false" id="zoomIcon" src="chrome-extension://kdfgigbjonaniokmpfflpflkhahhbaej/images/zoom.png" style="cursor: pointer; position: fixed; right: 50px; top: 25px; width: 70px; height: 70px; z-index: 200000; display: none;"><input id="zoomLabel" style="border: 3px solid rgb(102, 102, 102); padding: 3px ! important; background: gray none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; color: white; font-size: 10pt; font-family: &quot;MS Sans Serif&quot;; font-weight: bolder; text-align: center; cursor: pointer; position: fixed; right: 80px; top: 75px; z-index: 200000; opacity: 0.2; width: 50px ! important; height: 20px ! important; display: none;" value="100 %" title=" • Scroll up to Zoom In • Scroll down to Zoom out • Double click to hide this • Holding Left mouse button and Right click to show it again"><mytubeelement id="myTubeRelayElementToPage" event="preferencesUpdated" data="{&quot;bundle&quot;:{&quot;label_delimitor&quot;:&quot;:&quot;,&quot;percentage&quot;:&quot;%&quot;,&quot;smart_buffer&quot;:&quot;Smart Buffer&quot;,&quot;start_playing_when_buffered&quot;:&quot;Start playing when buffered&quot;,&quot;sound&quot;:&quot;Sound&quot;,&quot;desktop_notification&quot;:&quot;Desktop Notification&quot;,&quot;continuation_on_next_line&quot;:&quot;-&quot;,&quot;loop&quot;:&quot;Loop&quot;,&quot;only_notify&quot;:&quot;Only Notify&quot;,&quot;estimated_time&quot;:&quot;Estimated Time&quot;,&quot;global_preferences&quot;:&quot;Global Preferences&quot;,&quot;no_notification_supported_on_your_browser&quot;:&quot;No notification style supported on your browser version&quot;,&quot;video_buffered&quot;:&quot;Video Buffered&quot;,&quot;buffered&quot;:&quot;Buffered&quot;,&quot;hyphen&quot;:&quot;-&quot;,&quot;buffered_message&quot;:&quot;The video has been buffered as requested and is ready to play.&quot;,&quot;not_supported&quot;:&quot;Not Supported&quot;,&quot;on&quot;:&quot;On&quot;,&quot;off&quot;:&quot;Off&quot;,&quot;click_to_enable_for_this_site&quot;:&quot;Click to enable for this site&quot;,&quot;desktop_notification_denied&quot;:&quot;You have denied permission for desktop notification for this site&quot;,&quot;notification_status_delimitor&quot;:&quot;;&quot;,&quot;error&quot;:&quot;Error&quot;,&quot;adblock_interferance_message&quot;:&quot;Adblock (or similar extension) is known to interfere with SmartVideo. Please add this url to adblock whitelist.&quot;,&quot;calculating&quot;:&quot;Calculating&quot;,&quot;waiting&quot;:&quot;Waiting&quot;,&quot;will_start_buffering_when_initialized&quot;:&quot;Will start buffering when initialized&quot;,&quot;will_start_playing_when_initialized&quot;:&quot;Will start playing when initialized&quot;,&quot;completed&quot;:&quot;Completed&quot;,&quot;buffering_stalled&quot;:&quot;Buffering is stalled. Will stop.&quot;,&quot;stopped&quot;:&quot;Stopped&quot;,&quot;hr&quot;:&quot;Hr&quot;,&quot;min&quot;:&quot;Min&quot;,&quot;sec&quot;:&quot;Sec&quot;,&quot;any_moment&quot;:&quot;Any Moment&quot;,&quot;popup_donate_to&quot;:&quot;Donate to&quot;,&quot;extension_id&quot;:&quot;lnkdbjbjpnpjeciipoaflmpcddinpjjp&quot;},&quot;prefs&quot;:{&quot;desktopNotification&quot;:true,&quot;soundNotification&quot;:true,&quot;logLevel&quot;:0,&quot;enable&quot;:true,&quot;loop&quot;:false,&quot;hidePopup&quot;:false,&quot;autoPlay&quot;:false,&quot;autoBuffer&quot;:false,&quot;autoPlayOnBuffer&quot;:false,&quot;autoPlayOnBufferPercentage&quot;:42,&quot;autoPlayOnSmartBuffer&quot;:true,&quot;quality&quot;:&quot;default&quot;,&quot;fshd&quot;:false,&quot;onlyNotification&quot;:false,&quot;enableFullScreen&quot;:true,&quot;saveBandwidth&quot;:false,&quot;hideAnnotations&quot;:false,&quot;turnOffPagedBuffering&quot;:false}}"></mytubeelement><mytubeelement id="myTubeRelayElementToTab" event="relayPrefs" data="{&quot;loadBundle&quot;:true}"></mytubeelement>
+</body></html>

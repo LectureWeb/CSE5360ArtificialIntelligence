@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Written Assignment 4</title></head>
+<body style="" _texified="true">
+<h1>Written Assignment 4</h1>
+<h3>Due date: Thursday 11/15/2012, 11:59pm.</h3>
+The assignment should be submitted via <a href="http://elearn.uta.edu/">Blackboard</a>.
+<p></p>
+<hr>
+<h3> Problem 1 </h3>
+20 points.
+<p> <strong>1a: (10 points)</strong>
+Consider a first-order logic knowledge base that contains the following
+statements (and no other statements) about the block world:
+</p>
+<pre>on(a,b)<br>on(b,c)<br>clear(a)<br></pre>
+Suppose that we know that c is not on the table. Does the knowledge
+base already contain this information, or do we need to add a
+statement? If so, what statement do we need to add?
+<p><strong>1b: (10 points)</strong>
+Suppose that the knowledge base contains the exact same statements as
+above:
+</p>
+<pre>on(a,b)<br>on(b,c)<br>clear(a)<br></pre>
+However, suppose that (in contrast to question 1a), this knowledge base
+is a STRIPS knowledge base, i.e., it follows the rules and assumptions
+of the STRIPS language. As in 1a, suppose that we know that c is not on
+the table. Does the knowledge base already contain this information, or
+do we need to add a statement? If so, what statement do we need to add?
+<p>If you gave a different answer than in question 1a, what
+aspect of STRIPS caused the difference?
+</p>
+<p></p>
+<hr>
+<h3> Problem 2 </h3>
+20 points.
+<p> We have state descriptions and action definitions written
+following the conventions used in the graphplan software of <a href="pa4.htm">
+programming assignment 4</a>. One of the actions is defined as
+follows:
+</p>
+<pre>(operator<br> aaa<br> (params<br> (&lt;b&gt; ttt1) (&lt;c&gt; ttt1))<br> (preconds<br> (ppp1 &lt;b&gt; &lt;c&gt;) (ppp2 &lt;b&gt;) (ppp3 &lt;c&gt;))<br> (effects<br> (eee1 &lt;b&gt; &lt;c&gt;) (eee2 &lt;b&gt;) (del eee2 &lt;c&gt;) (del eee3 &lt;c&gt;)))<br><br></pre>
+Suppose we are at a state S1 described as follows (again, using
+graphplan syntax):
+<pre>(A ttt1)<br>(B ttt1)<br>(C ttt1)<br>(ppp1 B C)<br>(ppp2 A)<br>(ppp2 B)<br>(ppp3 C)<br>(eee1 A C)<br>(eee2 C)<br>(eee3 C)<br>(eee3 A)<br></pre>
+What is the state resulting from applying action aaa(B,C) to S1? Give a
+complete specification.
+<p></p>
+<hr>
+<h3> Problem 3 </h3>
+30 points.
+<p>In some planning domain, at every state we can perform a
+number X of different actions (no more than X, no fewer than X). Given
+an initial state S1 and a goal G, the shortest plan (i.e., the plan
+with the smallest number of actions) contains Y actions (Y is obviously
+a non-zero positive integer). In the following questions, remember that
+time complexity and space complexity for an algorithm are always
+worst-case estimates. Also, remember that, in big-O notation, constant
+factors do not matter: if a certain algorithm A is 10 times slower than
+another algorithm B, regardless of the values for X and Y, then
+algorithms A and B are considered to have equal big-O time complexity.
+Finally, remember that basic search algorithms like breadth-first
+search and depth-first search can be used to solve planning problems.
+</p>
+<p><strong>3a: (10 points)</strong>
+Name an algorithm that gives us the best time complexity (in terms of
+big-O notation) for finding the shortest plan?. What is that best time
+complexity? Time complexity should be expressed in terms of X and Y.
+Use big-O notation.
+</p>
+<p><strong>3b: (10 points)</strong>
+Name an algorithm that (in terms of big-O notation) gives us the best
+space complexity for finding the shortest plan? What is that best space
+complexity? Space complexity should be expressed in terms of X and Y.
+Use big-O notation.
+</p>
+<p><strong>3c: (10 points)</strong>
+Is there a single algorithm that, in terms of big-O notation, gives us
+both the best time complexity and the best space complexity? </p>
+<p></p>
+<hr>
+<h3> Problem 4 </h3>
+30 points.
+<p><strong>4a: (15 points)</strong> Suppose that we
+have implemented a planning system where states, goals, action
+preconditions and action effects are expressed using the STRIPS
+language. Given a state S1 and an action A1, and given specific
+parameters for A1 (as opposed to variables), is there a polynomial-time
+algorithm (in terms of the size of the knowledge base and the size of
+the preconditions for A1) that can compute whether the preconditions of
+A1 are all true in state S1? If so, what is that algorithm? If not, why
+not?
+</p>
+<p><strong>4b: (15 points)</strong> Suppose that we
+have implemented a planning system where states, goals, action
+preconditions and action effects are expressed using unrestricted first
+order logic. Given a state S1 and an action A1, and given specific
+parameters for A1 (as opposed to variables), is there a polynomial-time
+algorithm (in terms of the size of the knowledge base and the size of
+the preconditions for A1) that can compute whether the preconditions of
+A1 are all true in state S1? If so, what is that algorithm? If not, why
+not?
+</p>
+<p></p>
+<img onselect="return false" onselectstart="return false" id="zoomIcon" src="chrome-extension://kdfgigbjonaniokmpfflpflkhahhbaej/images/zoom.png" style="cursor: pointer; position: fixed; right: 50px; top: 25px; width: 70px; height: 70px; z-index: 10000; display: none;"><input id="zoomLabel" style="border: 3px solid rgb(102, 102, 102); padding: 3px; background-color: gray; color: white; font-size: 10pt; font-family: 'MS Sans Serif'; font-weight: bolder; text-align: center; cursor: pointer; position: fixed; right: 80px; top: 75px; width: 50px; height: 20px; z-index: 10000; opacity: 0.2; display: none;" value="100 %" title=" • Scroll up to Zoom In • Scroll down to Zoom out • Double click to hide this • Holding Left mouse button and Right click to show it again">
+<div id="sbi_camera_button" class="sbi_search" style="border: medium none ; margin: 0px; padding: 0px; left: 0px; top: 0px; position: absolute; width: 29px; height: 27px; z-index: 2147483647; display: none;"></div>
+</body></html>

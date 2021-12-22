@@ -1,0 +1,427 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+  
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+  <title>Assignment 3</title>
+
+  
+</head><body style="background-color: rgb(231, 246, 253);">
+<h1>Assignment 3</h1>
+
+<h2>Written Assignment - Game Playing &amp; Logic<br>
+</h2>
+
+<h3><span style="font-weight: bold;">Max possible score:</span></h3>
+
+<ul>
+
+  <li>4308: 150 Points</li>
+  <li>5360: 150 Points</li>
+</ul>
+
+<hr>
+<h3>Task 1 </h3>
+
+<span style="font-weight: bold;">Max: [4308: 15 Points,
+5360: 15 Points]</span>
+<table style="text-align: left; margin-left: auto; margin-right: auto;" border="1">
+
+  <tbody>
+    <tr>
+      <td style="text-align: center;">X </td>
+      <td style="text-align: center;"> <br>
+      </td>
+      <td style="text-align: center;">O<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align: center;">O</td>
+      <td style="text-align: center;"><br>
+      </td>
+      <td style="text-align: center;">X</td>
+    </tr>
+    <tr>
+      <td style="text-align: center;">X<br>
+      </td>
+      <td style="text-align: center;">O </td>
+      <td style="text-align: center;">&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+
+<br>
+
+<div style="text-align: center;">
+Figure 1. A tic-tac-toe board state.
+</div>
+
+<p>Consider the tic-tac-toe board state shown in Figure 1. Draw
+the full
+minimax search tree starting from this state, and ending in terminal
+nodes. Show the utility value for each terminal and non-terminal node.
+Also show which move the Minimax algorithm decides to play for X.
+Utility values are +1 if X wins, 0 for a tie, and -1 if O wins. (Note:
+X is the MAX player).
+</p>
+
+<hr>
+<h3>Task 2 </h3>
+
+<span style="font-weight: bold;">Max: [4308: 15 Points,
+5360: 15 Points]<br>
+</span>
+<h4><span style="font-weight: bold; font-style: italic;">Note: This is a
+ABET Assesment Task</span></h4>
+<br>
+
+<p style="text-align: center;"><img style="width: 970px; height: 463px;" alt="MinmaxTree" src="assmt3_files/minimax1.gif"><br>
+<br>
+Figure 2. A game search tree.
+</p>
+
+<p>a. (4308: 10 points, 5360: 10 points)
+In the game search tree of Figure 2, indicate what nodes will be pruned
+using alpha-beta search, and what the estimated utility values are for
+the rest of the nodes. Assume that, when given a choice, alpha-beta
+search expands nodes in a left-to-right order. Also, assume the MAX
+player plays first. Finally incidcate which action the Minmax algorithm
+will pick to exectute.
+</p>
+
+<p>b. (4308: 5 points, 5360: 5 points) This question is also on
+the game search tree
+of Figure 2. Suppose we are given some additional knowledge about the
+game: the maximum utility value is 10, i.e., it is not mathematically
+possible for the MAX player to get an outcome greater than 10. How can
+this knowledge be used to further improve the efficiency of alpha-beta
+search? Indicate the nodes that will be pruned using this improvement.
+Again, assume that, when given a choice, alpha-beta search expands
+nodes in a left-to-right order, and that the MAX player plays first.
+</p>
+
+<hr>
+<h3>Task 3 </h3>
+
+<span style="font-weight: bold;">Max: [4308: 10 Points,
+5360: 10 Points]</span><br>
+
+<br>
+
+Suppose that you want to implement an algorithm that will compete on a
+two-player deterministic game of perfect information. Your opponent is
+a supercomputer called DeepGreen. DeepGreen does not use Minimax. You
+are given a library function DeepGreenMove(S), that takes any state S
+as an argument, and returns the move that DeepGreen will choose for
+that state S (more precisely, DeepGreenMove (S) returns the state
+resulting from the opponent's move).
+<p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">Write
+an algorithm in pseudocode (following the style of the Minimax
+pseudocode) that will always make an optimal decision given the
+knowledge we have about DeepGreen. You are free to use the library
+function DeepGreenMove(S) in your pseudocode. What advantage would this
+algorithm have over Minimax? (if none, Justify).<br>
+</p>
+
+<hr>
+<h3>Task 4 </h3>
+
+<span style="font-weight: bold;">Max: [4308: 10 Points,
+5360: 10 Points]</span><br>
+
+<br>
+
+<div style="text-align: center;"><img style="width: 555px; height: 388px;" alt="Expectiminmax Tree" src="assmt3_files/expectiminmax.png"><br>
+Figure 3: An Expectiminmax tree.<br>
+</div>
+
+<br>
+
+Find
+the value of every non-terminal node in the expectiminmax tree given
+above. Also indicate which action will be performed by the algoirithm.
+What is lowest and highest possible outcome of a single game if the
+minmax strategy is followed.<br>
+
+<br>
+
+<span style="font-family: 'Times New Roman';"></span>
+<hr>
+<h3>Task 5<br>
+</h3>
+
+<span style="font-weight: bold;">Max: [4308: 10 Points,
+5360: 10 Points]</span><br>
+
+<br>
+
+<div style="text-align: center;"><img style="width: 400px; height: 294px;" alt="Figure 3: Yet another game search tree" title="Figure 3: Yet another game search tree" src="assmt3_files/best_worst_outcome.png"><br>
+Figure 4: Yet another game search tree<br>
+</div>
+
+<br>
+
+<p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">Consider
+the MINIMAX tree above. Suppose that we are the MAX player, and we
+follow the MINIMAX algorithm to play a full game against an opponent.
+However,<span class="Apple-converted-space">&nbsp;</span><strong>we
+do not know what algorithm the opponent uses</strong>.</p>
+
+<p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">Under
+these conditions, what is the best possible outcome of playing the full
+game for the MAX player? What is the worst possible outcome for the MAX
+player? Justify your answer.</p>
+
+<p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">NOTE:
+the question is not asking you about what MINIMAX will compute for the
+start node. It is asking you what is the best and worst outcome of a<span class="Apple-converted-space">&nbsp;</span><strong>complete
+game</strong><span class="Apple-converted-space">&nbsp;</span>under
+the assumptions stated above. <br>
+</p>
+
+<p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;"><br>
+</p>
+
+<hr>
+<h3>Task 6<br>
+</h3>
+
+<span style="font-weight: bold;">Max: [4308: 10 Points,
+5360: 10 Points]<br>
+<br>
+</span>Two logical statements S1 and S2 are logically equivalent if (S1
+&lt;=&gt; S2) is valid. We have two knowledge bases, KB1 and KB2..
+Write a function
+CHECK_EQUIVALENCE(KB1, KB2) that:
+<ul>
+
+  <li> returns true if KB1 and KB2 are logically equivalent. </li>
+  <li> returns false otherwise. </li>
+</ul>
+
+Your pseudocode can re-use any code from the textbook or
+slides, and can call any of the functions given in the textbook or
+slides, as long as such code and functions are used correctly, with
+correct names for the functions, and with well-specified values for all
+variables and arguments.
+<hr style="width: 100%; height: 2px;"><span style="font-weight: bold;"></span>
+<h3>Task 7<br>
+</h3>
+
+<span style="font-weight: bold;">Max: [4308: 10 Points,
+5360: 10 Points]<br>
+<br>
+</span>
+<table style="text-align: center;" border="1" cellpadding="0" cellspacing="0">
+
+  <tbody>
+    <tr>
+      <td>A</td>
+      <td>B</td>
+      <td>C</td>
+      <td>KB</td>
+      <td>S1</td>
+    </tr>
+    <tr>
+      <td>&nbsp;&nbsp;&nbsp;True&nbsp;&nbsp;&nbsp;</td>
+      <td>&nbsp;&nbsp;&nbsp;True&nbsp;&nbsp;&nbsp;</td>
+      <td>&nbsp;&nbsp;&nbsp;True&nbsp;&nbsp;&nbsp;</td>
+      <td>&nbsp;&nbsp;&nbsp;True&nbsp;&nbsp;&nbsp;</td>
+      <td>&nbsp;&nbsp;&nbsp;True&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+      <td>True</td>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>True</td>
+      <td>False</td>
+      <td>True</td>
+      <td>True</td>
+      <td> True</td>
+    </tr>
+    <tr>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>False</td>
+      <td>True</td>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td>False</td>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+KB and S1 are two propositional logic statements, that are constructed
+using symbols A, B, C, and using various connectives. The above truth
+table shows, for each combination of values of A, B, C, whether KB and
+S1 are true or false.
+</p>
+
+<p><strong>Part a</strong>: Given the above
+information, does KB entail S1? Justify your answer.
+</p>
+
+<p><strong>Part b</strong>: Given the above
+information, does statement NOT(KB) entail statement NOT(S1)? Justify
+your answer.
+</p>
+
+<br>
+
+<hr><br>
+
+<h3>Task 8<br>
+</h3>
+
+<span style="font-weight: bold;">Max: [4308: 10 Points,
+5360: 10 Points]<br>
+<br>
+</span>&nbsp;Suppose that some&nbsp; knowledge base contains various
+propositional-logic sentences that utilize symbols A, B, C, D
+(connected with various connectives). There are only two cases when the
+knowledge base is <span style="font-weight: bold;">false</span>:<br>
+
+- First case: when A is true, B is false, C is true, D is true. <br>
+
+- Second case: when A is false, B is false, C is true, D is false.<br>
+
+<br>
+
+In all other cases, the knowledge base is true. Write a conjunctive
+normal form (CNF)&nbsp; for the knowledge base.<br>
+
+<br>
+
+<hr>
+<h3>Task 9<br>
+</h3>
+
+<span style="font-weight: bold;">Max: [4308: 20 Points,
+5360: 20 Points]</span>
+<br>
+<h4><span style="font-weight: bold; font-style: italic;">Note: This is a
+ABET Assesment Task</span></h4>
+
+
+Consider the KB<br>
+
+<br>
+
+A =&gt; B<br>
+
+B &lt;=&gt; C<br>
+
+D =&gt; A<br>
+
+E =&gt; D<br>
+
+C&nbsp;AND E =&gt; F<br>
+
+E<br>
+
+<br>
+
+Show that this entails F by<br>
+
+<br>
+
+i. Forward Chaining<br>
+
+ii. Backward Chaining<br>
+
+iii. Resolution<br>
+
+<hr><br>
+
+<h3>Task 10<br>
+</h3>
+
+<span style="font-weight: bold;">Max: [4308: 40 Points,
+5360: 40 Points]<br>
+<br>
+</span>In April, John and Mary sign the following contract:<br>
+
+<br>
+
+- If it rains in May, then John must give Mary a check for
+$10,000<br>
+
+- If John gives Mary a check for $10,000, Mary must mow
+the lawn.<br>
+
+<br>
+
+What truly happened those days is the following:<br>
+
+- It did not rain in May.<br>
+
+- John gave Mary a check for $10,000<br>
+
+- Mary mowed the lawn.<br>
+
+<br>
+
+<strong>Part a</strong>: Write a first order logic
+statement to express the contract. Make sure that you clearly define
+what constants and predicates that you use are. (NOTE: DO NOT use
+functions)<br>
+
+<br>
+
+<strong>Part b</strong>: Write a logical statement to
+express what truly happened. When possible, use the same predicates and
+constants as in
+question 6a. If you need to define any new predicates or constants,
+clearly define what
+they stand for.<br>
+
+<br>
+
+<strong>Part c:</strong> Define the symbols required to convert <span style="font-weight: bold; text-decoration: underline;">any</span>
+KB involved in the above
+domanin from FOL to Propositional logic (Your symbols must allow me to
+convert ANY KB that uses the predicates and constants as decribed
+previously). <br>
+
+<br>
+
+<strong>Part d</strong>: Use the sybols given in part c, to convert the
+answers to part a and b to Propositional Logic.<br>
+
+<br>
+
+<span style="font-weight: bold;">Part e</span>:
+Was the contract violated
+or not, Justify your answer (Note: if the sequence of events that
+occured entails the contract then it was not violated)
+</body></html>

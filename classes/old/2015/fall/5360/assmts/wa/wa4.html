@@ -1,0 +1,158 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Written Assignment 4</title></head>
+<body style="" _texified="true">
+<h1>Written Assignment 4</h1>
+The assignment should be submitted via <a href="http://elearn.uta.edu/">Blackboard</a>.<br>
+<hr>
+<h3> Problem 1 </h3>
+10 points.<br>
+<p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">Consider
+this first-order logic knowledge base:</p>
+<pre style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; widows: 1; word-spacing: 0px;">taller(John, Bill)<br>for-every x, taller(x, Bill) =&gt; tall(x)<br></pre>
+<span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;">In
+this first-order logic knowledge base,<span class="Apple-converted-space">&nbsp;</span></span><tt style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">taller</tt><span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;"><span class="Apple-converted-space">&nbsp;</span>and<span class="Apple-converted-space">&nbsp;</span></span><tt style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">tall</tt><span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;"><span class="Apple-converted-space">&nbsp;</span>are
+predicates,<span class="Apple-converted-space">&nbsp;</span></span><tt style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">x</tt><span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;"><span class="Apple-converted-space">&nbsp;</span>is a
+variable, and<span class="Apple-converted-space">&nbsp;</span></span><tt style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">John</tt><span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;">,<span class="Apple-converted-space">&nbsp;</span></span><tt style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">Bill</tt><span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;"><span class="Apple-converted-space">&nbsp;</span>are
+constants. Convert this first-order logic knowledge base into a
+propositional logic knowledge base, by performing the following two
+steps:</span>
+<ol style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">
+<li>Define symbols for the propositional-logic version of the
+knowledge base, and specify what their equivalents are in the original
+first-order logic knowledge base.</li>
+<li>Define the statements that should be stored in the
+propositional-logic version of the knowledge base.</li>
+</ol>
+<span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;">The
+symbols you define should be comprehensive enough to allow us to
+translate any well-defined inference problem in the original knowledge
+base to an equivalent problem for the propositional knowledge base.
+Anything that we can infer from the original first-order logic
+knowledge base we should also be able to infer from the
+propositionalized knowledge base, and vice versa.</span>
+<br><br>
+<hr>
+<h3>Problem
+2</h3>10 points.
+<p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">A
+certain domain, represented in first-order logic, has:</p>
+<ul style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">
+<li>Six constants.</li>
+<li>Three predicates taking two arguments.</li>
+<li>Five functions taking two arguments.</li>
+</ul>
+<span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;">How
+many possible worlds are there for this domain? Justify your answer.<br>
+</span><span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;"></span>
+<br>
+<hr>
+<h3>Problem 3</h3>
+<span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;"></span>15
+points.
+<p> <strong>1a: (7 points)</strong>
+Consider a first-order logic knowledge base that contains the following
+statements (and no other statements) about the block world:
+</p>
+<pre>on(a,b)<br>on(b,c)<br>clear(a)<br></pre>
+Suppose that we know that c is not on the table. Does the knowledge
+base already contain this information, or do we need to add a
+statement? If so, what statement do we need to add?
+<p><strong>1b: (7 points)</strong>
+Suppose that the knowledge base contains the exact same statements as
+above:
+</p>
+<pre>on(a,b)<br>on(b,c)<br>clear(a)<br></pre>
+However, suppose that (in contrast to question 1a), this knowledge base
+is a PDDL knowledge base, i.e., it follows the rules and assumptions
+of the PDDL language. As in 1a, suppose that we know that c is not on
+the table. Does the knowledge base already contain this information, or
+do we need to add a statement? If so, what statement do we need to add?
+<p><span style="font-weight: bold;">1c: (1 point)</span>
+If you gave a different answer for question 1b than in question 1a,
+what
+aspect of PDDL caused the difference? If not, why?
+</p>
+<br>
+<hr>
+<h3> Problem 4 </h3>
+30 points.
+<p>In some planning domain, at every state we can perform a
+number X of different actions (no more than X, no fewer than X). Given
+an initial state S1 and a goal G, the shortest plan (i.e., the plan
+with the smallest number of actions) contains Y actions (Y is obviously
+a non-zero positive integer). In the following questions, remember that
+time complexity and space complexity for an algorithm <span style="font-weight: bold;">are always
+worst-case estimates</span>. Also, remember that, in big-O
+notation, constant
+factors do not matter: if a certain algorithm A is 10 times slower than
+another algorithm B, regardless of the values for X and Y, then
+algorithms A and B are considered to have equal big-O time complexity.
+Finally, remember that basic search algorithms like breadth-first
+search and depth-first search can be used to solve planning problems.
+</p>
+<p><strong>3a: (10 points)</strong>
+Name an algorithm that gives us the best time complexity (in terms of
+big-O notation) for finding the shortest plan?. What is that best time
+complexity? Time complexity should be expressed in terms of X and Y.
+Use big-O notation.
+</p>
+<p><strong>3b: (10 points)</strong>
+Name an algorithm that (in terms of big-O notation) gives us the best
+space complexity for finding the shortest plan? What is that best space
+complexity? Space complexity should be expressed in terms of X and Y.
+Use big-O notation.
+</p>
+<p><strong>3c: (10 points)</strong>
+Is there a single algorithm that, in terms of big-O notation, gives us
+both the best time complexity and the best space complexity?<br>
+</p>
+<hr>
+<h3>Problem 5</h3>
+20 points.<br>
+<br>
+Two adults and two children are on the left side of the river. Each
+adult weighs 150 pounds. Each child has half the weight of an adult, so
+each child weighs 75 pounds. They all want to cross to the right side
+of the river. However, the only means of transportation they can use is
+a boat, and the boat can carry a maximum of 150 pounds. Thus, the boat
+can carry one adult without children, or one child, or two children.
+Any adult or child can operate the boat, but the boat cannot be
+operated without having at least one person on the boat. The goal is to
+come up with a plan for moving everyone from the left side to the right
+side using multiple boat trips.
+<p style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px;">Define
+appropriate actions for this planning problem, in the PDDL language.
+For each action, provide a name, arguments, preconditions, and effects.
+Also, describe the initial state and the goal, using PDDL.<br>
+</p>
+<hr>
+<h3> Problem 6 </h3>
+15 points.
+<p> We have state descriptions and action definitions written
+following the conventions used in the graphplan software of <a href="http://omega.uta.edu/%7Evxg3135/classes/2015/fall/ai1/assmts/pa/pa4.html">
+programming assignment 4</a>. One of the actions is defined as
+follows:
+</p>
+<pre>(operator<br> aaa<br> (params<br> (&lt;b&gt; ttt1) (&lt;c&gt; ttt1))<br> (preconds<br> (ppp1 &lt;b&gt; &lt;c&gt;) (ppp2 &lt;b&gt;) (ppp3 &lt;c&gt;))<br> (effects<br> (eee1 &lt;b&gt; &lt;c&gt;) (eee2 &lt;b&gt;) (del eee2 &lt;c&gt;) (del eee3 &lt;c&gt;)))<br><br></pre>
+Suppose we are at a state S1 described as follows (again, using
+graphplan syntax):
+<pre>(A ttt1)<br>(B ttt1)<br>(C ttt1)<br>(ppp1 B C)<br>(ppp2 A)<br>(ppp2 B)<br>(ppp3 C)<br>(eee1 A C)<br>(eee2 C)<br>(eee3 C)<br>(eee3 A)<br></pre>
+What is the state resulting from applying action aaa(B,C) to S1? Give a
+complete specification.<br><hr>
+<h3> Problem 7 (Extra Credit) </h3>15 points.<br><br><span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;">Consider
+a smaller version of the book ordering problem, where Amazon only sells
+three book titles, and our goal is to own these three books. More
+formally:<br></span><ul><li><span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;">Only one type of action is available, buying a book from a store.</span><pre style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: left; text-indent: 0px; text-transform: none; widows: 1; word-spacing: 0px;">Action(buy(person, book, store),<br>    PRECOND: has(store, book),<br>    EFFECT: owns(person, book))</pre></li><li><span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;">Initial state:</span><pre style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: left; text-indent: 0px; text-transform: none; widows: 1; word-spacing: 0px;">has(Amazon, book1)<br>has(Amazon, book2)<br>has(Amazon, book3)</pre></li><li><span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;">Goal:</span><pre style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: left; text-indent: 0px; text-transform: none; widows: 1; word-spacing: 0px;">owns(me, book1) AND owns(me, book2) AND owns(me, book3)</pre></li></ul>
+<span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none;">Draw the planning graph for this problem, from level S0 up to and including level S2.<br></span>
+<hr>
+<h2>Other Instructions</h2>
+<ul><li>The answers can be typed as a document or handwritten and
+scanned.&nbsp;</li><li>Accepted document formats are (.pdf, .doc or
+.docx).&nbsp;Please do not submit
+.txt files. If you are using OpenOffice or LibreOffice, make sure to
+save as .pdf or .doc</li><li>If
+you are scanning handwritten documents make sure to scan it at a
+minimum of 600dpi and save as a&nbsp;.pdf or .png file.&nbsp;</li><li>If there are multiple files in your submission, zip them
+together and submit the .zip file.</li></ul>
+</body></html>
